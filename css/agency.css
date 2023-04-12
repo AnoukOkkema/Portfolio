@@ -928,3 +928,9 @@ p#name {padding-left: 25px;}
 .arrowlanding a:hover {
   text-decoration: none;
 }
+
+@media (max-width: 425px) {
+  .textlanding {
+    width: 100%;
+  }
+}
