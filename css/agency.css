@@ -932,5 +932,20 @@ p#name {padding-left: 25px;}
 @media (max-width: 425px) {
   .textlanding {
     width: 100%;
+    top:50%;
+    }
+
+  p {font-size: 14px;}
+
+  .logo-text {
+    display: block; /* set display to block so it appears on a new line */
+    font-size: 25px;
+    margin: 0; /* remove any default margins */
   }
+
+  .logo-image {
+    width: 50px;
+  }
+
+  #particles-js { width: 100%; height: 675px; background-color: white; background-image: url(""); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; }
 }
