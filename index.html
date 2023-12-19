@@ -1802,28 +1802,44 @@
 		})(jQuery);
 	</script>
 	<script>
+		// Function to hide the content-holder
+		function hideContent() {
+			var contentHolder = document.querySelector('#content-holder');
+			contentHolder.style.display = 'none';
+		}
+	
+		// Function to show the content-holder
+		function showContent() {
+			var contentHolder = document.querySelector('#content-holder');
+			contentHolder.style.display = 'block'; // You can use any suitable display style
+		}
+	
 		// Function to hide the overlay
 		function hideOverlay() {
 			var overlay = document.querySelector('.overlay');
-			overlay.classList.remove('show'); // Add the 'show' class to the overlay
+			overlay.classList.remove('show'); // Remove the 'show' class from the overlay
+			showContent(); // Show the content after hiding the overlay
 		}
-
+	
 		// Function to show the overlay and bars
 		function showOverlay() {
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.add('show'); // Add the 'show' class to the overlay
 			setTimeout(hideOverlay, 2000); // Hide the overlay after 2 seconds (adjust as needed)
 		}
-
+	
 		// Check if the page was loaded with a transition parameter
 		var urlParams = new URLSearchParams(window.location.search);
 		var transitionParam = urlParams.get('transition');
-		
+	
 		// If the 'transition' parameter is set to 'true', show the overlay and trigger the animation
 		if (transitionParam === 'true') {
+			hideContent(); // Initially hide the content-holder
 			showOverlay();
+		} else {
+			showContent(); // If 'transition' parameter is not set, show the content immediately
 		}
-	</script>
+	</script>	
 </body>
 
 </html>
