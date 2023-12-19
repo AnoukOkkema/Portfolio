@@ -1811,7 +1811,7 @@
 		// Function to show the content-holder
 		function showContent() {
 			var contentHolder = document.querySelector('#content-holder');
-			contentHolder.style.display = 'block'; // You can use any suitable display style
+			contentHolder.style.removeProperty('display'); // Remove the 'display' style
 		}
 	
 		// Function to hide the overlay
@@ -1836,9 +1836,7 @@
 		if (transitionParam === 'true') {
 			hideContent(); // Initially hide the content-holder
 			showOverlay();
-		} else {
-			showContent(); // If 'transition' parameter is not set, show the content immediately
-		}
+		} 
 	</script>	
 </body>
 
