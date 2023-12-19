@@ -114,7 +114,7 @@
 
 <body
 	class="home page-template-default page page-id-353 wp-custom-logo is-frontend dynamic-mode mejs-semplice-ui semplice-cursor gallery-cursor cookies-set cookies-refused"
-	bgcolor="#c3eed7" data-post-type="page" data-post-id="353" data-breakpoint-js="xl"
+	bgcolor="rgba(50, 50, 50, 1)" data-post-type="page" data-post-id="353" data-breakpoint-js="xl"
 	data-new-gr-c-s-check-loaded="14.1136.0" data-gr-ext-installed="">
 
 	<div id="content-holder" data-active-post="353">
@@ -1331,6 +1331,8 @@
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.add('show'); // Add the 'show' class to the overlay
 			setTimeout(hideOverlay, 2000); // Hide the overlay after 2 seconds (adjust as needed)
+			document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
+			showContent(); // Show the content after hiding the overlay
 		}
 	
 		// Check if the page was loaded with a transition parameter
@@ -1341,10 +1343,8 @@
 		if (transitionParam === 'true') {
 			hideContent(); // Initially hide the content-holder
 			showOverlay();
-		} else {
-			showContent(); // If 'transition' parameter is not set, show the content immediately
-		}
-	</script>	
+		} 
+	</script>		
 
 </body>
 
