@@ -69,7 +69,6 @@
 	</style>
 	<!-- Google Analytics here -->
 	<style>
-	
 		.overlay {
 			position: absolute;
 			top: 0;
@@ -85,13 +84,13 @@
 	
 		.bar {
 			position: absolute;
-			width: 10.1vw;
+			width: 16.667%; /* Each bar takes 16.667% of the width */
 			background: rgba(50, 50, 50, 1); /* #222222 */
 			top: 0;
 			bottom: 0;
 			transform: scale(0, 1);
 			transform-origin: 100% 100%;
-			transition: transform 0.5s ease-in-out;
+			transition: transform 0.3s ease-in-out;
 		}
 	
 		.bar:first-of-type {
@@ -99,22 +98,17 @@
 		}
 	
 		.bar:nth-of-type(1) { left: 0; transition-delay: 0.05s; }
-		.bar:nth-of-type(2) { left: 10vw; transition-delay: 0.10s; }
-		.bar:nth-of-type(3) { left: 20vw; transition-delay: 0.15s; }
-		.bar:nth-of-type(4) { left: 30vw; transition-delay: 0.20s; }
-		.bar:nth-of-type(5) { left: 40vw; transition-delay: 0.25s; }
-		.bar:nth-of-type(6) { left: 50vw; transition-delay: 0.30s; }
-		.bar:nth-of-type(7) { left: 60vw; transition-delay: 0.35s; }
-		.bar:nth-of-type(8) { left: 70vw; transition-delay: 0.40s; }
-		.bar:nth-of-type(9) { left: 80vw; transition-delay: 0.45s; }
-		.bar:nth-of-type(10) { left: 90vw; transition-delay: 0.50s; }
-	
+		.bar:nth-of-type(2) { left: 16.667%; transition-delay: 0.10s; }
+		.bar:nth-of-type(3) { left: 33.333%; transition-delay: 0.15s; }
+		.bar:nth-of-type(4) { left: 50%; transition-delay: 0.20s; }
+		.bar:nth-of-type(5) { left: 66.667%; transition-delay: 0.25s; }
+		.bar:nth-of-type(6) { left: 83.333%; transition-delay: 0.30s; }
 		</style>
 </head>
 
 <body
 	class="home page-template-default page page-id-353 wp-custom-logo is-frontend dynamic-mode mejs-semplice-ui semplice-cursor gallery-cursor cookies-set cookies-refused"
-	bgcolor="rgba(50, 50, 50, 1)" data-post-type="page" data-post-id="353" data-breakpoint-js="xl"
+	bgcolor="#323232" data-post-type="page" data-post-id="353" data-breakpoint-js="xl"
 	data-new-gr-c-s-check-loaded="14.1136.0" data-gr-ext-installed="">
 
 	<div id="content-holder" data-active-post="353">
@@ -1824,10 +1818,9 @@
 		// Function to show the overlay and bars
 		function showOverlay() {
 			var overlay = document.querySelector('.overlay');
+			document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
 			overlay.classList.add('show'); // Add the 'show' class to the overlay
 			setTimeout(hideOverlay, 2000); // Hide the overlay after 2 seconds (adjust as needed)
-			document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
-			showContent(); // Show the content after hiding the overlay
 		}
 	
 		// Check if the page was loaded with a transition parameter
