@@ -1318,8 +1318,8 @@
 		function hideOverlay() {
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.remove('show'); // Remove the 'show' class from the overlay
-			overlay.style.display = 'none';
 			showContent(); // Show the content after hiding the overlay
+			overlay.style.display = 'none'; // Add this line to set display to 'none'
 		}
 
 		// Function to show the overlay and bars
