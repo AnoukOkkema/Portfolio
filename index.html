@@ -1812,6 +1812,7 @@
 		function hideOverlay() {
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.remove('show'); // Remove the 'show' class from the overlay
+			overlay.style.display = 'none';
 			showContent(); // Show the content after hiding the overlay
 		}
 	

@@ -1307,20 +1307,21 @@
 			var contentHolder = document.querySelector('#content-holder');
 			contentHolder.style.display = 'none';
 		}
-	
+
 		// Function to show the content-holder
 		function showContent() {
 			var contentHolder = document.querySelector('#content-holder');
 			contentHolder.style.removeProperty('display'); // Remove the 'display' style
 		}
-	
+
 		// Function to hide the overlay
 		function hideOverlay() {
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.remove('show'); // Remove the 'show' class from the overlay
+			overlay.style.display = 'none';
 			showContent(); // Show the content after hiding the overlay
 		}
-	
+
 		// Function to show the overlay and bars
 		function showOverlay() {
 			var overlay = document.querySelector('.overlay');
@@ -1328,11 +1329,11 @@
 			document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
 			setTimeout(hideOverlay, 2000); // Hide the overlay after 2 seconds (adjust as needed)
 		}
-	
+
 		// Check if the page was loaded with a transition parameter
 		var urlParams = new URLSearchParams(window.location.search);
 		var transitionParam = urlParams.get('transition');
-	
+
 		// If the 'transition' parameter is set to 'true', show the overlay and trigger the animation
 		if (transitionParam === 'true') {
 			hideContent(); // Initially hide the content-holder
