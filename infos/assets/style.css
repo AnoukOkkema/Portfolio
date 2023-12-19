@@ -193,7 +193,7 @@ Text Domain: semplice
 	animation: marquee2 15s linear infinite;
 	-webkit-animation-delay: 7.5s;
 	animation-delay: 7.5s;
-	background-color: #0b0b0b;
+	background-color: #222222;
   }
 
   @-webkit-keyframes marquee {

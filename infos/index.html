@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com" rel="preconnect" />
 	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
 	<link rel="stylesheet" id="wp-block-library-css" href="../assets/css/style.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/infos/assets/style.css" type="text/css" />
 	<script src="assets/js/styles.js"></script>
 	<link rel="stylesheet" id="semplice-frontend-stylesheet-css" href="../assets/css/frontend.min.css" type="text/css"
 		media="all" />
@@ -1319,7 +1319,10 @@
 			var overlay = document.querySelector('.overlay');
 			overlay.classList.remove('show'); // Remove the 'show' class from the overlay
 			showContent(); // Show the content after hiding the overlay
-			overlay.style.display = 'none'; // Add this line to set display to 'none'
+			// Delay setting display to 'none' to ensure the transition completes
+			setTimeout(function () {
+			overlay.style.display = 'none'; // Set display to 'none' after the transition
+		}, 500); // Adjust the delay time (in milliseconds) as needed
 		}
 
 		// Function to show the overlay and bars
