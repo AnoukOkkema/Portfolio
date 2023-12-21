@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com" rel="preconnect" />
 	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
 	<link rel="stylesheet" id="wp-block-library-css" href="../assets/css/style.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="/Portfolio/infos/assets/style.css" type="text/css" />
+	<link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
 	<script src="../assets/js/styles.js"></script>
 	<link rel="stylesheet" id="semplice-frontend-stylesheet-css" href="../assets/css/frontend.min.css" type="text/css"
 		media="all" />
@@ -139,24 +139,26 @@
 							</div>
 							<div class="navbar__availability--link">
 								<div class="navbar__availability menu-item" style="text-transform: none;">
-									<h4>
-										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									</h4>
-									<h4>
-										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									</h4>
+								  <h4>
+									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+								  </h4>
+								</div>
+								<div aria-hidden="true" class="navbar__availability menu-item" style="text-transform: none;">
+								  <h4>
+									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+								  </h4>
 								</div>
 							</div>
 							<div class="navbar__links">
@@ -1344,7 +1346,13 @@
 			document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
 
 			showLoadingScreen();
-		} 
+
+			// Set the z-index after a delay
+			setTimeout(function() {
+				var loadingScreen = document.querySelector('.loading-screen');
+				loadingScreen.style.zIndex = 1; // Pas de waarde aan naar uw behoefte
+			}, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
+		}
 		
 	</script>
 
