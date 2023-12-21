@@ -797,7 +797,7 @@ img.wp-smiley,
   [data-font="font_hv6r9gsca"] li a,
   #content-holder h6 {
 	font-family: "Gordita-Light", sans-serif;
-	font-weight: 400;
+	font-weight: 100;
 	font-variation-settings: normal;
 	font-style: normal;
   }
@@ -5815,4 +5815,198 @@ a.wt-link-secondary:link {
 	border-width: 0;
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
 	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+/* INTRO */
+
+#content-353 #section_422b1589f {
+	padding-top: 12.333333333333336rem;
+	padding-bottom: 6.666666666666667rem;
+	background-color: transparent;
+}
+
+@media screen and (min-width: 544px) and (max-width: 767.98px) {
+	#content-353 #section_422b1589f {
+		padding-top: 1.6666666666666667rem;
+		padding-bottom: 3.3333333333333335rem;
+	}
+}
+
+@media screen and (max-width: 543.98px) {
+	#content-353 #section_422b1589f {
+		padding-top: 1.6666666666666667rem;
+		padding-bottom: 3.3333333333333335rem;
+	}
+}
+
+#content-353 #content_d42d748f6 {
+	padding-top: 0rem;
+	padding-bottom: 0.5rem;
+}
+
+#content-353 #content_d42d748f6 .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_ef30d27f3 {
+	padding-top: 0rem;
+}
+
+#content-353 #content_ef30d27f3 .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(3.3333rem) translateX(0rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_vmo2dzivl {
+	padding-top: 1.6666666666666667rem;
+}
+
+#content-353 #content_vmo2dzivl .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_da2def861 {
+	padding-top: 3.3333333333333335rem;
+}
+
+#content-353 #content_da2def861 .is-content {
+	border-color: #000000;
+	border-width: 0;
+	opacity: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(3.3333rem) translateX(0rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_0dtet8pyb {
+	padding-top: 1.6666666666666667rem;
+}
+
+#content-353 #content_0dtet8pyb .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(3.3333rem) translateX(0rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_n42u1ldn2 {
+	padding-top: 1.6666666666666667rem;
+}
+
+#content-353 #content_n42u1ldn2 .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(3.3333rem) translateX(0rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_45b328dc9 .is-content:after {
+	background-color: #c3eed7;
+}
+
+#content-353 #content_45b328dc9 .is-content,
+#content-353 #content_45b328dc9 .is-content:after,
+#content-353 #content_45b328dc9 .is-content a,
+#content-353 #content_45b328dc9 .is-content a:before,
+#content-353 #content_45b328dc9 .is-content a:after,
+#content-353 #content_45b328dc9 .is-content img {
+	transition: all 0.5s var(--ease-out-expo);
+}
+
+#content-353 #content_45b328dc9 .is-content {
+	background-color: transparent;
+	border-width: 0.05555555555555555rem;
+	border-radius: 2.7777777777777777rem;
+	border-color: #c3eed7;
+}
+
+#content-353 #content_45b328dc9 .is-content a,
+#content-353 #content_45b328dc9 .is-content a:before,
+#content-353 #content_45b328dc9 .is-content a:after {
+	font-size: 0.6666666666666666rem;
+	color: #c3eed7;
+	letter-spacing: -0.005555555555555556rem;
+	margin-right: 0.005555555555555556rem;
+	border-radius: 2.7777777777777777rem;
+	padding-bottom: 0.5555555555555556rem;
+	padding-left: 1.6666666666666667rem;
+	padding-right: 1.6666666666666667rem;
+	padding-top: 0.6666666666666666rem;
+}
+
+#content-353 #content_45b328dc9 .is-content:hover a,
+#content-353 #content_45b328dc9 .is-content:hover a:before,
+#content-353 #content_45b328dc9 .is-content:hover a:after {
+	color: #323232 !important;
+}
+
+#content-353 #content_45b328dc9 {
+	padding-top: 3.3333333333333335rem;
+	padding-bottom: 0rem;
+}
+
+#content-353 #content_45b328dc9 .is-content {
+	border-color: #c3eed7;
+	border-width: 0.0556rem;
+	opacity: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(3.3333rem) translateX(0rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_ysd24ocwk .spacer {
+	background-color: #515151;
+}
+
+#content-353 #content_ysd24ocwk .spacer {
+	height: 0.05555555555555555rem;
+}
+
+#content-353 #content_ysd24ocwk {
+	padding-top: 14.666666666666667rem;
+}
+
+/* WORKEXPERIENCE */
+
+#content-353 #section_bc10d4e31 {
+	padding-top: 0rem;
+	padding-bottom: 6.666666666666667rem;
+	background-color: transparent;
+}
+
+#content-353 #content_a35d723fb {
+	padding-top: 0rem;
+	padding-bottom: 0.5rem;
+}
+
+#content-353 #content_a35d723fb .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+}
+
+#content-353 #content_xlt50h0bf {
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+}
+
+#content-353 #content_xlt50h0bf .is-content {
+	opacity: 0;
+	border-color: #000000;
+	border-width: 0;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	transform: translateY(0) translateX(-3.3333333333333rem) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
 }

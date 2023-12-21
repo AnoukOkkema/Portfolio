@@ -1827,7 +1827,9 @@
 			// Set the z-index after a delay
 			setTimeout(function() {
 				var loadingScreen = document.querySelector('.loading-screen');
+				var contentHolder = document.querySelector('#content-holder');
 				loadingScreen.style.zIndex = 1; // Pas de waarde aan naar uw behoefte
+				contentHolder.style.zIndex = 10;
 			}, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
 		}
 		

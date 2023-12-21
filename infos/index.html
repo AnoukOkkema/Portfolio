@@ -25,7 +25,8 @@
 		media="all" />
 	<link rel="stylesheet" id="mediaelement-css" href="../assets/css/mediaelementplayer-legacy.min.css" type="text/css"
 		media="all" />
-	<link rel="stylesheet" id="cookie-notice-front-css" href="../assets/css/front.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" id="cookie-notice-front-css" href="../assets/css/front.min.css" type="text/css"
+		media="all" />
 	<script type="text/javascript" src="../assets/js/jquery.min.js" id="jquery-core-js"></script>
 	<script type="text/javascript" src="../assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 	<script async="" type="text/javascript" src="../assets/js/front.min.js" id="cookie-notice-front-js"></script>
@@ -69,43 +70,69 @@
 	</style>
 	<!-- Google Analytics here -->
 	<style>
-        .loading-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+		.loading-screen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			z-index: 99;
-        }
+		}
 
 		.loading-screen.show .bar {
 			transform: scale(1, 1);
 			transform-origin: 0 0;
 		}
-	
+
 		.bar {
 			position: absolute;
-			width: 16.667%; /* Each bar takes 16.667% of the width */
-			background: rgba(50, 50, 50, 1); /* #222222 */
+			width: 16.667%;
+			/* Each bar takes 16.667% of the width */
+			background: rgba(50, 50, 50, 1);
+			/* #222222 */
 			top: 0;
 			bottom: 0;
 			transform: scale(0, 1);
 			transform-origin: 100% 100%;
 			transition: transform 0.3s ease-in-out;
 		}
-	
+
 		.bar:first-of-type {
 			border-left: none;
 		}
-	
-		.bar:nth-of-type(1) { left: 0; transition-delay: 0.05s; }
-		.bar:nth-of-type(2) { left: 16.667%; transition-delay: 0.10s; }
-		.bar:nth-of-type(3) { left: 33.333%; transition-delay: 0.15s; }
-		.bar:nth-of-type(4) { left: 50%; transition-delay: 0.20s; }
-		.bar:nth-of-type(5) { left: 66.667%; transition-delay: 0.25s; }
-		.bar:nth-of-type(6) { left: 83.333%; transition-delay: 0.30s; }	
-        /* Add your animation styles for the bars here */
-    </style>
+
+		.bar:nth-of-type(1) {
+			left: 0;
+			transition-delay: 0.05s;
+		}
+
+		.bar:nth-of-type(2) {
+			left: 16.667%;
+			transition-delay: 0.10s;
+		}
+
+		.bar:nth-of-type(3) {
+			left: 33.333%;
+			transition-delay: 0.15s;
+		}
+
+		.bar:nth-of-type(4) {
+			left: 50%;
+			transition-delay: 0.20s;
+		}
+
+		.bar:nth-of-type(5) {
+			left: 66.667%;
+			transition-delay: 0.25s;
+		}
+
+		.bar:nth-of-type(6) {
+			left: 83.333%;
+			transition-delay: 0.30s;
+		}
+
+		/* Add your animation styles for the bars here */
+	</style>
 </head>
 
 <body
@@ -133,32 +160,34 @@
 					<div class="navbar-inner menu-type-text" data-xl-width="12" data-navbar-type="container">
 						<div class="l__navbar">
 							<div class="navbar__logo menu-item" style="text-transform: none;">
-								<a href="https://anoukokkema.github.io/Portfolio/" title="Anouk Okkema Portfolio" onclick="setTransition()">
+								<a href="https://anoukokkema.github.io/Portfolio/" title="Anouk Okkema Portfolio"
+									onclick="setTransition()">
 									<h5>AnoukOkkema</h5>
 								</a>
 							</div>
 							<div class="navbar__availability--link">
 								<div class="navbar__availability menu-item" style="text-transform: none;">
-								  <h4>
-									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-								  </h4>
+									<h4>
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
 								</div>
-								<div aria-hidden="true" class="navbar__availability menu-item" style="text-transform: none;">
-								  <h4>
-									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-								  </h4>
+								<div aria-hidden="true" class="navbar__availability menu-item"
+									style="text-transform: none;">
+									<h4>
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										INFORMATIONS <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
 								</div>
 							</div>
 							<div class="navbar__links">
@@ -192,6 +221,218 @@
 			<div class="transition-wrap">
 				<div class="sections">
 
+					<!-- INTRO -->
+					<section id="section_422b1589f" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-justify="center" data-layout="grid" data-height="dynamic">
+						<div class="container">
+							<div id="row_195fb2188" class="row">
+								<div id="column_e6fb931f4" class="column" data-xl-width="9">
+									<div class="content-wrapper">
+
+
+										<div id="content_d42d748f6" class="column-content" data-module="text">
+											<div class="is-content">
+												<h6 data-mce-style="text-align: center;" style="text-align: center;">
+													<span style="color: rgb(195, 238, 215);"
+														data-mce-style="color: #c3eed7;">THIS IS ME</span>
+												</h6>
+											</div>
+										</div>
+
+										<div id="content_ef30d27f3" class="column-content" data-module="text">
+											<div class="is-content">
+												<h2 style="text-align: center;" data-mce-style="text-align: center;"
+													data-font-size-sm="2.667rem" data-line-height-sm="2.833rem"
+													data-font-size-xs="2.556rem" data-line-height-xs="2.833rem"><span
+														style="color: rgb(231, 250, 236);"
+														data-mce-style="color: rgb(231, 250, 236);"
+														data-letter-spacing-sm="-0.156rem"
+														data-letter-spacing-xs="-0.139rem"><strong>ANOUK
+															OKKEMA</strong>&nbsp;
+														<br>
+														<span class="font_hv6r9gsca">WORKSTUDENT / APPLIED DATA SCIENCE
+															/ ARTIFICIAL INTELLIGENCE</span></span></h2>
+
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_q7fh2vbiy" class="row">
+								<div id="column_wguttfoxw" class="column" data-xl-width="3" data-md-width="4">
+									<div class="content-wrapper">
+
+
+										<div id="content_vmo2dzivl" class="column-content" data-module="image">
+											<div class="ce-image" data-align="center"><img class="is-content"
+													src="../assets/files/image-placeholder-500x500.jpg" width="541"
+													height="721"
+													alt="Samuel Scalzo Graphiste et Web Designer Freelance à Liège en Belgique"
+													caption="" data-width="grid-width" data-scaling="no"></div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_uu1dap72y" class="row">
+								<div id="column_rp8njemh8" class="column" data-xl-width="7">
+									<div class="content-wrapper">
+
+
+										<div id="content_da2def861" class="column-content" data-module="text">
+											<div class="is-content">
+												<h5 style="text-align: center;" data-mce-style="text-align: center;">
+													<span style="color: rgb(248, 248, 248);"
+														data-mce-style="color: #f8f8f8;"><span
+															class="font_cmq05ad5r">Anouk Okkema</span> — Based in <span
+															style="color: rgb(195, 238, 215);"
+															data-mce-style="color: #c3eed7;">Breda</span>, the <span
+															style="color: rgb(195, 238, 215);"
+															data-mce-style="color: #c3eed7;">Netherlands&nbsp;</span>—
+														With over <span style="color: rgb(195, 238, 215);"
+															data-mce-style="color: #c3eed7;">3 years of
+															experience</span>
+														in creating innovative digital solutions&nbsp;</span>
+												</h5>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_p6oo9mc1h" class="row">
+								<div id="column_hjrl0y751" class="column" data-xl-width="4">
+									<div class="content-wrapper">
+
+
+										<div id="content_0dtet8pyb" class="column-content" data-module="text">
+											<div class="is-content">
+												<p><span data-mce-style="color: #efefef;" style="color: #efefef;"><span
+															style="caret-color: #efefef;"
+															data-mce-style="caret-color: #efefef;">I'm a dedicated
+															student of Applied Data Science and Artificial Intelligence
+															at Breda University of Applied Sciences. My studies have
+															given me hands-on
+															experience in key areas like machine learning, deep
+															learning, and data analysis. I enjoy using Python to
+															make sense of complex data and to find patterns that others
+															might miss.</span></span></p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div id="column_i0mo5act3" class="column" data-xl-width="4">
+									<div class="content-wrapper">
+
+
+										<div id="content_n42u1ldn2" class="column-content" data-module="text">
+											<div class="is-content">
+												<p><span style="color: rgb(239, 239, 239);"
+														data-mce-style="color: rgb(239, 239, 239);">As you browse
+														through my work, you'll find that I take pride in the details,
+														the coding, and the user experience. Each project is a step
+														forward in my ongoing quest for knowledge and innovation in the
+														tech space. I look forward to sharing these experiences with you
+														and hope they inspire as much as they have challenged and
+														enriched me.
+													</span></p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_menapau94" class="row">
+								<div id="column_7vza1s871" class="column" data-xl-width="12">
+									<div class="content-wrapper">
+
+
+										<div id="content_45b328dc9" class="column-content" data-module="button">
+
+											<div class="ce-button" data-align="center">
+												<div class="is-content " data-width="auto"
+													data-effect="slide-bottom-to-top" data-icon-direction="right">
+													<a data-font="font_qdryllvcq"
+														href="https://www.linkedin.com/in/anouk-okkema-96978a236/"
+														target="_blank" data-text-effect="none"
+														data-text-align="center">
+														<div data-content-for="xl">
+															<div class="inner">PROFILE LINKEDIN</div>
+														</div>
+													</a>
+												</div>
+											</div>
+
+										</div>
+
+										<div id="content_ysd24ocwk" class="column-content" data-module="spacer">
+
+											<div class="spacer-container">
+												<div class="is-content">
+													<div class="spacer"><!-- horizontal spacer --></div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- WORKEXPERIENCE -->
+					<section id="section_bc10d4e31" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single">
+						<div class="container">
+							<div id="row_a6bc0a659" class="row">
+								<div id="column_b37swnd8r" class="column" data-xl-width="2" data-md-width="3">
+									<div class="content-wrapper">
+
+
+										<div id="content_a35d723fb" class="column-content" data-module="text">
+											<div class="is-content">
+												<h6 data-mce-style="text-align: left;" style="text-align: left;"><span
+														style="color: rgb(195, 238, 215);"
+														data-mce-style="color: rgb(195, 238, 215);">SOLUTIONS</span>
+												</h6>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div id="column_306556450" class="column" data-xl-width="8" data-md-width="8">
+									<div class="content-wrapper">
+
+
+										<div id="content_xlt50h0bf" class="column-content" data-module="text">
+											<div class="is-content">
+												<h2 data-font-size-sm="2.667rem" data-line-height-sm="2.833rem"
+													data-font-size-xs="2.556rem" data-line-height-xs="2.833rem"><span
+														style="color: rgb(231, 250, 236);"
+														data-mce-style="color: #e7faec;"
+														data-letter-spacing-sm="-0.156rem"
+														data-letter-spacing-xs="-0.139rem">SERVICES <span
+															class="font_hv6r9gsca">— PLUS DE 10 ANS
+															D'EXPERIENCE</span></span></h2>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_puxuvfpfs" class="row">
+								<div id="column_b28nz1ytn" class="column" data-xl-width="12">
+									<div class="content-wrapper">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 
 
 					<!-- FOOTER -->
@@ -546,7 +787,8 @@
 	</div>
 	</div>
 	<script type="text/javascript" src="../assets/js/shared.scripts.min.js" id="semplice-shared-scripts-js"></script>
-	<script type="text/javascript" src="../assets/js/frontend.scripts.min.js" id="semplice-frontend-scripts-js"></script>
+	<script type="text/javascript" src="../assets/js/frontend.scripts.min.js"
+		id="semplice-frontend-scripts-js"></script>
 	<script type="text/javascript" src="../assets/js/mediaelement-and-player.min.js" id="mediaelement-core-js"></script>
 	<script type="text/javascript" src="../assets/js/mediaelement-migrate.min.js" id="mediaelement-migrate-js"></script>
 
@@ -683,618 +925,362 @@
 	</script>
 	<script type="text/javascript" src="../assets/js/frontend.min.js" id="semplice-frontend-js-js"></script>
 
-	<script type="text/javascript" id="353-motion-js">
+	<script type="text/javascript" id="370-motion-js">
 		(function ($) {
 			"use strict"; var playRepeat = [];
-			s4.animate.gsap["content_25upcjcby"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_25upcjcby .is-content",
+			s4.animate.gsap["content_d42d748f6"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_d42d748f6 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_25upcjcby .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_d42d748f6 .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_25upcjcby"].to("#content-holder #content_25upcjcby .is-content", props);
+			s4.animate.gsap["content_d42d748f6"].to("#content-holder #content_d42d748f6 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_25upcjcby"].pause();
+			s4.animate.gsap["content_d42d748f6"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_bql70bhnp"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_bql70bhnp .is-content",
+			s4.animate.gsap["content_ef30d27f3"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_ef30d27f3 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_bql70bhnp .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_ef30d27f3 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_bql70bhnp"].to("#content-holder #content_bql70bhnp .is-content", props);
+			s4.animate.gsap["content_ef30d27f3"].to("#content-holder #content_ef30d27f3 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_bql70bhnp"].pause();
+			s4.animate.gsap["content_ef30d27f3"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_o4ai86mkr"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_o4ai86mkr .is-content",
+			s4.animate.gsap["content_vmo2dzivl"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_vmo2dzivl .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_o4ai86mkr .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_vmo2dzivl .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			var props = JSON.parse('{"duration":2,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_o4ai86mkr"].to("#content-holder #content_o4ai86mkr .is-content", props);
+			s4.animate.gsap["content_vmo2dzivl"].to("#content-holder #content_vmo2dzivl .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_o4ai86mkr"].pause();
+			s4.animate.gsap["content_vmo2dzivl"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_4nrvat77t"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_4nrvat77t .is-content",
+			s4.animate.gsap["content_da2def861"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_da2def861 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_4nrvat77t .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_da2def861 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1.25,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_4nrvat77t"].to("#content-holder #content_4nrvat77t .is-content", props);
+			s4.animate.gsap["content_da2def861"].to("#content-holder #content_da2def861 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_4nrvat77t"].pause();
+			s4.animate.gsap["content_da2def861"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_odarncrkn"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_odarncrkn .is-content",
+			s4.animate.gsap["content_0dtet8pyb"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_0dtet8pyb .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_odarncrkn .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_0dtet8pyb .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_0dtet8pyb"].to("#content-holder #content_0dtet8pyb .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_0dtet8pyb"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_n42u1ldn2"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_n42u1ldn2 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_n42u1ldn2 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_n42u1ldn2"].to("#content-holder #content_n42u1ldn2 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_n42u1ldn2"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_45b328dc9"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_45b328dc9 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_45b328dc9 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_45b328dc9"].to("#content-holder #content_45b328dc9 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_45b328dc9"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_a35d723fb"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_a35d723fb .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_a35d723fb .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_odarncrkn"].to("#content-holder #content_odarncrkn .is-content", props);
+			s4.animate.gsap["content_a35d723fb"].to("#content-holder #content_a35d723fb .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_odarncrkn"].pause();
+			s4.animate.gsap["content_a35d723fb"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_0qsf0cnt1"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_0qsf0cnt1 .is-content",
+			s4.animate.gsap["content_xlt50h0bf"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_xlt50h0bf .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_0qsf0cnt1 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_xlt50h0bf .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_0qsf0cnt1"].to("#content-holder #content_0qsf0cnt1 .is-content", props);
+			s4.animate.gsap["content_xlt50h0bf"].to("#content-holder #content_xlt50h0bf .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_0qsf0cnt1"].pause();
+			s4.animate.gsap["content_xlt50h0bf"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_k524frnev"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_k524frnev .is-content",
+			s4.animate.gsap["content_l0gb3z5gb"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_l0gb3z5gb .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_k524frnev .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_l0gb3z5gb .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			var props = JSON.parse('{"duration":1.5,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_k524frnev"].to("#content-holder #content_k524frnev .is-content", props);
+			s4.animate.gsap["content_l0gb3z5gb"].to("#content-holder #content_l0gb3z5gb .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_k524frnev"].pause();
+			s4.animate.gsap["content_l0gb3z5gb"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_64ipx5t4q"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_64ipx5t4q .is-content",
+			s4.animate.gsap["content_3134d190e"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_3134d190e .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_64ipx5t4q .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":2,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_64ipx5t4q"].to("#content-holder #content_64ipx5t4q .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_64ipx5t4q"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_qj7pxw8qx"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_qj7pxw8qx",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_qj7pxw8qx", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_qj7pxw8qx"].to("#content-holder #content_qj7pxw8qx", props);
-			// pause timeline
-			s4.animate.gsap["content_qj7pxw8qx"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_r3l6op5w2"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_r3l6op5w2 .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_r3l6op5w2 .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
-			// add to timeline
-			s4.animate.gsap["content_r3l6op5w2"].to("#content-holder #content_r3l6op5w2 .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_r3l6op5w2"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_54lmxazbm"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_54lmxazbm .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_54lmxazbm .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_54lmxazbm"].to("#content-holder #content_54lmxazbm .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_54lmxazbm"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_3xikdhz0q"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_3xikdhz0q .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_3xikdhz0q .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_3xikdhz0q"].to("#content-holder #content_3xikdhz0q .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_3xikdhz0q"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_56rscek0l"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_56rscek0l .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_56rscek0l .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_56rscek0l"].to("#content-holder #content_56rscek0l .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_56rscek0l"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_wham1pehk"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_wham1pehk .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_wham1pehk .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_wham1pehk"].to("#content-holder #content_wham1pehk .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_wham1pehk"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_9anw8qy1c"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_9anw8qy1c .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_9anw8qy1c .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_9anw8qy1c"].to("#content-holder #content_9anw8qy1c .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_9anw8qy1c"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_fteyn1tq3"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_fteyn1tq3 .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_fteyn1tq3 .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
-			// add to timeline
-			s4.animate.gsap["content_fteyn1tq3"].to("#content-holder #content_fteyn1tq3 .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_fteyn1tq3"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_defizobxm"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_defizobxm .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_defizobxm .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
-			// add to timeline
-			s4.animate.gsap["content_defizobxm"].to("#content-holder #content_defizobxm .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_defizobxm"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_d8e3c6ioc"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_d8e3c6ioc .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_d8e3c6ioc .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_d8e3c6ioc"].to("#content-holder #content_d8e3c6ioc .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_d8e3c6ioc"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_atf96xm9h"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_atf96xm9h .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_atf96xm9h .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
-			// add to timeline
-			s4.animate.gsap["content_atf96xm9h"].to("#content-holder #content_atf96xm9h .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_atf96xm9h"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_vyax0l8zz"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_vyax0l8zz .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_vyax0l8zz .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_3134d190e .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_vyax0l8zz"].to("#content-holder #content_vyax0l8zz .is-content", props);
+			s4.animate.gsap["content_3134d190e"].to("#content-holder #content_3134d190e .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_vyax0l8zz"].pause();
+			s4.animate.gsap["content_3134d190e"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_rbpi9jzd2"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_rbpi9jzd2 .is-content",
+			s4.animate.gsap["content_e842c66bb"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_e842c66bb .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_rbpi9jzd2 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_e842c66bb .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_rbpi9jzd2"].to("#content-holder #content_rbpi9jzd2 .is-content", props);
+			s4.animate.gsap["content_e842c66bb"].to("#content-holder #content_e842c66bb .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_rbpi9jzd2"].pause();
+			s4.animate.gsap["content_e842c66bb"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_jlm27u06v"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_jlm27u06v .is-content",
+			s4.animate.gsap["content_0c2d2e74b"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_0c2d2e74b .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_jlm27u06v .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_0c2d2e74b .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_jlm27u06v"].to("#content-holder #content_jlm27u06v .is-content", props);
+			s4.animate.gsap["content_0c2d2e74b"].to("#content-holder #content_0c2d2e74b .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_jlm27u06v"].pause();
+			s4.animate.gsap["content_0c2d2e74b"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_vq138iycw"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_vq138iycw .is-content",
+			s4.animate.gsap["content_29873b6fc"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_29873b6fc .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_vq138iycw .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_vq138iycw"].to("#content-holder #content_vq138iycw .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_vq138iycw"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_yo742jzfk"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_yo742jzfk .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_yo742jzfk .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_yo742jzfk"].to("#content-holder #content_yo742jzfk .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_yo742jzfk"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_2sccltlej"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_2sccltlej .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_2sccltlej .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_2sccltlej"].to("#content-holder #content_2sccltlej .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_2sccltlej"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_vedmzn0pw"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_vedmzn0pw .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_vedmzn0pw .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_vedmzn0pw"].to("#content-holder #content_vedmzn0pw .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_vedmzn0pw"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_a93t3xwgc"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_a93t3xwgc .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_a93t3xwgc .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_a93t3xwgc"].to("#content-holder #content_a93t3xwgc .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_a93t3xwgc"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_i74w3gsrd"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_i74w3gsrd .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_i74w3gsrd .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_i74w3gsrd"].to("#content-holder #content_i74w3gsrd .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_i74w3gsrd"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_3j1qnh067"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_3j1qnh067 .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_3j1qnh067 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
-
-			// parse props
-			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
-			// add to timeline
-			s4.animate.gsap["content_3j1qnh067"].to("#content-holder #content_3j1qnh067 .is-content", props);
-			// pause timeline
-			s4.animate.gsap["content_3j1qnh067"].pause();
-			var playRepeat = [];
-			s4.animate.gsap["content_rt5c3fd8i"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_rt5c3fd8i .is-content",
-				repeat: 0,
-
-			});
-
-			// gsap set transform
-			gsap.set("#content-holder #content_rt5c3fd8i .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_29873b6fc .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":2,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_rt5c3fd8i"].to("#content-holder #content_rt5c3fd8i .is-content", props);
+			s4.animate.gsap["content_29873b6fc"].to("#content-holder #content_29873b6fc .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_rt5c3fd8i"].pause();
+			s4.animate.gsap["content_29873b6fc"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_rp6zlm507"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_rp6zlm507 .is-content",
+			s4.animate.gsap["content_f71b6b129"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_f71b6b129 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_rp6zlm507 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_f71b6b129 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_rp6zlm507"].to("#content-holder #content_rp6zlm507 .is-content", props);
+			s4.animate.gsap["content_f71b6b129"].to("#content-holder #content_f71b6b129 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_rp6zlm507"].pause();
+			s4.animate.gsap["content_f71b6b129"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_micpgzg8p"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_micpgzg8p .is-content",
+			s4.animate.gsap["content_9f5f4ca8d"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_9f5f4ca8d .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_micpgzg8p .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_9f5f4ca8d .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_micpgzg8p"].to("#content-holder #content_micpgzg8p .is-content", props);
+			s4.animate.gsap["content_9f5f4ca8d"].to("#content-holder #content_9f5f4ca8d .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_micpgzg8p"].pause();
+			s4.animate.gsap["content_9f5f4ca8d"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_v7fwc1qj4"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_v7fwc1qj4 .is-content",
+			s4.animate.gsap["content_f7f82b798"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_f7f82b798 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_v7fwc1qj4 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_f7f82b798 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":2,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_v7fwc1qj4"].to("#content-holder #content_v7fwc1qj4 .is-content", props);
+			s4.animate.gsap["content_f7f82b798"].to("#content-holder #content_f7f82b798 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_v7fwc1qj4"].pause();
+			s4.animate.gsap["content_f7f82b798"].pause();
 			$(window).scroll();
 		})(jQuery); (function ($) {
 			"use strict"; var playRepeat = [];
-			s4.animate.gsap["content_11ba8ace3"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_11ba8ace3 .is-content",
+			s4.animate.gsap["content_5cfc8bf8e"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_5cfc8bf8e .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_11ba8ace3 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_5cfc8bf8e .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_11ba8ace3"].to("#content-holder #content_11ba8ace3 .is-content", props);
+			s4.animate.gsap["content_5cfc8bf8e"].to("#content-holder #content_5cfc8bf8e .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_11ba8ace3"].pause();
+			s4.animate.gsap["content_5cfc8bf8e"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_8b793d1c9"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_8b793d1c9 .is-content",
+			s4.animate.gsap["content_5f325ed01"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_5f325ed01 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_8b793d1c9 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_5f325ed01 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1.5,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_8b793d1c9"].to("#content-holder #content_8b793d1c9 .is-content", props);
+			s4.animate.gsap["content_5f325ed01"].to("#content-holder #content_5f325ed01 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_8b793d1c9"].pause();
+			s4.animate.gsap["content_5f325ed01"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_37391b07a"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_37391b07a .is-content",
+			s4.animate.gsap["content_0c93a4d3d"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_0c93a4d3d .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_37391b07a .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_0c93a4d3d .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_37391b07a"].to("#content-holder #content_37391b07a .is-content", props);
+			s4.animate.gsap["content_0c93a4d3d"].to("#content-holder #content_0c93a4d3d .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_37391b07a"].pause();
+			s4.animate.gsap["content_0c93a4d3d"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_8621d3279"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_8621d3279 .is-content",
+			s4.animate.gsap["content_62f6c9db6"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_62f6c9db6 .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_8621d3279 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_62f6c9db6 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
 			// add to timeline
-			s4.animate.gsap["content_8621d3279"].to("#content-holder #content_8621d3279 .is-content", props);
+			s4.animate.gsap["content_62f6c9db6"].to("#content-holder #content_62f6c9db6 .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_8621d3279"].pause();
+			s4.animate.gsap["content_62f6c9db6"].pause();
 			var playRepeat = [];
-			s4.animate.gsap["content_9c0ba8f8a"] = gsap.timeline({
-				scrollTrigger: "#content-holder #content_9c0ba8f8a .is-content",
+			s4.animate.gsap["content_3c41c02ea"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_3c41c02ea .is-content",
 				repeat: 0,
 
 			});
 
 			// gsap set transform
-			gsap.set("#content-holder #content_9c0ba8f8a .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+			gsap.set("#content-holder #content_3c41c02ea .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
 
 			// parse props
 			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
 			// add to timeline
-			s4.animate.gsap["content_9c0ba8f8a"].to("#content-holder #content_9c0ba8f8a .is-content", props);
+			s4.animate.gsap["content_3c41c02ea"].to("#content-holder #content_3c41c02ea .is-content", props);
 			// pause timeline
-			s4.animate.gsap["content_9c0ba8f8a"].pause();
+			s4.animate.gsap["content_3c41c02ea"].pause();
 			$(window).scroll();
 		})(jQuery);
 	</script>
@@ -1309,14 +1295,14 @@
 		function hideContent() {
 			var contentHolder = document.querySelector('#content-holder');
 			contentHolder.style.visibility = 'hidden'; // Hide the content
-    		contentHolder.style.opacity = '0'; // Set opacity to 0
+			contentHolder.style.opacity = '0'; // Set opacity to 0
 		}
 
 		// Function to show the content-holder
 		function showContent() {
 			var contentHolder = document.querySelector('#content-holder');
 			contentHolder.style.visibility = 'visible'; // Show the content
-    		contentHolder.style.opacity = '1'; // Set opacity back to 1 to make it fully visible
+			contentHolder.style.opacity = '1'; // Set opacity back to 1 to make it fully visible
 		}
 
 		// Function to hide the loading screen
@@ -1324,7 +1310,7 @@
 			var loadingScreen = document.querySelector('.loading-screen');
 			loadingScreen.classList.remove('show');
 			showContent(); // Show the content after hiding the loading screen
-			
+
 		}
 
 		// Function to show the loading screen
@@ -1348,12 +1334,14 @@
 			showLoadingScreen();
 
 			// Set the z-index after a delay
-			setTimeout(function() {
+			setTimeout(function () {
 				var loadingScreen = document.querySelector('.loading-screen');
+				var contentHolder = document.querySelector('#content-holder');
 				loadingScreen.style.zIndex = 1; // Pas de waarde aan naar uw behoefte
+				contentHolder.style.zIndex = 10;
 			}, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
 		}
-		
+
 	</script>
 
 </body>
