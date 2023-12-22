@@ -702,8 +702,7 @@
 
 
 										<div id="content_11ba8ace3" class="column-content" data-module="text">
-											<div class="is-content"
-												style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+											<div class="is-content" style="opacity: 0;">
 												<p data-mce-style="text-align: left; font-size: 1.133rem; line-height: 1.611rem;"
 													style="text-align: left; font-size: 1.133rem; line-height: 1.611rem;"
 													data-font-size-xl="1.133rem" data-line-height-xl="1.611rem"
@@ -722,7 +721,7 @@
 											<div class="ce-button" data-align="left">
 												<div class="is-content " data-width="auto"
 													data-effect="slide-bottom-to-top" data-icon-direction="right"
-													style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+													style="opacity: 0;">
 													<a data-font="font_qdryllvcq" href="mailto:anouk.okkema@gmail.com"
 														target="_self" data-text-effect="none" data-text-align="center">
 														<div data-content-for="xl">
@@ -761,7 +760,7 @@
 
 											<div class="socialprofiles is-content" data-distributed="default"
 												data-align="left"
-												style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+												style="opacity: 0;">
 												<div class="inner">
 													<ul>
 														<li class="social-profile social-profile-linkedin"><a
@@ -808,7 +807,7 @@
 
 										<div id="content_9c0ba8f8a" class="column-content" data-module="text">
 											<div class="is-content"
-												style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+												style="opacity: 1;">
 												<p style="text-align: left; font-size: 0.556rem;"
 													data-mce-style="text-align: left; font-size: 0.556rem;"
 													data-font-size-xl="0.556rem">
@@ -1833,6 +1832,39 @@
 			}, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
 		}
 		
+	</script>
+
+	<script>
+		function isInViewport(element) {
+			const rect = element.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		function runOnScroll() {
+			const elem = document.querySelector('#content-353 #content_11ba8ace3 .is-content');
+			const elem2 = document.querySelector('#content-353 #content_8b793d1c9 .is-content');
+			const elem3 = document.querySelector('#content-353 #content_8621d3279 .is-content');
+
+			if (isInViewport(elem) && !elem.classList.contains('visible')) {
+				elem.classList.add('visible');
+			}
+
+			if (isInViewport(elem2) && !elem2.classList.contains('visible')) {
+				elem2.classList.add('visible');
+			}
+
+			if (isInViewport(elem3) && !elem3.classList.contains('visible')) {
+				elem3.classList.add('visible');
+			}
+		}
+
+		window.addEventListener('scroll', runOnScroll);
+
 	</script>
 
 </body>
