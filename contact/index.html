@@ -290,7 +290,7 @@
 											style="--index: 2">O</span><span style="--index: 3">U</span><span
 											style="--index: 4">T</span></div>
 								</a>
-								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/contact/index.html" onclick="setTransition()">
+								<a class="menu-item">
 									<div><span style="--index: 0">C</span><span style="--index: 1">O</span><span
 											style="--index: 2">N</span><span style="--index: 3">T</span><span
 											style="--index: 4">A</span><span style="--index: 5">C</span><span
@@ -1145,6 +1145,21 @@
 		}
 
 	</script>
+    <script>
+        function handleClick(event) {
+            var currentLocation = window.location.href;
+            var linkLocation = document.getElementById('contactLink').href;
+            
+            // Compare the base URLs, without any hash or search parameters
+            if (new URL(currentLocation).pathname === new URL(linkLocation).pathname) {
+                event.preventDefault(); // Stop the link from being followed
+                // You can also add any other code here to indicate the link is inactive, 
+                // like changing its appearance to show it's disabled
+            } else {
+                setTransition(); // Call this function only if the URLs don't match
+            }
+        }
+        </script>
 
 </body>
 
