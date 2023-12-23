@@ -25,7 +25,7 @@ Text Domain: semplice
 .menu-item {
 	position: relative;
 	text-transform: uppercase;
-	cursor: pointer;
+	cursor: none;
   }
   .menu-item-text {
 	pointer-events: none;
@@ -140,11 +140,12 @@ width: 20rem;
 top: 20%;
 text-decoration: none;
 pointer-events: all;
-cursor: pointer;
+cursor: none;
 }
 
 .navbar__availability--link:hover {
 border: solid 1px #a6f6cb;
+cursor: none;
 }
 
 .navbar__availability {
