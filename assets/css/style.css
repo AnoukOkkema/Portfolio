@@ -106,11 +106,7 @@ Text Domain: semplice
   }
   .l__navbar .navbar__links {
 	display: flex;
-  }
-  @media only screen and (max-width: 1024px) {
-	.l__navbar .navbar__links {
-	  display: none;
-	}
+	margin-top: -8px;
   }
   
 .l__navbar .navbar__links a {
@@ -6367,4 +6363,24 @@ animation: slideInFromBottom 1s ease-out forwards;
 #content-353 #content_xyzcbqa3k {
 	padding-top: 3.3333333333333335rem;
 	padding-bottom: 6.666666666666667rem;
+}
+
+/* Viewport sizing */
+
+
+/* NAVBAR */
+
+@media only screen and (max-width: 1200px) {
+	.l__navbar .navbar__availability--link {
+		width: 15rem;
+	}
+/* CSS-stijlen voor schermen kleiner dan 1200px */
+}
+
+@media only screen and (max-width: 1200px) {
+
+	/* .l__navbar .navbar__links {
+		display: none;
+	  } */
+/* CSS-stijlen voor schermen kleiner dan 1200px */
 }
