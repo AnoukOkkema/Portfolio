@@ -6377,10 +6377,32 @@ animation: slideInFromBottom 1s ease-out forwards;
 /* CSS-stijlen voor schermen kleiner dan 1200px */
 }
 
-@media only screen and (max-width: 1200px) {
-
+@media only screen and (max-width: 1024px) {
+	.l__navbar .navbar__availability--link {
+		margin-top: 5px;
+	}
 	/* .l__navbar .navbar__links {
 		display: none;
 	  } */
+/* CSS-stijlen voor schermen kleiner dan 1200px */
+}
+
+@media only screen and (max-width: 920px) {
+	.l__navbar .navbar__availability--link {
+		width: 12rem;
+	}
+	/* .l__navbar .navbar__links {
+		display: none;
+	  } */
+/* CSS-stijlen voor schermen kleiner dan 1200px */
+}
+
+@media only screen and (max-width: 800px) {
+	.l__navbar .navbar__availability--link {
+		display: none;
+	}
+	.l__navbar .navbar__links {
+		display: none;
+	  }
 /* CSS-stijlen voor schermen kleiner dan 1200px */
 }
