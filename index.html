@@ -69,43 +69,69 @@
 	</style>
 	<!-- Google Analytics here -->
 	<style>
-        .loading-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+		.loading-screen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			z-index: 99;
-        }
+		}
 
 		.loading-screen.show .bar {
 			transform: scale(1, 1);
 			transform-origin: 0 0;
 		}
-	
+
 		.bar {
 			position: absolute;
-			width: 16.667%; /* Each bar takes 16.667% of the width */
-			background: rgba(50, 50, 50, 1); /* #222222 */
+			width: 16.667%;
+			/* Each bar takes 16.667% of the width */
+			background: rgba(50, 50, 50, 1);
+			/* #222222 */
 			top: 0;
 			bottom: 0;
 			transform: scale(0, 1);
 			transform-origin: 100% 100%;
 			transition: transform 0.3s ease-in-out;
 		}
-	
+
 		.bar:first-of-type {
 			border-left: none;
 		}
-	
-		.bar:nth-of-type(1) { left: 0; transition-delay: 0.05s; }
-		.bar:nth-of-type(2) { left: 16.667%; transition-delay: 0.10s; }
-		.bar:nth-of-type(3) { left: 33.333%; transition-delay: 0.15s; }
-		.bar:nth-of-type(4) { left: 50%; transition-delay: 0.20s; }
-		.bar:nth-of-type(5) { left: 66.667%; transition-delay: 0.25s; }
-		.bar:nth-of-type(6) { left: 83.333%; transition-delay: 0.30s; }	
-        /* Add your animation styles for the bars here */
-    </style>
+
+		.bar:nth-of-type(1) {
+			left: 0;
+			transition-delay: 0.05s;
+		}
+
+		.bar:nth-of-type(2) {
+			left: 16.667%;
+			transition-delay: 0.10s;
+		}
+
+		.bar:nth-of-type(3) {
+			left: 33.333%;
+			transition-delay: 0.15s;
+		}
+
+		.bar:nth-of-type(4) {
+			left: 50%;
+			transition-delay: 0.20s;
+		}
+
+		.bar:nth-of-type(5) {
+			left: 66.667%;
+			transition-delay: 0.25s;
+		}
+
+		.bar:nth-of-type(6) {
+			left: 83.333%;
+			transition-delay: 0.30s;
+		}
+
+		/* Add your animation styles for the bars here */
+	</style>
 </head>
 
 <body
@@ -139,30 +165,32 @@
 							</div>
 							<div class="navbar__availability--link">
 								<div class="navbar__availability menu-item" style="text-transform: none;">
-								  <h4>
-									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-								  </h4>
+									<h4>
+										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
 								</div>
-								<div aria-hidden="true" class="navbar__availability menu-item" style="text-transform: none;">
-								  <h4>
-									Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-									Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
-								  </h4>
+								<div aria-hidden="true" class="navbar__availability menu-item"
+									style="text-transform: none;">
+									<h4>
+										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
 								</div>
 							</div>
 							<div class="navbar__links">
-								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/infos/index.html" title="Anouk Okkema Portfolio" onclick="setTransition()">
+								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/infos/index.html"
+									title="Anouk Okkema Portfolio" onclick="setTransition()">
 									<div><span style="--index: 0">A</span><span style="--index: 1">B</span><span
 											style="--index: 2">O</span><span style="--index: 3">U</span><span
 											style="--index: 4">T</span></div>
@@ -171,7 +199,8 @@
 											style="--index: 2">O</span><span style="--index: 3">U</span><span
 											style="--index: 4">T</span></div>
 								</a>
-								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/contact/index.html" onclick="setTransition()">
+								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/contact/index.html"
+									onclick="setTransition()">
 									<div><span style="--index: 0">C</span><span style="--index: 1">O</span><span
 											style="--index: 2">N</span><span style="--index: 3">T</span><span
 											style="--index: 4">A</span><span style="--index: 5">C</span><span
@@ -183,6 +212,251 @@
 											style="--index: 6">T</span></div>
 								</a>
 							</div>
+
+							<!-- Nieuwe gekleurde div voor de achtergrond -->
+							<div class="menu__background"></div>
+
+							<img src="assets/files/hamburger.693fd2ab.svg" alt="Menu"
+								class="mobile-only hamburger__menu">
+							<div class="menu__mobile mobile-only">
+								<h3 class="menu__mobile--close">
+									CLOSE
+								</h3>
+								<div class="menu__mobile--content">
+									<a class="menu-item mobile__menu--item" href="https://henriheymans.com/">
+										<div><span style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">P</span><span style="--index: 30">R</span><span
+												style="--index: 31">O</span><span style="--index: 32">J</span><span
+												style="--index: 33">E</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">S</span><span
+												style="--index: 37">
+											</span><span style="--index: 38"> </span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42">
+											</span><span style="--index: 43"> </span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47">
+											</span><span style="--index: 48"> </span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52">
+											</span><span style="--index: 53"> </span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57">
+											</span><span style="--index: 58"> </span><span style="--index: 59">
+											</span><span style="--index: 60"> </span><span style="--index: 61"> </span>
+										</div>
+										<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+												style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">P</span><span style="--index: 30">R</span><span
+												style="--index: 31">O</span><span style="--index: 32">J</span><span
+												style="--index: 33">E</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">S</span><span
+												style="--index: 37">
+											</span><span style="--index: 38"> </span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42">
+											</span><span style="--index: 43"> </span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47">
+											</span><span style="--index: 48"> </span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52">
+											</span><span style="--index: 53"> </span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57">
+											</span><span style="--index: 58"> </span><span style="--index: 59">
+											</span><span style="--index: 60"> </span><span style="--index: 61"> </span>
+										</div>
+									</a>
+									<a class="menu-item mobile__menu--item" href="https://henriheymans.com/">
+										<div><span style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">A</span><span style="--index: 30">B</span><span
+												style="--index: 31">O</span><span style="--index: 32">U</span><span
+												style="--index: 33">T</span><span style="--index: 34">
+											</span><span style="--index: 35"> </span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58"> </span>
+										</div>
+										<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+												style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">A</span><span style="--index: 30">B</span><span
+												style="--index: 31">O</span><span style="--index: 32">U</span><span
+												style="--index: 33">T</span><span style="--index: 34">
+											</span><span style="--index: 35"> </span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58"> </span>
+										</div>
+									</a>
+									<a class="menu-item mobile__menu--item" href="https://henriheymans.com/">
+										<div><span style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">C</span><span style="--index: 30">O</span><span
+												style="--index: 31">N</span><span style="--index: 32">T</span><span
+												style="--index: 33">A</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39"> </span><span style="--index: 40">
+											</span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44"> </span><span style="--index: 45">
+											</span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49"> </span><span style="--index: 50">
+											</span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54"> </span><span style="--index: 55">
+											</span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58">
+											</span><span style="--index: 59"> </span><span style="--index: 60"> </span>
+										</div>
+										<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+												style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">C</span><span style="--index: 30">O</span><span
+												style="--index: 31">N</span><span style="--index: 32">T</span><span
+												style="--index: 33">A</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39"> </span><span style="--index: 40">
+											</span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44"> </span><span style="--index: 45">
+											</span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49"> </span><span style="--index: 50">
+											</span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54"> </span><span style="--index: 55">
+											</span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58">
+											</span><span style="--index: 59"> </span><span style="--index: 60"> </span>
+										</div>
+									</a>
+								</div>
+							</div>
+
 						</div>
 					</div>
 
@@ -202,16 +476,6 @@
 								style="--index: 2">N</span><span style="--index: 3">K</span><span
 								style="--index: 4">E</span><span style="--index: 5">D</span><span
 								style="--index: 6">I</span><span style="--index: 7">N</span></div>
-					</a>
-					<a rel="noreferrer" target="_blank" class="menu-item"
-						href="https://www.linkedin.com/in/anouk-okkema-96978a236/">
-						<div><span style="--index: 0">R</span><span style="--index: 1">E</span><span
-								style="--index: 2">S</span><span style="--index: 3">U</span><span
-								style="--index: 4">M</span><span style="--index: 5">E</span></div>
-						<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span style="--index: 0">R</span>
-								<span style="--index: 1">E</span><span
-								style="--index: 2">S</span><span style="--index: 3">U</span><span
-								style="--index: 4">M</span><span style="--index: 5">E</span></div>
 					</a>
 				</div>
 				<div class="landing__bottom-content__scroll">
@@ -481,8 +745,9 @@
 												<div class="is-content " data-width="auto"
 													data-effect="slide-bottom-to-top" data-icon-direction="right"
 													style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
-													<a data-font="font_qdryllvcq" href="https://anoukokkema.github.io/Portfolio/infos/index.html" target="_self"
-														data-text-effect="none" data-text-align="center">
+													<a data-font="font_qdryllvcq"
+														href="https://anoukokkema.github.io/Portfolio/infos/index.html"
+														target="_self" data-text-effect="none" data-text-align="center">
 														<div data-content-for="xl">
 															<div class="inner">WANT TO KNOW MORE?</div>
 														</div>
@@ -815,8 +1080,7 @@
 
 
 										<div id="content_9c0ba8f8a" class="column-content" data-module="text">
-											<div class="is-content"
-												style="opacity: 1;">
+											<div class="is-content" style="opacity: 1;">
 												<p style="text-align: left; font-size: 0.556rem;"
 													data-mce-style="text-align: left; font-size: 0.556rem;"
 													data-font-size-xl="0.556rem">
@@ -838,7 +1102,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="pswp__bg"></div>
 		<div class="pswp__scroll-wrap">
@@ -1809,7 +2073,7 @@
 			var loadingScreen = document.querySelector('.loading-screen');
 			loadingScreen.classList.remove('show');
 			showContent(); // Show the content after hiding the loading screen
-			
+
 		}
 
 		// Function to show the loading screen
@@ -1833,14 +2097,14 @@
 			showLoadingScreen();
 
 			// Set the z-index after a delay
-			setTimeout(function() {
+			setTimeout(function () {
 				var loadingScreen = document.querySelector('.loading-screen');
 				var contentHolder = document.querySelector('#content-holder');
 				loadingScreen.style.zIndex = 1; // Pas de waarde aan naar uw behoefte
 				contentHolder.style.zIndex = 10;
 			}, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
 		}
-		
+
 	</script>
 
 	<script>
@@ -1873,6 +2137,28 @@
 		}
 
 		window.addEventListener('scroll', runOnScroll);
+
+		document.querySelector('.hamburger__menu').addEventListener('click', function () {
+			var background = document.querySelector('.menu__background');
+			var menu = document.querySelector('.menu__mobile');
+			var body = document.body;
+			background.classList.add('menu__background--open');
+			setTimeout(function () {
+				menu.classList.add('menu__mobile--open');
+				body.style.overflow = 'hidden'; // Disable scrolling
+			}, 700); // Adjust timing based on your transition durations
+		});
+
+		document.querySelector('.menu__mobile--close').addEventListener('click', function () {
+			var background = document.querySelector('.menu__background');
+			var menu = document.querySelector('.menu__mobile');
+			var body = document.body;
+			menu.classList.remove('menu__mobile--open');
+			setTimeout(function () {
+				background.classList.remove('menu__background--open');
+				body.style.overflow = 'auto'; // Disable scrolling
+			}, 100); // Same here
+		});
 
 	</script>
 

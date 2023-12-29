@@ -6367,8 +6367,84 @@ animation: slideInFromBottom 1s ease-out forwards;
 
 /* Viewport sizing */
 
+.mobile-only {
+display: none;
+}
+
+.hamburger__menu {
+height: 2rem;
+cursor: pointer;
+}
+
+.menu__mobile {
+height: 100vh;
+width: 100vw;
+background-color: #000;
+position: fixed;
+top: 0;
+left: 0;
+transform: translateY(-100%);
+z-index: 7;
+transition: transform 0.5s ease-in-out; /* Add this line */
+}
+
+/* New colored div styles */
+.menu__background {
+    height: 150vh;
+    width: 100vw;
+    background-color: #c3eed7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: 6; /* Below the menu__mobile z-index */
+    transition: transform 0.5s ease-in-out 0.3s; /* Adjust timing for coordinated animation */
+}
+
+.menu__background--open {
+    transform: translateY(0);
+}
+
+.menu__mobile--open {
+    transform: translateY(0);
+}
+
+.menu__mobile .menu__mobile--close {
+position: absolute;
+right: 3rem;
+top: 3rem;
+font-size: 1.6rem;
+color: #fafafa;
+font-family: Montreal-book, sans-serif;
+}
+
+.menu__mobile .menu__mobile--content {
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.menu__mobile .menu__mobile--content a {
+font-family: Montreal-book, sans-serif;
+}
+.menu__mobile .menu__mobile--content a,
+.menu__mobile .menu__mobile--content span {
+color: #fafafa;
+font-size: 4rem;
+margin-top: 2.5rem;
+cursor: pointer;
+}
 
 /* NAVBAR */
+@media only screen and (min-width: 920px) {
+	.hamburger__menu {
+		display: none;
+	}
+
+}
 
 @media only screen and (max-width: 1200px) {
 	.l__navbar .navbar__availability--link {
@@ -6388,21 +6464,19 @@ animation: slideInFromBottom 1s ease-out forwards;
 }
 
 @media only screen and (max-width: 920px) {
-	.l__navbar .navbar__availability--link {
-		width: 12rem;
+	.mobile-only {
+		display: block;
 	}
-	/* .l__navbar .navbar__links {
-		display: none;
-	  } */
-/* CSS-stijlen voor schermen kleiner dan 1200px */
-}
-
-@media only screen and (max-width: 800px) {
+	
 	.l__navbar .navbar__availability--link {
 		display: none;
 	}
 	.l__navbar .navbar__links {
 		display: none;
 	  }
+
+	/* .semplice-cursor #semplice-cursor {
+		display: none;
+	} */
 /* CSS-stijlen voor schermen kleiner dan 1200px */
 }
