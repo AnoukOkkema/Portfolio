@@ -6475,8 +6475,25 @@ cursor: pointer;
 		display: none;
 	  }
 
+	.menu__mobile .menu__mobile--content a,
+	.menu__mobile .menu__mobile--content span {
+	font-size: 3rem;
+	}
+
+	.menu__mobile .menu__mobile--close {
+	font-size: 1.5rem !important;
+	}
+
 	/* .semplice-cursor #semplice-cursor {
 		display: none;
 	} */
 /* CSS-stijlen voor schermen kleiner dan 920px */
 }
+
+@media only screen and (max-width: 525px) {
+	.menu__mobile .menu__mobile--content a,
+	.menu__mobile .menu__mobile--content span {
+	font-size: 1.5rem;
+	}
+}
+
