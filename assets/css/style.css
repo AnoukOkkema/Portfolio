@@ -6460,7 +6460,7 @@ cursor: pointer;
 	/* .l__navbar .navbar__links {
 		display: none;
 	  } */
-/* CSS-stijlen voor schermen kleiner dan 1200px */
+/* CSS-stijlen voor schermen kleiner dan 1024px */
 }
 
 @media only screen and (max-width: 920px) {
@@ -6478,5 +6478,5 @@ cursor: pointer;
 	/* .semplice-cursor #semplice-cursor {
 		display: none;
 	} */
-/* CSS-stijlen voor schermen kleiner dan 1200px */
+/* CSS-stijlen voor schermen kleiner dan 920px */
 }
