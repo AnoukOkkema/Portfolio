@@ -18,7 +18,7 @@ window.addEventListener('scroll', function() {
     var scrollLeftBottom = scrollTop * 0.5; // Adjust multiplier as needed, and invert direction
 
     // Apply the horizontal scroll, maintain rotation for bottomText
-    topText.style.transform = `translateX(-30vw) translateX(${scrollLeftTop}px)`;
+    topText.style.transform = `translateX(-100vw) translateX(${scrollLeftTop}px)`;
     // Since bottomText is always rotated 180deg, we combine the transforms
     bottomText.style.transform = `rotate(180deg) translateX(${scrollLeftBottom}px)`;
 });

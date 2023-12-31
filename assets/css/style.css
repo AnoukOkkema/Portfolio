@@ -279,7 +279,7 @@ animation-play-state: paused;
 .separator__top .separator__text {
 	white-space: nowrap;
 	will-change: transform; /* Optimize for animation */
-	transform: translateX(-30vw); /* Move text 30% viewport width to the left */
+	transform: translateX(-100vw); /* Move text 30% viewport width to the left */
 }
 
 .separator__bottom .separator__text {
