@@ -6344,6 +6344,27 @@ animation: slideInFromBottom 1s ease-out forwards;
 	padding-bottom: 6.666666666666667rem;
 }
 
+/* ROTATE DEVICE */
+/* Hide the rotate message by default */
+#rotate-device {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    line-height: 100vh; /* Center text vertically */
+    z-index: 1000;
+}
+
+/* Show the message when the device is in landscape and the viewport is within specific dimensions */
+@media screen and (max-width: 724px) and (max-height: 375px) and (orientation: landscape) {
+    #rotate-device {
+        display: block;
+    }
+}
+
 /* Viewport sizing */
 
 .mobile-only {
