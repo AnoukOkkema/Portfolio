@@ -282,6 +282,14 @@ animation-play-state: paused;
 	transform: translateX(-100vw); /* Move text 30% viewport width to the left */
 }
 
+.separator__top .separator__text span{
+	font-size: 1.27rem;
+}
+
+.separator__bottom .separator__text span{
+	font-size: 1.27rem;
+}
+
 .separator__bottom .separator__text {
 	transform: rotate(180deg);
 	transform-origin: center;
@@ -1195,7 +1203,7 @@ img.wp-smiley,
   }
   #content-353 #content_ezz8lxfx2 .semplice-marquee-text {
 	color: #c3eed7;
-	font-size: 1.2777777777777777rem;
+	font-size: 1.277777777777777rem;
 	line-height: 5.277777777777778rem;
 	margin-right: 0rem;
 	text-transform: uppercase;
@@ -6794,5 +6802,55 @@ cursor: pointer;
 		font-size: 0.7888888888888888rem;
 		line-height: 1.222222222222223rem;
 		letter-spacing: 0rem;
+	}
+}
+
+/* SEPERATOR */
+
+@media only screen and (max-width: 920px) {
+	/* Additional styles for horizontal scrolling */
+	.separator__top, .separator__bottom {
+		overflow-x: hidden;
+		display: flex;
+	}
+
+	.separator__top .separator__text span{
+		font-size: 0.85rem;
+	}
+
+	.separator__bottom .separator__text span{
+		font-size: 0.85rem;
+	}
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1024px) {
+	/* Additional styles for horizontal scrolling */
+	.separator__top, .separator__bottom {
+		overflow-x: hidden;
+		display: flex;
+	}
+
+	.separator__top .separator__text span{
+		font-size: 1rem;
+	}
+
+	.separator__bottom .separator__text span{
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+	/* Additional styles for horizontal scrolling */
+	.separator__top, .separator__bottom {
+		overflow-x: hidden;
+		display: flex;
+	}
+
+	.separator__top .separator__text span{
+		font-size: 1.1rem;
+	}
+	
+	.separator__bottom .separator__text span{
+		font-size: 1.1rem;
 	}
 }
