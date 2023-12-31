@@ -6346,22 +6346,32 @@ animation: slideInFromBottom 1s ease-out forwards;
 
 /* ROTATE DEVICE */
 /* Hide the rotate message by default */
-#rotate-device {
+.rotate-device-overlay {
     display: none;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #c3eed7; /* The color from your image */
+    color: black;
+    z-index: 1000; /* Make sure this is above all other content */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    line-height: 100vh; /* Center text vertically */
-    z-index: 1000;
+    padding: 15px; /* Add padding to ensure the text fits well */
+    box-sizing: border-box; /* Include padding in the height and width */
 }
 
-/* Show the message when the device is in landscape and the viewport is within specific dimensions */
-@media screen and (max-width: 724px) and (max-height: 375px) and (orientation: landscape) {
-    #rotate-device {
-        display: block;
+.rotate-device-overlay .rotate-device-message p {
+    margin: 0.5em 0; /* Provide some spacing between paragraphs */
+    line-height: 1.4; /* Improve readability */
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .rotate-device-overlay {
+        display: flex; /* This will show the overlay in landscape mode with max-height of 500px */
+        flex-direction: column; /* Aligns items vertically */
     }
 }
 
