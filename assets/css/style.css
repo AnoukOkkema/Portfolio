@@ -6574,9 +6574,11 @@ cursor: pointer;
     .landing__bottom-content .landing__bottom-content__scroll a {
         position: relative; /* Adjust as needed */
         display: inline-block; /* Allows for text-align centering */
+		font-size: 0 !important;
     }
 
     .landing__bottom-content .landing__bottom-content__scroll a span {
+		font-size: initial;
         padding: 6px 3px !important;
 		display: block;
 		margin: 20px auto;
