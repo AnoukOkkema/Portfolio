@@ -10899,7 +10899,7 @@
       if ("object" == typeof window) return window;
     }
   })()),
-    (n.p = "/Portfolio/assets/files/"),
+    (n.p = "/assets/files/"),
     (() => {
       "use strict";
       function t() {
@@ -39729,8 +39729,8 @@
                 immediateRender: !1,
               },
               z: 0.1,
-              y: this.width > 750 ? -0.02 : -0.01,
-              x: this.width > 750 ? -0.05 : -0.02,
+              y: this.width > 550 ? -0.02 : -0.01,
+              x: this.width > 550 ? -0.05 : -0.02,
             })),
             (this.sTriggerTheta = ni.to(this, {
               scrollTrigger: {
@@ -39752,9 +39752,9 @@
                 end: "top",
                 scrub: 1,
               },
-              y: window.innerWidth > 2024 ? 0 : this.height / 8,
+              y: window.innerWidth > 1024 ? 0 : this.height / 8,
             }));
-        }
+        } // HERE
         loadImages() {
           var t = this.workImages,
             e = 0;
