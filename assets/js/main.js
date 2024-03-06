@@ -39993,28 +39993,6 @@
         }
         addMouseEvents() {
           this.workImageStore.forEach((t, e) => {
-            t.link.addEventListener("click", (n) => {
-              if (((ig = 1.2), !this.animationRunning)) {
-                (this.animationRunning = !0),
-                  ni.set(".js-link", { pointerEvents: "none" }),
-                  ni.to(".cases-overview__title", { opacity: 0 }),
-                  this.sTrigger.kill();
-                var r = e,
-                  i =
-                    this.containerTop +
-                    this.scrollHeight / this.workObjects.length -
-                    1 * r;
-                xl.scrollTo(i),
-                  this.changeCorners(t),
-                  (t.material.uniforms.roundMedia = 0),
-                  this.workImageStore.forEach((e) => {
-                    e.img != t.img && this.changeCornerZ(e.mesh);
-                  }),
-                  this.ribbonMaterials.forEach((t) => {
-                    ni.to(t, { opacity: 0 });
-                  });
-              }
-            }),
               this.mm.add("(prefers-reduced-motion: no-preference)", () => {
                 t.link.addEventListener("mouseenter", () => {
                   this.animationRunning ||
@@ -40044,77 +40022,6 @@
                 });
               });
           });
-        }
-        changeCornerZ(t) {
-          ni.timeline()
-            .to(t.material.uniforms.uAlpha, {
-              value: 0,
-              duration: 0.2,
-              ease: "Power4.out",
-              onComplete: () => {
-                this.scene.remove(t);
-              },
-            })
-            .to(
-              t.material.uniforms.uCorners.value,
-              { x: -1, duration: 2, ease: "Power4.out" },
-              0
-            )
-            .to(
-              t.material.uniforms.uCorners.value,
-              { z: -1, duration: 2, ease: "Power4.out" },
-              0
-            )
-            .to(
-              t.material.uniforms.uCorners.value,
-              { y: -1, duration: 2, ease: "Power4.out" },
-              0
-            )
-            .to(
-              t.material.uniforms.uCorners.value,
-              { w: -1, duration: 2, ease: "Power4.out" },
-              0
-            );
-        }
-        changeCorners(t) {
-          var e = t.mesh;
-          e &&
-            ni
-              .timeline()
-              .to(this.camera.rotation, {
-                x: 0,
-                y: 0,
-                z: 0,
-                onUpdate: () => {
-                  this.camera.updateProjectionMatrix();
-                },
-              })
-              .to(".homepage-header", { opacity: 0 })
-              .to(
-                e.material.uniforms.uCorners.value,
-                { x: 1, duration: 0.5, ease: "Power4.out" },
-                0.2
-              )
-              .to(
-                e.material.uniforms.uCorners.value,
-                { z: 1, duration: 0.5, ease: "Power4.out" },
-                0.24
-              )
-              .to(
-                e.material.uniforms.uCorners.value,
-                { y: 1, duration: 0.5, ease: "Power4.out" },
-                0.28
-              )
-              .to(
-                e.material.uniforms.uCorners.value,
-                { w: 1, duration: 0.5, ease: "Power4.out" },
-                0.32
-              )
-              .to(
-                e.material.uniforms.uProgressHover,
-                { value: 0, duration: 0.4, ease: "Power4.out" },
-                0.2
-              );
         }
         render() {
           this.mm.add("(prefers-reduced-motion: no-preference)", () => {
