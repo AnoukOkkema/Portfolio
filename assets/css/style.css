@@ -5414,6 +5414,11 @@ a.wt-link-secondary:link {
 	  font-size: calc(calc(100vw - var(--scrollbar-width)) / 24 * 3.5);
 	}
   }
+  
+  .hero-heading {
+	color: rgb(231, 250, 236);
+  }
+
   .cases-overview__title.closed {
 	clip-path: polygon(
 	  calc(calc(100vw - var(--scrollbar-width)) / 24 * 24) 0%,
