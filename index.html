@@ -12,73 +12,12 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height, viewport-fit=cover" />
 
-	<!-- Prerendering -->
-	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/contact/index.html" as="document">
-
-	<title>Anouk Okkema - Workstudent Applied Data Science & Artificial Intelligence</title>
-	<link rel="icon" href="assets/files/Logo-AnoukOkkema.png" type="image/png" sizes="512*512"/>
-	<meta name="description"
-		content="Hey, I'm Anouk Okkema, 19 years old workstudent Applied Data Science & Artificial Intelligence" />
-
-	<link href="https://fonts.googleapis.com" rel="preconnect" />
-	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
-	<link rel="stylesheet" id="wp-block-library-css" href="./assets/css/style.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
-	<script src="assets/js/styles.js"></script>
-	<link rel="stylesheet" id="semplice-frontend-stylesheet-css" href="./assets/css/frontend.min.css" type="text/css"
-		media="all" />
-	<link rel="stylesheet" id="mediaelement-css" href="./assets/css/mediaelementplayer-legacy.min.css" type="text/css"
-		media="all" />
-	<link rel="stylesheet" id="cookie-notice-front-css" href="./assets/css/front.min.css" type="text/css" media="all" />
-	<script type="text/javascript" src="./assets/js/jquery.min.js" id="jquery-core-js"></script>
-	<script type="text/javascript" src="./assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
-	<script async="" type="text/javascript" src="./assets/js/front.min.js" id="cookie-notice-front-js"></script>
-	<script async="" src="./assets/js/js(1)"></script>
-	<style type="text/css" id="semplice-custom-css">
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner {
-			background-color: #efefef;
-		}
-
-		.semplice-cursor #semplice-cursor {
-			mix-blend-mode: difference;
-		}
-
-		.semplice-cursor #semplice-cursor.mouseover-cursor {
-			mix-blend-mode: difference;
-		}
-
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
-			font-family: "Gordita-Bold", sans-serif;
-			font-weight: 400;
-			font-variation-settings: normal;
-			font-style: normal;
-		}
-
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
-			font-size: 0.6666666666666666rem;
-		}
-
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
-			letter-spacing: -0.005555555555555556rem;
-			margin-right: --0.005555555555555556rem;
-		}
-
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
-			color: #323232;
-		}
-
-		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-icon svg {
-			fill: #323232;
-		}
-	</style>
-	<!-- Google Analytics here -->
 	<style>
 		body {
-            background: #b7f8d6;
-        }
-
+			background: #b7f8d6;
+		}
 		/* Hide main content immediately with CSS */
-		body, .content-holder {
+		html, body, .content-holder {
 			visibility: hidden;
 		}
 
@@ -145,6 +84,111 @@
 		}
 
 	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Show the loading animation
+			var loadingScreen = document.querySelector('.loading-screen');
+			loadingScreen.classList.add('show');
+		
+			// Calculate total animation duration for hiding the screen
+			var baseAnimationDuration = 0.3;
+			var longestDelay = 0.3;
+			var BackgroundDelay = 0.1;
+			var totalAnimationDuration = (baseAnimationDuration + longestDelay) * 1000; // Convert to milliseconds
+		
+			// Calculate duration just for the first part of the animation
+			// For instance, if you know the first part ends after a certain period, use that period here
+			var firstPartDuration = BackgroundDelay * 1000; // Assuming the first part ends with the longest delay
+		
+			// Function to hide the loading screen and show the main content
+			function hideLoadingScreenAndShowContent() {
+				// Change the background to 'none' after the first part of the animation
+				setTimeout(function() {
+					loadingScreen.style.background = 'none';
+				}, firstPartDuration);
+		
+				// Hide the loading screen completely after the total animation duration
+				loadingScreen.classList.remove('show');
+				setTimeout(function() {
+					loadingScreen.style.visibility = 'hidden';
+					loadingScreen.style.zIndex = 1;
+				}, totalAnimationDuration);
+		
+				// Show the main content
+				var contentHolder = document.querySelector('#content-holder');
+				document.body.style.visibility = 'visible';
+				contentHolder.style.visibility = 'visible';
+			}
+		
+			// Start the process to hide the loading screen and show main content after initial delay
+			setTimeout(hideLoadingScreenAndShowContent, 2000); // This initial delay ensures user sees the animation before content is shown
+		});
+
+	</script>
+
+	<!-- Preloading -->
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/contact/index.html" as="document">
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/projects/pick-place/index.html" as="document">
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/infos/index.html" as="document">
+
+	<title>Anouk Okkema - Workstudent Applied Data Science & Artificial Intelligence</title>
+	<link rel="icon" href="assets/files/Logo-AnoukOkkema.png" type="image/png" sizes="512*512"/>
+	<meta name="description"
+		content="Hey, I'm Anouk Okkema, 19 years old workstudent Applied Data Science & Artificial Intelligence" />
+
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+	<link rel="stylesheet" id="wp-block-library-css" href="./assets/css/style.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+	<script src="assets/js/styles.js"></script>
+	<link rel="stylesheet" id="semplice-frontend-stylesheet-css" href="./assets/css/frontend.min.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" id="mediaelement-css" href="./assets/css/mediaelementplayer-legacy.min.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" id="cookie-notice-front-css" href="./assets/css/front.min.css" type="text/css" media="all" />
+	<script type="text/javascript" src="./assets/js/jquery.min.js" id="jquery-core-js"></script>
+	<script type="text/javascript" src="./assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+	<script async="" type="text/javascript" src="./assets/js/front.min.js" id="cookie-notice-front-js"></script>
+	<script async="" src="./assets/js/js(1)"></script>
+	<style type="text/css" id="semplice-custom-css">
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner {
+			background-color: #efefef;
+		}
+
+		.semplice-cursor #semplice-cursor {
+			mix-blend-mode: difference;
+		}
+
+		.semplice-cursor #semplice-cursor.mouseover-cursor {
+			mix-blend-mode: difference;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			font-family: "Gordita-Bold", sans-serif;
+			font-weight: 400;
+			font-variation-settings: normal;
+			font-style: normal;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			font-size: 0.6666666666666666rem;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			letter-spacing: -0.005555555555555556rem;
+			margin-right: --0.005555555555555556rem;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			color: #323232;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-icon svg {
+			fill: #323232;
+		}
+	</style>
+	<!-- Google Analytics here -->
 </head>
 
 <body
@@ -1986,48 +2030,6 @@
 			$(window).scroll();
 		})(jQuery);
 	</script>
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Show the loading animation
-			var loadingScreen = document.querySelector('.loading-screen');
-			loadingScreen.classList.add('show');
-		
-			// Calculate total animation duration for hiding the screen
-			var baseAnimationDuration = 0.3;
-			var longestDelay = 0.3;
-			var BackgroundDelay = 0.1;
-			var totalAnimationDuration = (baseAnimationDuration + longestDelay) * 1000; // Convert to milliseconds
-		
-			// Calculate duration just for the first part of the animation
-			// For instance, if you know the first part ends after a certain period, use that period here
-			var firstPartDuration = BackgroundDelay * 1000; // Assuming the first part ends with the longest delay
-		
-			// Function to hide the loading screen and show the main content
-			function hideLoadingScreenAndShowContent() {
-				// Change the background to 'none' after the first part of the animation
-				setTimeout(function() {
-					loadingScreen.style.background = 'none';
-				}, firstPartDuration);
-		
-				// Hide the loading screen completely after the total animation duration
-				loadingScreen.classList.remove('show');
-				setTimeout(function() {
-					loadingScreen.style.visibility = 'hidden';
-					loadingScreen.style.zIndex = 1;
-				}, totalAnimationDuration);
-		
-				// Show the main content
-				var contentHolder = document.querySelector('#content-holder');
-				document.body.style.visibility = 'visible';
-				contentHolder.style.visibility = 'visible';
-			}
-		
-			// Start the process to hide the loading screen and show main content after initial delay
-			setTimeout(hideLoadingScreenAndShowContent, 2000); // This initial delay ensures user sees the animation before content is shown
-		});
-	</script>
-
 	<script>
 		function isInViewport(element) {
 			const rect = element.getBoundingClientRect();
