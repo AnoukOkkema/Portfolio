@@ -71,68 +71,72 @@
     </style>
     <!-- Google Analytics here -->
     <style>
-        .loading-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 99;
-            height: 100vh;
-        }
+		/* Hide main content immediately with CSS */
+		body, .content-holder {
+			visibility: hidden;
+		}
 
-        .loading-screen.show .bar {
-            transform: scale(1, 1);
-            transform-origin: 0 0;
-        }
+		.loading-screen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 99;
+			background: #b7f8d6;
+			visibility: visible; /* Ensure the loading screen is visible by default */
+		}
 
-        .bar {
-            position: absolute;
-            width: 16.667%;
-            /* Each bar takes 16.667% of the width */
-            background: #222222;
-            /* #222222 */
-            top: 0;
-            bottom: 0;
-            transform: scale(0, 1);
-            transform-origin: 100% 100%;
-            transition: transform 0.3s ease-in-out;
-            height: 180vh;
-        }
+		.loading-screen.show .bar {
+			transform: scale(1, 1);
+			transform-origin: 0 0;
+		}
 
-        .bar:first-of-type {
-            border-left: none;
-        }
+		.bar {
+			position: absolute;
+			width: 16.667%;
+			/* Each bar takes 16.667% of the width */
+			background: #222222;
+			top: 0;
+			bottom: 0;
+			transform: scale(0, 1);
+			transform-origin: 100% 100%;
+			transition: transform 0.4s ease-in-out;
+		}
 
-        .bar:nth-of-type(1) {
-            left: 0;
-            transition-delay: 0.05s;
-        }
+		.bar:first-of-type {
+			border-left: none;
+		}
 
-        .bar:nth-of-type(2) {
-            left: 16.667%;
-            transition-delay: 0.10s;
-        }
+		.bar:nth-of-type(1) {
+			left: 0;
+			transition-delay: 0.05s;
+		}
 
-        .bar:nth-of-type(3) {
-            left: 33.333%;
-            transition-delay: 0.15s;
-        }
+		.bar:nth-of-type(2) {
+			left: 16.667%;
+			transition-delay: 0.10s;
+		}
 
-        .bar:nth-of-type(4) {
-            left: 50%;
-            transition-delay: 0.20s;
-        }
+		.bar:nth-of-type(3) {
+			left: 33.333%;
+			transition-delay: 0.15s;
+		}
 
-        .bar:nth-of-type(5) {
-            left: 66.667%;
-            transition-delay: 0.25s;
-        }
+		.bar:nth-of-type(4) {
+			left: 50%;
+			transition-delay: 0.20s;
+		}
 
-        .bar:nth-of-type(6) {
-            left: 83.333%;
-            transition-delay: 0.30s;
-        }
+		.bar:nth-of-type(5) {
+			left: 66.667%;
+			transition-delay: 0.25s;
+		}
+
+		.bar:nth-of-type(6) {
+			left: 83.333%;
+			transition-delay: 0.30s;
+		}
 
         .l__navbar {
             height: 4rem;
@@ -1091,64 +1095,46 @@
     </script>
 
     <script>
-        // Function to set the transition variable to true
-        function setTransition() {
-            // You can use localStorage, cookies, or a global variable to store the transition status
-            localStorage.setItem('transition', 'true');
-        }
-
-        // Function to hide the content-holder
-        function hideContent() {
-            var contentHolder = document.querySelector('#content-holder');
-            contentHolder.style.visibility = 'hidden'; // Hide the content
-            contentHolder.style.opacity = '0'; // Set opacity to 0
-        }
-
-        // Function to show the content-holder
-        function showContent() {
-            var contentHolder = document.querySelector('#content-holder');
-            contentHolder.style.visibility = 'visible'; // Show the content
-            contentHolder.style.opacity = '1'; // Set opacity back to 1 to make it fully visible
-        }
-
-        // Function to hide the loading screen
-        function hideLoadingScreen() {
-            var loadingScreen = document.querySelector('.loading-screen');
-            loadingScreen.classList.remove('show');
-            showContent(); // Show the content after hiding the loading screen
-
-        }
-
-        // Function to show the loading screen
-        function showLoadingScreen() {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the loading animation
             var loadingScreen = document.querySelector('.loading-screen');
             loadingScreen.classList.add('show');
-
-            // After 2 seconds (adjust as needed), hide the loading screen
-            setTimeout(hideLoadingScreen, 2000);
-        }
-
-        // Check if the transition variable is set to 'true' and add the 'transition-true' class if true
-        var transition = localStorage.getItem('transition');
-
-        // If the 'transition' parameter is set to 'true', show the overlay and trigger the animation
-        if (transition === 'true') {
-            hideContent(); // Initially hide the content-holder
-
-            document.body.style.backgroundColor = '#c3eed7'; // Set the background color of the body
-
-            showLoadingScreen();
-
-            // Set the z-index after a delay
-            setTimeout(function () {
-                var loadingScreen = document.querySelector('.loading-screen');
+        
+            // Calculate total animation duration for hiding the screen
+            var baseAnimationDuration = 0.3;
+            var longestDelay = 0.3;
+            var BackgroundDelay = 0.1;
+            var totalAnimationDuration = (baseAnimationDuration + longestDelay) * 1000; // Convert to milliseconds
+        
+            // Calculate duration just for the first part of the animation
+            // For instance, if you know the first part ends after a certain period, use that period here
+            var firstPartDuration = BackgroundDelay * 1000; // Assuming the first part ends with the longest delay
+        
+            // Function to hide the loading screen and show the main content
+            function hideLoadingScreenAndShowContent() {
+                // Change the background to 'none' after the first part of the animation
+                setTimeout(function() {
+                    loadingScreen.style.background = 'none';
+                }, firstPartDuration);
+        
+                // Hide the loading screen completely after the total animation duration
+                loadingScreen.classList.remove('show');
+                setTimeout(function() {
+                    loadingScreen.style.visibility = 'hidden';
+                    loadingScreen.style.zIndex = 1;
+                }, totalAnimationDuration);
+        
+                // Show the main content
                 var contentHolder = document.querySelector('#content-holder');
-                loadingScreen.style.zIndex = 1; // Pas de waarde aan naar uw behoefte
-                contentHolder.style.zIndex = 10;
-            }, 2500); // Vertraging in milliseconden, 1000 ms = 1 seconde
-        }
-
+                document.body.style.visibility = 'visible';
+                contentHolder.style.visibility = 'visible';
+            }
+        
+            // Start the process to hide the loading screen and show main content after initial delay
+            setTimeout(hideLoadingScreenAndShowContent, 2000); // This initial delay ensures user sees the animation before content is shown
+        });
     </script>
+
     <script>
         function handleClick(event) {
             var currentLocation = window.location.href;
