@@ -10899,7 +10899,7 @@
       if ("object" == typeof window) return window;
     }
   })()),
-    (n.p = "/assets/files/"),
+    (n.p = "../assets/files/"),
     (() => {
       "use strict";
       function t() {
