@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en-EN" data-semplice="6.2.3" class=" " data-wf-page="64b558e8890784c720b2f450">
+<script type="text/javascript" async="" src="./assets/js/analytics.js"></script>
+<script type="text/javascript" async="" src="./assets/js/js"></script>
+<script>
+	window._wordtune_extension_installed = true;
+</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height, viewport-fit=cover" />
+
+	<style>
+		body {
+			background: #b7f8d6;
+		}
+		/* Hide main content immediately with CSS */
+		html, body, .content-holder {
+			visibility: hidden;
+		}
+
+		.loading-screen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 99;
+			background: #b7f8d6;
+			visibility: visible; /* Ensure the loading screen is visible by default */
+		}
+
+		.loading-screen.show .bar {
+			transform: scale(1, 1);
+			transform-origin: 0 0;
+		}
+
+		.bar {
+			position: absolute;
+			width: 16.667%;
+			/* Each bar takes 16.667% of the width */
+			height: 250%;
+			background: #2c2c2c;
+			top: 0;
+			bottom: 0;
+			transform: scale(0, 1);
+			transform-origin: 100% 100%;
+			transition: transform 0.4s ease-in-out;
+		}
+
+		.bar:first-of-type {
+			border-left: none;
+		}
+
+		.bar:nth-of-type(1) {
+			left: 0;
+			transition-delay: 0.05s;
+		}
+
+		.bar:nth-of-type(2) {
+			left: 16.667%;
+			transition-delay: 0.10s;
+		}
+
+		.bar:nth-of-type(3) {
+			left: 33.333%;
+			transition-delay: 0.15s;
+		}
+
+		.bar:nth-of-type(4) {
+			left: 50%;
+			transition-delay: 0.20s;
+		}
+
+		.bar:nth-of-type(5) {
+			left: 66.667%;
+			transition-delay: 0.25s;
+		}
+
+		.bar:nth-of-type(6) {
+			left: 83.333%;
+			transition-delay: 0.30s;
+		}
+
+	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Show the loading animation
+			var loadingScreen = document.querySelector('.loading-screen');
+			loadingScreen.classList.add('show');
+		
+			// Calculate total animation duration for hiding the screen
+			var baseAnimationDuration = 0.3;
+			var longestDelay = 0.3;
+			var BackgroundDelay = 0.1;
+			var totalAnimationDuration = (baseAnimationDuration + longestDelay) * 1000; // Convert to milliseconds
+		
+			// Calculate duration just for the first part of the animation
+			// For instance, if you know the first part ends after a certain period, use that period here
+			var firstPartDuration = BackgroundDelay * 1000; // Assuming the first part ends with the longest delay
+		
+			// Function to hide the loading screen and show the main content
+			function hideLoadingScreenAndShowContent() {
+				// Change the background to 'none' after the first part of the animation
+				setTimeout(function() {
+					loadingScreen.style.background = 'none';
+				}, firstPartDuration);
+		
+				// Hide the loading screen completely after the total animation duration
+				loadingScreen.classList.remove('show');
+				setTimeout(function() {
+					loadingScreen.style.visibility = 'hidden';
+					loadingScreen.style.zIndex = 1;
+				}, totalAnimationDuration);
+		
+				// Show the main content
+				var contentHolder = document.querySelector('#content-holder');
+				document.body.style.visibility = 'visible';
+				contentHolder.style.visibility = 'visible';
+			}
+		
+			// Start the process to hide the loading screen and show main content after initial delay
+			setTimeout(hideLoadingScreenAndShowContent, 2000); // This initial delay ensures user sees the animation before content is shown
+		});
+
+	</script>
+
+	<!-- Preloading -->
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/contact/index.html" as="document">
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/projects/pick-place/index.html" as="document">
+	<link rel="preload" href="https://anoukokkema.github.io/Portfolio/infos/index.html" as="document">
+
+	<title>Anouk Okkema - Workstudent Applied Data Science & Artificial Intelligence</title>
+	<link rel="icon" href="assets/files/Logo-AnoukOkkema.png" type="image/png" sizes="512*512"/>
+	<meta name="description"
+		content="Hey, I'm Anouk Okkema, 19 years old workstudent Applied Data Science & Artificial Intelligence" />
+
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+	<link rel="stylesheet" id="wp-block-library-css" href="./assets/css/style.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+	<script src="assets/js/styles.js"></script>
+	<link rel="stylesheet" id="semplice-frontend-stylesheet-css" href="./assets/css/frontend.min.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" id="mediaelement-css" href="./assets/css/mediaelementplayer-legacy.min.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" id="cookie-notice-front-css" href="./assets/css/front.min.css" type="text/css" media="all" />
+	<script type="text/javascript" src="./assets/js/jquery.min.js" id="jquery-core-js"></script>
+	<script type="text/javascript" src="./assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+	<script async="" type="text/javascript" src="./assets/js/front.min.js" id="cookie-notice-front-js"></script>
+	<script async="" src="./assets/js/js(1)"></script>
+	<style type="text/css" id="semplice-custom-css">
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner {
+			background-color: #efefef;
+		}
+
+		.semplice-cursor #semplice-cursor {
+			mix-blend-mode: difference;
+		}
+
+		.semplice-cursor #semplice-cursor.mouseover-cursor {
+			mix-blend-mode: difference;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			font-family: "Gordita-Bold", sans-serif;
+			font-weight: 400;
+			font-variation-settings: normal;
+			font-style: normal;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			font-size: 0.6666666666666666rem;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			letter-spacing: -0.005555555555555556rem;
+			margin-right: --0.005555555555555556rem;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-text {
+			color: #323232;
+		}
+
+		.semplice-cursor #semplice-cursor .semplice-cursor-inner .cursor-icon svg {
+			fill: #323232;
+		}
+	</style>
+	<!-- Google Analytics here -->
+</head>
+
+<body
+	class="home page-template-default page page-id-353 wp-custom-logo is-frontend dynamic-mode mejs-semplice-ui semplice-cursor gallery-cursor cookies-set cookies-refused"
+	bgcolor="#323232" data-post-type="page" data-post-id="353" data-breakpoint-js="xl"
+	data-new-gr-c-s-check-loaded="14.1136.0" data-gr-ext-installed="">
+
+	<div class="loading-screen">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+
+	<div class="rotate-device-overlay">
+		<div class="rotate-device-message">
+			<p>Please rotate your device</p>
+			<p>We don't support landscape mode yet. Please go back to portrait mode for the best experience.</p>
+		</div>
+	</div>	
+
+	<div id="content-holder" data-active-post="353">
+		<div id="content-353" class="content-container active-content">
+			<!-- Navbar here -->
+			<header
+				class="nav_txir985cq semplice-navbar sticky-nav container-nav container-nav-expanded non-exclusive headroom headroom headroom--not-bottom headroom--pinned headroom--top use-headroom"
+				data-cover-transparent="disabled" data-bg-overlay-visibility="visible" data-mobile-fallback="enabled"
+				data-logo-visibility="visible" data-logo-position="left" data-nav-position="top" style="opacity: 1;">
+				<div class="container-nav-inner container" data-nav="container-expanded">
+					<div class="navbar-inner menu-type-text" data-xl-width="12" data-navbar-type="container">
+						<div class="l__navbar">
+							<div class="navbar__logo menu-item" style="text-transform: none;">
+								<a>
+									<h5>AnoukOkkema</h5>
+								</a>
+							</div>
+							<div class="navbar__availability--link">
+								<div class="navbar__availability menu-item" style="text-transform: none;">
+									<h4>
+										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
+								</div>
+								<div aria-hidden="true" class="navbar__availability menu-item"
+									style="text-transform: none;">
+									<h4>
+										Python <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										R <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										PostgreSQL <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Microsoft Power BI <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Reinforcement Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Computer Vision <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+										Deep Learning <span class="dot"></span>&nbsp;&nbsp;&nbsp;
+									</h4>
+								</div>
+							</div>
+							<div class="navbar__links">
+								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/infos/index.html"
+									title="Anouk Okkema Portfolio">
+									<div><span style="--index: 0">A</span><span style="--index: 1">B</span><span
+											style="--index: 2">O</span><span style="--index: 3">U</span><span
+											style="--index: 4">T</span></div>
+									<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+											style="--index: 0">A</span><span style="--index: 1">B</span><span
+											style="--index: 2">O</span><span style="--index: 3">U</span><span
+											style="--index: 4">T</span></div>
+								</a>
+								<a class="menu-item" href="https://anoukokkema.github.io/Portfolio/contact/index.html">
+									<div><span style="--index: 0">C</span><span style="--index: 1">O</span><span
+											style="--index: 2">N</span><span style="--index: 3">T</span><span
+											style="--index: 4">A</span><span style="--index: 5">C</span><span
+											style="--index: 6">T</span></div>
+									<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+											style="--index: 0">C</span><span style="--index: 1">O</span><span
+											style="--index: 2">N</span><span style="--index: 3">T</span><span
+											style="--index: 4">A</span><span style="--index: 5">C</span><span
+											style="--index: 6">T</span></div>
+								</a>
+							</div>
+
+							<!-- Nieuwe gekleurde div voor de achtergrond -->
+							<div class="menu__background"></div>
+
+							<img src="assets/files/hamburger.693fd2ab.svg" alt="Menu"
+								class="mobile-only hamburger__menu">
+							<div class="menu__mobile mobile-only">
+								<h3 class="menu__mobile--close">
+									CLOSE
+								</h3>
+								<div class="menu__mobile--content">
+									<a class="menu-item mobile__menu--item" href="https://anoukokkema.github.io/Portfolio/infos/index.html">
+										<div><span style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">A</span><span style="--index: 30">B</span><span
+												style="--index: 31">O</span><span style="--index: 32">U</span><span
+												style="--index: 33">T</span><span style="--index: 34">
+											</span><span style="--index: 35"> </span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58"> </span>
+										</div>
+										<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+												style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">A</span><span style="--index: 30">B</span><span
+												style="--index: 31">O</span><span style="--index: 32">U</span><span
+												style="--index: 33">T</span><span style="--index: 34">
+											</span><span style="--index: 35"> </span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39">
+											</span><span style="--index: 40"> </span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44">
+											</span><span style="--index: 45"> </span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49">
+											</span><span style="--index: 50"> </span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54">
+											</span><span style="--index: 55"> </span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58"> </span>
+										</div>
+									</a>
+									<a class="menu-item mobile__menu--item" href="https://anoukokkema.github.io/Portfolio/contact/index.html">
+										<div><span style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">C</span><span style="--index: 30">O</span><span
+												style="--index: 31">N</span><span style="--index: 32">T</span><span
+												style="--index: 33">A</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39"> </span><span style="--index: 40">
+											</span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44"> </span><span style="--index: 45">
+											</span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49"> </span><span style="--index: 50">
+											</span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54"> </span><span style="--index: 55">
+											</span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58">
+											</span><span style="--index: 59"> </span><span style="--index: 60"> </span>
+										</div>
+										<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+												style="--index: 0">
+											</span><span style="--index: 1"> </span><span style="--index: 2">
+											</span><span style="--index: 3"> </span><span style="--index: 4">
+											</span><span style="--index: 5">
+											</span><span style="--index: 6"> </span><span style="--index: 7">
+											</span><span style="--index: 8"> </span><span style="--index: 9">
+											</span><span style="--index: 10">
+											</span><span style="--index: 11"> </span><span style="--index: 12">
+											</span><span style="--index: 13"> </span><span style="--index: 14">
+											</span><span style="--index: 15">
+											</span><span style="--index: 16"> </span><span style="--index: 17">
+											</span><span style="--index: 18"> </span><span style="--index: 19">
+											</span><span style="--index: 20">
+											</span><span style="--index: 21"> </span><span style="--index: 22">
+											</span><span style="--index: 23"> </span><span style="--index: 24">
+											</span><span style="--index: 25">
+											</span><span style="--index: 26"> </span><span style="--index: 27">
+											</span><span style="--index: 28"> </span><span
+												style="--index: 29">C</span><span style="--index: 30">O</span><span
+												style="--index: 31">N</span><span style="--index: 32">T</span><span
+												style="--index: 33">A</span><span style="--index: 34">C</span><span
+												style="--index: 35">T</span><span style="--index: 36">
+											</span><span style="--index: 37"> </span><span style="--index: 38">
+											</span><span style="--index: 39"> </span><span style="--index: 40">
+											</span><span style="--index: 41">
+											</span><span style="--index: 42"> </span><span style="--index: 43">
+											</span><span style="--index: 44"> </span><span style="--index: 45">
+											</span><span style="--index: 46">
+											</span><span style="--index: 47"> </span><span style="--index: 48">
+											</span><span style="--index: 49"> </span><span style="--index: 50">
+											</span><span style="--index: 51">
+											</span><span style="--index: 52"> </span><span style="--index: 53">
+											</span><span style="--index: 54"> </span><span style="--index: 55">
+											</span><span style="--index: 56">
+											</span><span style="--index: 57"> </span><span style="--index: 58">
+											</span><span style="--index: 59"> </span><span style="--index: 60"> </span>
+										</div>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</header>
+
+			<div class="landing__bottom-content">
+				<div class="landing__bottom-content__networks">
+					<a rel="noreferrer" target="_blank" class="menu-item"
+						href="https://www.linkedin.com/in/anouk-okkema-96978a236/">
+						<div><span style="--index: 0">L</span><span style="--index: 1">I</span><span
+								style="--index: 2">N</span><span style="--index: 3">K</span><span
+								style="--index: 4">E</span><span style="--index: 5">D</span><span
+								style="--index: 6">I</span><span style="--index: 7">N</span></div>
+						<div class="hover-clone" style="position: absolute; left: 0px; top: 0px;"><span
+								style="--index: 0">L</span><span style="--index: 1">I</span><span
+								style="--index: 2">N</span><span style="--index: 3">K</span><span
+								style="--index: 4">E</span><span style="--index: 5">D</span><span
+								style="--index: 6">I</span><span style="--index: 7">N</span></div>
+					</a>
+				</div>
+				<div class="landing__bottom-content__scroll">
+					<a>SCROLL TO BEGIN YOUR JOURNEY
+						<span>
+							<img src="./assets/files/arrow-down.svg" alt="Arrow right">
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Sections -->
+			<div class="transition-wrap">
+				<div class="sections">
+					<section id="section_13fb3fca9" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-height="fullscreen" data-valign="center" data-justify="center"
+						data-layout="grid" data-force-fullscreen="true">
+						<div class="background-video">
+							<video data-autoplay="" autoplay="" webkit-playsinline="" playsinline="" loop="" muted=""
+								data-object-fit="cover">
+								<source src="assets/files/Header video web 1080.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<div class="container">
+							<div id="row_bad7f8314" class="row">
+								<div id="column_50b3b2c99" class="column" data-xl-width="9" data-lg-width="10"
+									data-md-width="11">
+									<div class="content-wrapper">
+										<div id="content_25upcjcby" class="column-content" data-module="text">
+											<div class="is-content" style="
+								  translate: none;
+								  rotate: none;
+								  scale: none;
+								  transform: translate(0px, 0px);
+								  opacity: 1;
+								">
+												<h6 data-mce-style="text-align: center;" style="text-align: center">
+													<span style="color: #b7f8d6"
+														data-mce-style="color: rgb(195, 238, 215);">WORKSTUDENT</span>
+												</h6>
+											</div>
+										</div>
+
+										<div id="content_bql70bhnp" class="column-content" data-module="text">
+											<div class="is-content" style="
+								  translate: none;
+								  rotate: none;
+								  scale: none;
+								  transform: translate(0rem, 0px);
+								  opacity: 1;
+								">
+												<h1 style="text-align: center" data-mce-style="text-align: center;"
+													data-font-size-md="4.444rem" data-line-height-md="4.389rem"
+													data-font-size-sm="3.278rem" data-line-height-sm="3.333rem"
+													data-font-size-xs="2.778rem" data-line-height-xs="2.778rem"
+													data-font-size-lg="4.889rem" data-line-height-lg="4.667rem">
+													<span data-letter-spacing-md="-0.222rem"
+														data-letter-spacing-sm="-0.206rem"
+														data-letter-spacing-xs="-0.117rem"><span style="color: #b7f8d6"
+															data-mce-style="color: rgb(231, 250, 236);">ARTIFICIAL</span>
+												</h1>
+											</div>
+										</div>
+
+										<div id="content_o4ai86mkr" class="column-content" data-module="text">
+											<div class="is-content" style="
+								  translate: none;
+								  rotate: none;
+								  scale: none;
+								  transform: translate(0rem, 0px);
+								  opacity: 1;
+								">
+												<h1 style="text-align: center" data-mce-style="text-align: center;"
+													data-font-size-md="4.444rem" data-line-height-md="4.389rem"
+													data-line-height-sm="3.333rem" data-font-size-sm="3.278rem"
+													data-font-size-xs="2.778rem" data-line-height-xs="2.833rem"
+													data-font-size-lg="4.889rem" data-line-height-lg="4.667rem">
+													<span style="color: #b7f8d6"
+														data-mce-style="color: rgb(231, 250, 236);"
+														data-letter-spacing-md="-0.222rem"
+														data-letter-spacing-sm="-0.206rem"
+														data-letter-spacing-xs="-0.117rem">INTELLIGENCE</span>
+												</h1>
+											</div>
+										</div>
+
+										<div id="content_4nrvat77t" class="column-content" data-module="text">
+											<div class="is-content" style="
+								  translate: none;
+								  rotate: none;
+								  scale: none;
+								  transform: translate(0rem, 0px);
+								  opacity: 1;
+								">
+												<h5 style="text-align: center" data-mce-style="text-align: center;">
+													<span style="color: rgb(248, 248, 248)"
+														data-mce-style="color: rgb(248, 248, 248);"><span
+															class="font_cmq05ad5r">Anouk Okkema</span>
+														— Data Science and AI Student from Breda, adept in advanced
+														analytics and deep learning, turning data into smart solutions
+														and insights</span>
+												</h5>
+											</div>
+										</div>
+										<div id="content_4nrvat77t" class="column-content" data-module="text">
+											<div class="is-content" style="
+								translate: none;
+								rotate: none;
+								scale: none;
+								transform: translate(0rem, 0px);
+								opacity: 1;
+							  ">
+												<h5 style="text-align: center" data-mce-style="text-align: center;">
+													<span style="color: rgb(248, 248, 248)"
+														data-mce-style="color: rgb(248, 248, 248);">
+														WELCOME TO <span>my</span> 2024
+														<span>portfolio</span>.</span>
+												</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section id="section_0sohyke5t" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-layout="fluid" data-height="dynamic" data-gutter="no">
+						<div class="container">
+							<div id="row_0x8h56pek" class="row">
+								<div id="column_6u1qoub8x" class="column" data-xl-width="12">
+									<div class="content-wrapper">
+										<div id="content_ezz8lxfx2" class="column-content" data-module="marquee">
+											<div class="is-content semplice-marquee">
+												<div class="semplice-marquee-inner" data-direction="ltr"
+													data-options='{"direction": "ltr", "speed": {"xl":170,"lg":170,"md":170,"sm":170,"xs":170}, "mode": "text" }'
+													data-font="font_hv6r9gsca">
+													<div class="separator__top">
+														<p class="separator__text"
+															style="color: #a6f6cb;">
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+														</p>
+													</div>
+													<div class="separator__bottom">
+														<p class="separator__text"
+															style="color: #fafafa;">
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+															<span>ANOUK OKKEMA</span>
+															<span>2024 PORTFOLIO</span>
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- PROJECT INTRODUCTION SECTION  -->
+					<section id="section_bsjqxx0yp" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-layout="grid">
+						<div class="container">
+							<div id="row_nut0tqso4" class="row">
+								<div id="column_w6qz1jewp" class="column" data-xl-width="3">
+									<div class="content-wrapper">
+
+
+										<div id="content_odarncrkn" class="column-content" data-module="text">
+											<div class="is-content"
+												style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+												<h6 data-mce-style="text-align: left;" style="text-align: left;"><span
+														style="color: rgb(195, 238, 215);"
+														data-mce-style="color: rgb(195, 238, 215);">ACHIEVEMENTS</span>
+												</h6>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div id="column_8w8dlewye" class="column" data-xl-width="8">
+									<div class="content-wrapper">
+
+
+										<div id="content_0qsf0cnt1" class="column-content" data-module="text">
+											<div class="is-content"
+												style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+												<h2 data-font-size-sm="2.667rem" data-line-height-sm="2.833rem"
+													data-mce-style="" data-font-size-xs="2.556rem"
+													data-line-height-xs="2.833rem"><span
+														style="color: rgb(231, 250, 236);"
+														data-mce-style="color: rgb(231, 250, 236);"
+														data-letter-spacing-sm="-0.139rem"
+														data-letter-spacing-xs="-0.139rem">PROJECTS <span
+															class="font_hv6r9gsca">— MY WORK</span></span></h2>
+											</div>
+										</div>
+
+										<div id="content_k524frnev" class="column-content" data-module="text">
+											<div class="is-content"
+												style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+												<p><span style="color: rgb(239, 239, 239);"
+														data-mce-style="color: rgb(239, 239, 239);">Dive into a showcase
+														of my technical arsenal, where Machine Learning, Deep Learning,
+														Natural Language Processing, Reinforcement Learning, and
+														Computer Vision converge to create innovative solutions. Each
+														project is a window into my approach to complex challenges,
+														highlighting my journey through the evolving landscape of AI and
+														data-driven technology.</span></p>
+											</div>
+										</div>
+
+										<div id="content_64ipx5t4q" class="column-content" data-module="button"
+											style="z-index: 3;">
+
+											<div class="ce-button" data-align="left">
+												<div class="is-content " data-width="auto"
+													data-effect="slide-bottom-to-top" data-icon-direction="right"
+													style="translate: none; rotate: none; scale: none; transform: translate(0rem, 0px); opacity: 1;">
+													<a data-font="font_qdryllvcq"
+														href="https://anoukokkema.github.io/Portfolio/infos/index.html"
+														target="_self" data-text-effect="none" data-text-align="center">
+														<div data-content-for="xl">
+															<div class="inner">WANT TO KNOW MORE?</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- PROJECT SECTION  -->
+					<section id="section_358mo4bd6" class="content-block section-module" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-layout="fluid" data-gutter="no">
+						<div class="smooth-scroll">
+							<main id="main" class="app-transition-fade" data-router-view="default">
+								<div id="container-projects"></div>
+
+								<section class="cases-overview">
+									<div class="cases-overview__work-items">
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/studio-sallali/" data-id="60"
+												data-color-1="#f07967" data-color-2="#adc710">
+												<span class="sr-only">
+													Finance Dashboard Oosterhout</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/image-placeholder-500x500.jpg"
+													data-lazy-load alt="Studio Sallali" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="60" data-color-1="#f07967"
+											data-color-2="#adc710">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Finance Dashboard Oosterhout</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://anoukokkema.github.io/Portfolio/projects/pick-place/index.html" data-id="63"
+												data-color-1="#8facd3" data-color-2="#edf2fd">
+												<span class="sr-only">
+													RoboSuite PickPlace Computer Vision</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/frontview_frame_resized.png"
+													width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="63" data-color-1="#8facd3"
+											data-color-2="#edf2fd">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													RoboSuite PickPlace Computer Vision</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class=" apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/talpa/" data-id="56"
+												data-color-1="#254d60" data-color-2="#eeb82b">
+												<span class="sr-only">
+													RoboSuite PickPlace Reinforcement Learning</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/image-placeholder-500x500.jpg"
+													data-lazy-load alt="Talpa" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="56" data-color-1="#254d60"
+											data-color-2="#eeb82b">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													RoboSuite PickPlace Reinforcement Learning</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/ray-charles-video-museum/"
+												data-id="293" data-color-1="" data-color-2="">
+												<span class="sr-only">
+													XAI Model Visualiser App</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/image-placeholder-500x500.jpg"
+													data-lazy-load alt="Ray Charles Video museum" width="898"
+													height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="293" data-color-1="" data-color-2="">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													XAI Model Visualiser App</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/levitate-film/" data-id="66"
+												data-color-1="#e4c9ae" data-color-2="#476477">
+												<span class="sr-only">
+													Fashion Recommendation System</span> 
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="Levitate Film" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="66" data-color-1="#e4c9ae"
+											data-color-2="#476477">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Fashion Recommendation System</h2> 
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/the-raelettes/" data-id="39"
+												data-color-1="#ea7958" data-color-2="#f89a05">
+												<span class="sr-only">
+													Project Name #6</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="The Raelettes" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="39" data-color-1="#ea7958"
+											data-color-2="#f89a05">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Project Name #6</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/wereldvrede-by-amnesty-international/"
+												data-id="37" data-color-1="#82817f" data-color-2="#efedee">
+												<span class="sr-only">
+													Project Name #7</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="Wereld&shy;vrede" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="37" data-color-1="#82817f"
+											data-color-2="#efedee">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Project Name #7</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/studio-moan/" data-id="40"
+												data-color-1="#fad73c" data-color-2="#c7c7c7">
+												<span class="sr-only">
+													Project Name #8</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="Studio Moan" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="40" data-color-1="#fad73c"
+											data-color-2="#c7c7c7">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Project Name #8</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/ride-out/" data-id="38"
+												data-color-1="#305589" data-color-2="#e2b075">
+												<span class="sr-only">
+													Project Name #9</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="Ride Out" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="38" data-color-1="#305589"
+											data-color-2="#e2b075">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Project Name #9</h2>
+											</div>
+										</div>
+										<div class="cases-overview__work-item" aria-hidden="true">
+											<a class="apg-post js-link" data-swup-preload
+												href="https://cydstumpel.nl/work/buro-dertig/" data-id="41"
+												data-color-1="#99aa95" data-color-2="#af0000">
+												<span class="sr-only">
+													Project Name #10</span>
+											</a>
+											<div class="cases-overview__image js-image">
+												<img data-src="assets/files/Project-Soon.png"
+													data-lazy-load alt="Buro Dertig" width="898" height="898">
+											</div>
+										</div>
+										<div class="cases-overview__title" id="41" data-color-1="#99aa95"
+											data-color-2="#af0000">
+											<div class="cases-overview__sticky">
+												<h2 class="hero-heading caps">
+													Project Name #10</h2>
+											</div>
+										</div>
+									</div>
+									<div id="case-container"></div>
+								</section>
+							</main>
+						</div>
+					</section>
+
+					<!-- FOOTER -->
+					<section id="section_8bf57a079" class="content-block" data-column-mode-sm="single"
+						data-column-mode-xs="single" data-layout="grid">
+						<div class="container">
+							<div id="row_f629c3832" class="row">
+								<div id="column_6852fa02f" class="column" data-xl-width="4" data-lg-width="5"
+									data-md-width="6">
+									<div class="content-wrapper">
+
+
+										<div id="content_11ba8ace3" class="column-content" data-module="text">
+											<div class="is-content">
+												<p data-mce-style="text-align: left; font-size: 1.133rem; line-height: 1.611rem;"
+													style="text-align: left; font-size: 1.133rem; line-height: 1.611rem;"
+													data-font-size-xl="1.133rem" data-line-height-xl="1.611rem"
+													class="custom_9efy17btd regular"><span
+														style="color: rgb(231, 250, 236); letter-spacing: -0.061rem;"
+														data-mce-style="color: rgb(231, 250, 236); letter-spacing: -0.061rem;"
+														data-letter-spacing-xl="-0.061rem" class="font_qdryllvcq">ANOUK
+														OKKEMA <span class="font_hv6r9gsca">— WORKSTUDENT APPLIED DATA
+															SCIENCE / ARTIFICIAL INTELLIGENCE
+															— BREDA / NETHERLANDS </span></span></p>
+											</div>
+										</div>
+
+										<div id="content_8b793d1c9" class="column-content" data-module="button">
+
+											<div class="ce-button" data-align="left">
+												<div class="is-content " data-width="auto"
+													data-effect="slide-bottom-to-top" data-icon-direction="right">
+													<a data-font="font_qdryllvcq" href="mailto:anouk.okkema@gmail.com"
+														target="_self" data-text-effect="none" data-text-align="center">
+														<div data-content-for="xl">
+															<div class="inner">SEND AN EMAIL</div>
+														</div>
+													</a>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+								<div id="column_c5af4446e" class="column spacer-column" data-xl-width="5"
+									data-lg-width="3" data-md-width="2">
+									<div class="content-wrapper">
+
+
+									</div>
+								</div>
+								<div id="column_0d2e4683c" class="column" data-xl-width="3" data-lg-width="4"
+									data-md-width="4">
+									<div class="content-wrapper">
+
+
+										<div id="content_37391b07a" class="column-content" data-module="text">
+											<div class="is-content"
+												style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+												<h6><span style="color: rgb(239, 239, 239);"
+														data-mce-style="color: rgb(239, 239, 239);">LET'S CONNECT</span>
+												</h6>
+											</div>
+										</div>
+
+										<div id="content_8621d3279" class="column-content" data-module="socialprofiles">
+
+											<div class="socialprofiles is-content" data-distributed="default"
+												data-align="left">
+												<div class="inner">
+													<ul>
+														<li class="social-profile social-profile-linkedin"><a
+																href="https://www.linkedin.com/in/anouk-okkema-96978a236/"
+																target="_blank"><svg width="12" height="12"
+																	viewBox="0 0 12 12" fill="none"
+																	xmlns="http://www.w3.org/2000/svg">
+																	<path
+																		d="M2.64334 11.0341H0.310005V3.54076H2.64334V11.0341ZM1.41334 2.60409H1.39667C1.218 2.61742 1.0385 2.59366 0.869449 2.53432C0.700393 2.47498 0.545429 2.38134 0.414282 2.25927C0.283134 2.1372 0.178635 1.98934 0.107344 1.82497C0.036053 1.66059 -0.000491084 1.48326 4.98345e-06 1.30409C4.98345e-06 0.564092 0.563338 0.00409261 1.43 0.00409261C1.60953 -0.0101492 1.79005 0.0128711 1.96025 0.0717087C2.13046 0.130546 2.28666 0.223931 2.41906 0.346001C2.55146 0.468071 2.6572 0.616192 2.72963 0.781066C2.80207 0.94594 2.83965 1.12401 2.84 1.30409C2.84 2.03076 2.29 2.60409 1.41334 2.60409ZM12 11.0341H9.33333V7.15742C9.33333 6.15742 8.92 5.45076 8 5.45076C7.71925 5.45073 7.44565 5.53934 7.2182 5.70393C6.99076 5.86853 6.82107 6.10073 6.73334 6.36742C6.67759 6.56563 6.65839 6.77234 6.67667 6.97742V11.0341H4.07C4.07 11.0341 4.10334 4.16742 4.07 3.54409H6.69667V4.73076C6.85334 4.21742 7.69667 3.48409 9.03 3.48409C10.6967 3.48409 12 4.56076 12 6.88076V11.0341Z"
+																		fill="white"></path>
+																</svg>
+															</a></li>
+													</ul>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_435b562a1" class="row">
+								<div id="column_5370b0cbd" class="column" data-xl-width="12">
+									<div class="content-wrapper">
+
+
+										<div id="content_05219eb22" class="column-content" data-module="spacer">
+
+											<div class="spacer-container">
+												<div class="is-content">
+													<div class="spacer"><!-- horizontal spacer --></div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div id="row_ef50eb123" class="row">
+								<div id="column_24b7160af" class="column" data-xl-width="12">
+									<div class="content-wrapper">
+
+
+										<div id="content_9c0ba8f8a" class="column-content" data-module="text">
+											<div class="is-content" style="opacity: 1;">
+												<p style="text-align: left; font-size: 0.556rem;"
+													data-mce-style="text-align: left; font-size: 0.556rem;"
+													data-font-size-xl="0.556rem">
+													<span style="color: rgb(239, 239, 239);"
+														data-mce-style="color: rgb(239, 239, 239);">Website created in
+														Netherlands with ♥ by Anouk Okkema — © AnoukOkkema / 2024 / All
+														rights reserved.</span>
+												</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="pswp__bg"></div>
+		<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar">
+					<div class="pswp__counter"></div>
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+					<button class="pswp__button pswp__button--share" title="Share"></button>
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+				</button>
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+				</button>
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ADDITIONAL TOOLS -->
+
+	<script type="text/javascript" src="assets/js/main.js" id="theme-appjs-js"></script>
+
+	<section id="section_878a33b67" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single"
+		data-layout="grid">
+		<div class="container">
+		</div>
+	</section>
+	</div>
+	</div>
+	<div class="back-to-top" data-arrow-align="right">
+		<a class="semplice-event" data-event-type="helper" data-event="scrollToTop"><svg version="1.1" id="Ebene_1"
+				xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				width="53px" height="20px" viewBox="0 0 53 20" enable-background="new 0 0 53 20" xml:space="preserve">
+				<g id="Ebene_3"></g>
+				<g>
+					<polygon points="43.886,16.221 42.697,17.687 26.5,4.731 10.303,17.688 9.114,16.221 26.5,2.312 	">
+					</polygon>
+				</g>
+			</svg>
+		</a>
+	</div>
+
+	<div id="semplice-cursor" style="transform: translate3d(1632px, 830px, 0px)">
+		<div class="semplice-cursor-inner">
+			<span class="cursor-text cursor-view">View</span>
+			<span class="cursor-icon cursor-top-arrow">
+				<svg viewBox="0 0 100 100">
+					<path
+						d="M54.393,96.6V14.5L80.7,40.88a4.186,4.186,0,0,0,5.912-5.925L53.172,1.424a4.187,4.187,0,0,0-5.917-.005l-0.005.005L13.8,34.952a4.186,4.186,0,0,0,5.912,5.925L46.029,14.5V96.6A4.182,4.182,0,0,0,54.393,96.6Z">
+					</path>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-bottom-arrow"><svg viewBox="0 0 100 100">
+					<path
+						d="M54.393,3.4V85.5L80.7,59.12a4.186,4.186,0,0,1,5.912,5.925L53.172,98.576a4.188,4.188,0,0,1-5.917.005l-0.005-.005L13.8,65.048a4.186,4.186,0,0,1,5.912-5.925L46.029,85.5V3.4A4.182,4.182,0,0,1,54.393,3.4Z">
+					</path>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-right-arrow">
+				<svg viewBox="0 0 100 100">
+					<path
+						d="M95.849,46.323H14.1L40.364,20.15a4.166,4.166,0,0,0-5.9-5.881L1.076,47.537a4.162,4.162,0,0,0,0,5.891L34.462,86.7a4.166,4.166,0,0,0,5.9-5.881L14.1,54.642H95.849A4.159,4.159,0,1,0,95.849,46.323Z"
+						class="arrow" transform="translate(100, 100) rotate(180) ">
+					</path>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-left-arrow">
+				<svg viewBox="0 0 100 100">
+					<path
+						d="M95.849,46.323H14.1L40.364,20.15a4.166,4.166,0,0,0-5.9-5.881L1.076,47.537a4.162,4.162,0,0,0,0,5.891L34.462,86.7a4.166,4.166,0,0,0,5.9-5.881L14.1,54.642H95.849A4.159,4.159,0,1,0,95.849,46.323Z"
+						class="arrow">
+					</path>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-zoom-in">
+				<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 99.98">
+					<g id="Interface-Essential_Zoom_zoom-in" data-name="Interface-Essential / Zoom / zoom-in">
+						<g id="Group_344" data-name="Group 344">
+							<g id="zoom-in">
+								<g id="Shape_1570" data-name="Shape 1570">
+									<path
+										d="M40.86,81.78A40.89,40.89,0,0,1,40.9,0h0A40.93,40.93,0,0,1,81.78,40.87h0A41,41,0,0,1,40.86,81.78Zm0-75.53A34.63,34.63,0,1,0,75.53,40.87h0A34.67,34.67,0,0,0,40.9,6.25Z">
+									</path>
+								</g>
+								<g id="Shape_1571" data-name="Shape 1571">
+									<path d="M59.38,43.74H21.89a3.13,3.13,0,0,1,0-6.25H59.38a3.13,3.13,0,1,1,0,6.25Z">
+									</path>
+								</g>
+								<g id="Shape_1572" data-name="Shape 1572">
+									<path
+										d="M40.64,62.49a3.13,3.13,0,0,1-3.13-3.13V21.87a3.13,3.13,0,0,1,6.25,0V59.36A3.13,3.13,0,0,1,40.64,62.49Z">
+									</path>
+								</g>
+								<g id="Shape_1573" data-name="Shape 1573">
+									<path
+										d="M96.88,100a3.12,3.12,0,0,1-2.21-.92L65.39,69.78a3.12,3.12,0,1,1,4.41-4.42L99.08,94.64a3.13,3.13,0,0,1-2.2,5.34Z">
+									</path>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-ba">
+				<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+					<g id="Interface-Essential_Resize_expand-vertical-2"
+						data-name="Interface-Essential / Resize / expand-vertical-2">
+						<g id="Group_769" data-name="Group 769">
+							<g id="expand-vertical-2">
+								<g id="Shape_3208" data-name="Shape 3208">
+									<path
+										d="M100,50a3.13,3.13,0,0,1-3.13,3.13H62.5a3.13,3.13,0,0,1,0-6.25H96.88A3.12,3.12,0,0,1,100,50Z"
+										transform="translate(0)"></path>
+								</g>
+								<g id="Shape_3209" data-name="Shape 3209">
+									<path
+										d="M40.63,50a3.13,3.13,0,0,1-3.13,3.12H3.12a3.13,3.13,0,0,1,0-6.25H37.5A3.13,3.13,0,0,1,40.63,50Z"
+										transform="translate(0)">
+									</path>
+								</g>
+								<g id="Shape_3210" data-name="Shape 3210">
+									<path
+										d="M100,50a3.12,3.12,0,0,1-.92,2.21L83.46,67.83A3.12,3.12,0,0,1,79,63.42L92.46,50,79,36.58a3.12,3.12,0,0,1,4.42-4.41L99.08,47.79A3.12,3.12,0,0,1,100,50Z"
+										transform="translate(0)">
+									</path>
+								</g>
+								<g id="Shape_3211" data-name="Shape 3211">
+									<path
+										d="M21.88,34.37A3.1,3.1,0,0,1,21,36.58L7.54,50,21,63.42a3.12,3.12,0,0,1-4.42,4.41L.92,52.21a3.11,3.11,0,0,1,0-4.42L16.54,32.17a3.13,3.13,0,0,1,5.34,2.2Z"
+										transform="translate(0)">
+									</path>
+								</g>
+								<g id="Shape_3212" data-name="Shape 3212">
+									<path d="M53.13,3.13V96.88a3.13,3.13,0,1,1-6.25,0V3.12a3.13,3.13,0,0,1,6.25,0Z"
+										transform="translate(0)">
+									</path>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</span>
+			<span class="cursor-icon cursor-drag">
+				<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+					viewBox="0 0 100 100">
+					<g id="Interface-Essential_Move_direction-button-arrows"
+						data-name="Interface-Essential / Move / direction-button-arrows">
+						<g id="Group_722" data-name="Group 722">
+							<g id="direction-button-arrows">
+								<g id="Shape_3410" data-name="Shape 3410">
+									<path
+										d="M50,100a2.17,2.17,0,0,1-2.17-2.17V2.17a2.17,2.17,0,0,1,4.34,0V97.83A2.17,2.17,0,0,1,50,100Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+								<g id="Shape_3411" data-name="Shape 3411">
+									<path d="M97.83,52.17H2.17a2.17,2.17,0,0,1,0-4.34H97.83a2.17,2.17,0,0,1,0,4.34Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+								<g id="Shape_3412" data-name="Shape 3412">
+									<path
+										d="M15.22,65.22a2.14,2.14,0,0,1-1.54-.64l-13-13a2.18,2.18,0,0,1,0-3.08l13-13a2.17,2.17,0,1,1,3.07,3.07L5.25,50l11.5,11.51a2.17,2.17,0,0,1,0,3.07A2.13,2.13,0,0,1,15.22,65.22Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+								<g id="Shape_3413" data-name="Shape 3413">
+									<path
+										d="M50,100a2.16,2.16,0,0,1-1.54-.64l-13-13a2.17,2.17,0,1,1,3.07-3.07L50,94.75l11.51-11.5a2.17,2.17,0,1,1,3.07,3.07l-13,13A2.16,2.16,0,0,1,50,100Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+								<g id="Shape_3414" data-name="Shape 3414">
+									<path
+										d="M84.78,65.22a2.13,2.13,0,0,1-1.53-.64,2.17,2.17,0,0,1,0-3.07L94.75,50,83.25,38.49a2.17,2.17,0,1,1,3.07-3.07l13,13a2.18,2.18,0,0,1,0,3.08l-13,13A2.14,2.14,0,0,1,84.78,65.22Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+								<g id="Shape_3415" data-name="Shape 3415">
+									<path
+										d="M63,17.39a2.13,2.13,0,0,1-1.53-.64L50,5.25,38.49,16.75a2.17,2.17,0,1,1-3.07-3.07l13-13a2.18,2.18,0,0,1,3.08,0l13,13a2.17,2.17,0,0,1,0,3.07A2.14,2.14,0,0,1,63,17.39Z"
+										transform="translate(0 0)">
+									</path>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="./assets/js/shared.scripts.min.js" id="semplice-shared-scripts-js"></script>
+	<script type="text/javascript" src="./assets/js/frontend.scripts.min.js" id="semplice-frontend-scripts-js"></script>
+	<script type="text/javascript" src="./assets/js/mediaelement-and-player.min.js" id="mediaelement-core-js"></script>
+	<script type="text/javascript" src="./assets/js/mediaelement-migrate.min.js" id="mediaelement-migrate-js"></script>
+
+	<script type="text/javascript" id="semplice-frontend-js-js-extra">
+		/* <![CDATA[ */
+		var semplice = {
+			customize: {
+				cursor: {
+					custom_cursor: "enabled",
+					color: "#efefef",
+					blend_mode: "difference",
+					mouseover_color: "#c3eed7",
+					inner_color: "#323232",
+					mouseover_blend_mode: "difference",
+					font_family: "font_qdryllvcq",
+					font_size: "0.6666666666666666rem",
+					custom_mouseovers: "show_more",
+					show_more_cursor_text: "VIEW",
+					show_more_cursor_color: "#c3eed7",
+					show_more_cursor_inner_color: "#2c2c2c",
+					show_more_cursor_type: "text",
+					nav_cursor_type: "none",
+					nav_cursor_color: "#c3eed7",
+					nav_cursor_inner_color: "transparent",
+					mouseover_size: "75",
+					letter_spacing: "-0.005555555555555556rem",
+					nextprev_prev_cursor_blendmode: "normal",
+					nextprev_prev_cursor_color: "#c3eed7",
+					nextprev_prev_cursor_inner_color: "#323232",
+					nextprev_next_cursor_color: "#c3eed7",
+					nextprev_next_cursor_inner_color: "#323232",
+					pg_cursor_type: "text",
+					pg_cursor_text: "VIEW",
+					pg_cursor_color: "#c3eed7",
+					pg_cursor_inner_color: "#323232",
+					apg_cursor_text: "VIEW",
+					apg_cursor_color: "#c3eed7",
+					apg_cursor_inner_color: "#323232",
+					apg_prev_cursor_type: "left-arrow",
+					lightbox_cursor_color: "#c3eed7",
+					lightbox_cursor_inner_color: "#323232",
+					logo_cursor_blendmode: "difference",
+					nav_cursor_blendmode: "difference",
+					nextprev_next_cursor_blendmode: "normal",
+					pg_cursor_blendmode: "normal",
+					apg_cursor_blendmode: "normal",
+					apg_prev_cursor_blendmode: "normal",
+					apg_next_cursor_blendmode: "normal",
+					gallery_prev_cursor_blendmode: "normal",
+					gallery_next_cursor_blendmode: "normal",
+					gallery_drag_cursor_blendmode: "normal",
+					lightbox_cursor_blendmode: "normal",
+					mailchimp_cursor_blendmode: "normal",
+					ba_cursor_blendmode: "normal",
+					back_to_top_cursor_blendmode: "normal",
+					show_more_cursor_blendmode: "normal",
+				},
+			},
+			gallery: {
+				prev: '<svg version="1.1" id="Ebene_1" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px"\r\n\twidth="18px" height="40px"  viewBox="0 0 18 40" enable-background="new 0 0 18 40" xml:space="preserve">\r\n<g id="Ebene_2">\r\n\t<g>\r\n\t\t<polygon points="16.3,40 0.3,20 16.3,0 17.7,1 2.5,20 17.7,39 \t\t"\/>\r\n\t<\/g>\r\n<\/g>\r\n<\/svg>\r\n',
+				next: '<svg version="1.1" id="Ebene_1" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" x="0px" y="0px"\r\n\twidth="18px" height="40px" viewBox="0 0 18 40" enable-background="new 0 0 18 40" xml:space="preserve">\r\n<g id="Ebene_2">\r\n\t<g>\r\n\t\t<polygon points="0.3,39 15.5,20 0.3,1 1.7,0 17.7,20 1.7,40 \t\t"\/>\r\n\t<\/g>\r\n<\/g>\r\n<\/svg>\r\n',
+			},
+			post_ids: {
+				"coming-soon": "331",
+				blog: "494",
+				"politique-de-confidentialite": "100",
+				accueil: "353",
+				projets: "363",
+				infos: "370",
+				"design-lab": "373",
+				contact: "380",
+				botchi: "145",
+				"space-exploration": "149",
+				"brussels-finance": "185",
+				bonpain: "225",
+				commuty: "305",
+				"branding-personnel": "395",
+				neutron: "488",
+			},
+			transition: {
+				in: {
+					effect: "fadeIn",
+					position: "normal",
+					visibility: "transition-hidden",
+					easing: "Expo.easeInOut",
+					duration: 1,
+				},
+				out: {
+					effect: "fadeOut",
+					position: "normal",
+					visibility: "transition-hidden",
+					easing: "Expo.easeInOut",
+					duration: 1,
+				},
+				reveal: false,
+				staggered: {
+					mode: "waterfall",
+					direction: "hor",
+					easing: "Expo.easeOut",
+					lines: "6",
+					duration: 0.3,
+					color: "#323232",
+					delay: 0.07,
+				},
+				optimize: "disabled",
+				status: "enabled",
+				preset: "staggered",
+				scrollToTop: "enabled",
+			},
+			sr_options: { viewFactor: 0.25, distance: "0" },
+		};
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="./assets/js/frontend.min.js" id="semplice-frontend-js-js"></script>
+
+	<script type="text/javascript" id="353-motion-js">
+		(function ($) {
+			"use strict"; var playRepeat = [];
+			s4.animate.gsap["content_25upcjcby"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_25upcjcby .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_25upcjcby .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_25upcjcby"].to("#content-holder #content_25upcjcby .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_25upcjcby"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_bql70bhnp"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_bql70bhnp .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_bql70bhnp .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_bql70bhnp"].to("#content-holder #content_bql70bhnp .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_bql70bhnp"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_o4ai86mkr"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_o4ai86mkr .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_o4ai86mkr .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_o4ai86mkr"].to("#content-holder #content_o4ai86mkr .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_o4ai86mkr"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_4nrvat77t"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_4nrvat77t .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_4nrvat77t .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.25,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_4nrvat77t"].to("#content-holder #content_4nrvat77t .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_4nrvat77t"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_odarncrkn"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_odarncrkn .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_odarncrkn .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_odarncrkn"].to("#content-holder #content_odarncrkn .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_odarncrkn"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_0qsf0cnt1"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_0qsf0cnt1 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_0qsf0cnt1 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_0qsf0cnt1"].to("#content-holder #content_0qsf0cnt1 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_0qsf0cnt1"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_k524frnev"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_k524frnev .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_k524frnev .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_k524frnev"].to("#content-holder #content_k524frnev .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_k524frnev"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_64ipx5t4q"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_64ipx5t4q .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_64ipx5t4q .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":2,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_64ipx5t4q"].to("#content-holder #content_64ipx5t4q .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_64ipx5t4q"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_qj7pxw8qx"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_qj7pxw8qx",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_qj7pxw8qx", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_qj7pxw8qx"].to("#content-holder #content_qj7pxw8qx", props);
+			// pause timeline
+			s4.animate.gsap["content_qj7pxw8qx"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_r3l6op5w2"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_r3l6op5w2 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_r3l6op5w2 .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_r3l6op5w2"].to("#content-holder #content_r3l6op5w2 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_r3l6op5w2"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_54lmxazbm"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_54lmxazbm .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_54lmxazbm .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_54lmxazbm"].to("#content-holder #content_54lmxazbm .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_54lmxazbm"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_3xikdhz0q"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_3xikdhz0q .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_3xikdhz0q .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_3xikdhz0q"].to("#content-holder #content_3xikdhz0q .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_3xikdhz0q"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_56rscek0l"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_56rscek0l .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_56rscek0l .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_56rscek0l"].to("#content-holder #content_56rscek0l .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_56rscek0l"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_wham1pehk"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_wham1pehk .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_wham1pehk .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_wham1pehk"].to("#content-holder #content_wham1pehk .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_wham1pehk"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_9anw8qy1c"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_9anw8qy1c .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_9anw8qy1c .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_9anw8qy1c"].to("#content-holder #content_9anw8qy1c .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_9anw8qy1c"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_fteyn1tq3"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_fteyn1tq3 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_fteyn1tq3 .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_fteyn1tq3"].to("#content-holder #content_fteyn1tq3 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_fteyn1tq3"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_defizobxm"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_defizobxm .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_defizobxm .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_defizobxm"].to("#content-holder #content_defizobxm .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_defizobxm"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_d8e3c6ioc"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_d8e3c6ioc .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_d8e3c6ioc .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_d8e3c6ioc"].to("#content-holder #content_d8e3c6ioc .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_d8e3c6ioc"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_atf96xm9h"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_atf96xm9h .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_atf96xm9h .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_atf96xm9h"].to("#content-holder #content_atf96xm9h .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_atf96xm9h"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_vyax0l8zz"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_vyax0l8zz .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_vyax0l8zz .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_vyax0l8zz"].to("#content-holder #content_vyax0l8zz .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_vyax0l8zz"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_rbpi9jzd2"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_rbpi9jzd2 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_rbpi9jzd2 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_rbpi9jzd2"].to("#content-holder #content_rbpi9jzd2 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_rbpi9jzd2"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_jlm27u06v"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_jlm27u06v .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_jlm27u06v .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_jlm27u06v"].to("#content-holder #content_jlm27u06v .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_jlm27u06v"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_vq138iycw"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_vq138iycw .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_vq138iycw .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_vq138iycw"].to("#content-holder #content_vq138iycw .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_vq138iycw"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_yo742jzfk"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_yo742jzfk .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_yo742jzfk .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_yo742jzfk"].to("#content-holder #content_yo742jzfk .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_yo742jzfk"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_2sccltlej"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_2sccltlej .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_2sccltlej .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_2sccltlej"].to("#content-holder #content_2sccltlej .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_2sccltlej"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_vedmzn0pw"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_vedmzn0pw .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_vedmzn0pw .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_vedmzn0pw"].to("#content-holder #content_vedmzn0pw .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_vedmzn0pw"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_a93t3xwgc"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_a93t3xwgc .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_a93t3xwgc .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_a93t3xwgc"].to("#content-holder #content_a93t3xwgc .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_a93t3xwgc"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_i74w3gsrd"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_i74w3gsrd .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_i74w3gsrd .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_i74w3gsrd"].to("#content-holder #content_i74w3gsrd .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_i74w3gsrd"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_3j1qnh067"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_3j1qnh067 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_3j1qnh067 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_3j1qnh067"].to("#content-holder #content_3j1qnh067 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_3j1qnh067"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_rt5c3fd8i"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_rt5c3fd8i .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_rt5c3fd8i .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":2,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_rt5c3fd8i"].to("#content-holder #content_rt5c3fd8i .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_rt5c3fd8i"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_rp6zlm507"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_rp6zlm507 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_rp6zlm507 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_rp6zlm507"].to("#content-holder #content_rp6zlm507 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_rp6zlm507"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_micpgzg8p"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_micpgzg8p .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_micpgzg8p .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_micpgzg8p"].to("#content-holder #content_micpgzg8p .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_micpgzg8p"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_v7fwc1qj4"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_v7fwc1qj4 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_v7fwc1qj4 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":2,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_v7fwc1qj4"].to("#content-holder #content_v7fwc1qj4 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_v7fwc1qj4"].pause();
+			$(window).scroll();
+		})(jQuery); (function ($) {
+			"use strict"; var playRepeat = [];
+			s4.animate.gsap["content_11ba8ace3"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_11ba8ace3 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_11ba8ace3 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_11ba8ace3"].to("#content-holder #content_11ba8ace3 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_11ba8ace3"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_8b793d1c9"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_8b793d1c9 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_8b793d1c9 .is-content", JSON.parse('{"translateY":0,"translateX":"-3.3333333333333rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1.5,"ease":"Power3.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_8b793d1c9"].to("#content-holder #content_8b793d1c9 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_8b793d1c9"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_37391b07a"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_37391b07a .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_37391b07a .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_37391b07a"].to("#content-holder #content_37391b07a .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_37391b07a"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_8621d3279"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_8621d3279 .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_8621d3279 .is-content", JSON.parse('{"translateY":"3.3333rem","translateX":"0rem","rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Expo.easeInOut","delay":0,"opacity":1,"x":"0rem","y":0}');
+			// add to timeline
+			s4.animate.gsap["content_8621d3279"].to("#content-holder #content_8621d3279 .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_8621d3279"].pause();
+			var playRepeat = [];
+			s4.animate.gsap["content_9c0ba8f8a"] = gsap.timeline({
+				scrollTrigger: "#content-holder #content_9c0ba8f8a .is-content",
+				repeat: 0,
+
+			});
+
+			// gsap set transform
+			gsap.set("#content-holder #content_9c0ba8f8a .is-content", JSON.parse('{"translateY":0,"translateX":0,"rotate":"0deg","rotateY":"0deg","rotateX":"0deg","skewX":"0deg","skewY":"0deg","scaleX":"1","scaleY":"1"}'));
+
+			// parse props
+			var props = JSON.parse('{"duration":1,"ease":"Circ.easeInOut","delay":0,"opacity":1}');
+			// add to timeline
+			s4.animate.gsap["content_9c0ba8f8a"].to("#content-holder #content_9c0ba8f8a .is-content", props);
+			// pause timeline
+			s4.animate.gsap["content_9c0ba8f8a"].pause();
+			$(window).scroll();
+		})(jQuery);
+	</script>
+	<script>
+		function isInViewport(element) {
+			const rect = element.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		function runOnScroll() {
+			const elem = document.querySelector('#content-353 #content_11ba8ace3 .is-content');
+			const elem2 = document.querySelector('#content-353 #content_8b793d1c9 .is-content');
+			const elem3 = document.querySelector('#content-353 #content_8621d3279 .is-content');
+
+			if (isInViewport(elem) && !elem.classList.contains('visible')) {
+				elem.classList.add('visible');
+			}
+
+			if (isInViewport(elem2) && !elem2.classList.contains('visible')) {
+				elem2.classList.add('visible');
+			}
+
+			if (isInViewport(elem3) && !elem3.classList.contains('visible')) {
+				elem3.classList.add('visible');
+			}
+		}
+
+		window.addEventListener('scroll', runOnScroll);
+
+		document.querySelector('.hamburger__menu').addEventListener('click', function () {
+			var background = document.querySelector('.menu__background');
+			var menu = document.querySelector('.menu__mobile');
+			var body = document.body;
+			background.classList.add('menu__background--open');
+			setTimeout(function () {
+				menu.classList.add('menu__mobile--open');
+				body.style.overflow = 'hidden'; // Disable scrolling
+			}, 700); // Adjust timing based on your transition durations
+		});
+
+		document.querySelector('.menu__mobile--close').addEventListener('click', function () {
+			var background = document.querySelector('.menu__background');
+			var menu = document.querySelector('.menu__mobile');
+			var body = document.body;
+			menu.classList.remove('menu__mobile--open');
+			setTimeout(function () {
+				background.classList.remove('menu__background--open');
+				body.style.overflow = 'auto'; // Disable scrolling
+			}, 100); // Same here
+		});
+
+	</script>
+
+</body>
+
+</html>
