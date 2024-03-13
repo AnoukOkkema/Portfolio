@@ -773,7 +773,7 @@ img.wp-smiley,
   [data-font="font_hv6r9gsca"],
   [data-font="font_hv6r9gsca"] li a,
   #content-holder h6 {
-	font-family: "Gordita-Light", sans-serif;
+	font-family: "Gordita-Light", 'Open Sans';
 	font-weight: 100;
 	font-variation-settings: normal;
 	font-style: normal;
@@ -6378,6 +6378,28 @@ animation: slideInFromBottom 1s ease-out forwards;
         display: flex; /* This will show the overlay in landscape mode with max-height of 500px */
         flex-direction: column; /* Aligns items vertically */
     }
+}
+
+/* Pick Place Project */
+
+#content-353 #cover-353 .cover-image {
+	background-image: url(/assets/files/frontview_frame_0189.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 0%;
+	background-attachment: scroll;
+	background-color: #111111;
+}
+
+#content-353 .semplice-cover .show-more svg,
+#content-353 .semplice-cover .show-more img {
+	width: 2.9444rem;
+}
+
+#content-353 #content_emsle5eef {
+	padding-right: 0rem;
+	padding-bottom: 6.666666666666667rem;
+	padding-left: 0rem;
 }
 
 /* Viewport sizing */
