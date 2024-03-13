@@ -6402,6 +6402,55 @@ animation: slideInFromBottom 1s ease-out forwards;
 	padding-left: 0rem;
 }
 
+.semplice-next-prev {
+	background: #222222;
+	padding: 0rem 0rem 0rem 0rem;
+}
+.semplice-next-prev .np-inner {
+	height: 27.77777777777778rem;
+}
+.semplice-next-prev .np-inner .np-link .np-prefix,
+.semplice-next-prev .np-inner .np-link .np-label {
+	color: #ffffff;
+	font-size: 1.3888888888888888rem;
+	text-transform: uppercase;
+	letter-spacing: -0.05rem;
+}
+.semplice-next-prev .np-inner .np-link .np-text-above {
+	padding-bottom: 0.5555555555555556rem;
+}
+.semplice-next-prev .np-inner .np-link .np-label-above {
+	color: #c3eed7;
+	font-size: 0.6666666666666666rem;
+	text-transform: uppercase;
+	letter-spacing: 0rem;
+}
+.semplice-next-prev .np-inner .np-link .np-text {
+	padding: 0rem 0rem;
+}
+.semplice-next .np-text {
+	margin-right: 0.05rem;
+}
+.semplice-next-prev .nextprev-seperator {
+	width: 1px;
+	margin: 1.666666666666667rem -0px;
+	background: #000000;
+}
+
+.np-link:hover {
+	background: #2c2c2c;
+}
+.np-link:hover .np-text .np-label,
+.np-link:hover .np-text .np-prefix {
+	color: #c3eed7 !important;
+}
+.np-link:hover .np-label-above {
+	color: #ffffff !important;
+}
+
+.np-inner:hover .np-link { opacity: 0.3; }
+.np-inner .np-link:hover .np-bg { transform: scale(1.14) !important;}
+
 /* Viewport sizing */
 
 .mobile-only {
