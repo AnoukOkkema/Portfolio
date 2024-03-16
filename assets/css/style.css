@@ -1362,7 +1362,7 @@ img.wp-smiley,
 	  rgba(0, 0, 0, 0) 100%
 	);
 	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg)
-	  rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
+	  rotateX(0deg) skew(0deg, 0deg) scale(1, 1); 
   }
   #content-353 #content_0qsf0cnt1 .is-content {
 	opacity: 0;
@@ -1373,7 +1373,8 @@ img.wp-smiley,
 	  rgba(0, 0, 0, 0) 0%,
 	  rgba(0, 0, 0, 0) 100%
 	);
-	transform: translateY(0) translateX(-3.3333333333333rem) rotate(0deg)
+	white-space: nowrap;
+	transform: translateY(0) translateX(0) rotate(0deg)
 	  rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
   }
   #content-353 #content_k524frnev .is-content {
@@ -1385,7 +1386,7 @@ img.wp-smiley,
 	  rgba(0, 0, 0, 0) 0%,
 	  rgba(0, 0, 0, 0) 100%
 	);
-	transform: translateY(0) translateX(-3.3333333333333rem) rotate(0deg)
+	transform: translateY(0) translateX(0) rotate(0deg)
 	  rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
   }
   #content-353 #content_64ipx5t4q .is-content {
