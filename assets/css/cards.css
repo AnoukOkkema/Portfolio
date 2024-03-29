@@ -1,0 +1,175 @@
+:root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--outline-width: 0px;
+}
+
+#cards {
+	/* Make place at bottom, as items will slide to that position*/
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+	/* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+	margin-bottom: var(--card-margin);
+}
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+
+#card_4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+.card__content {
+	transform-origin: 50% 0%;
+	will-change: transform;
+	height: 80%;
+}
+
+
+
+/** PAGE STYLING **/
+
+header,
+main {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+header {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+#cards {
+	list-style: none;
+	outline: calc(var(--outline-width) * 10) solid hotpink;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--numcards), var(--card-height));
+	gap: var(--card-margin);
+}
+
+.card {
+	outline: var(--outline-width) solid lime;
+}
+
+.card__content {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgba(50, 50, 50, 1);
+	color: rgb(255, 255, 255);
+	border-radius: 1em;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+
+	align-items: stretch;
+	outline: var(--outline-width) solid blue;
+}
+
+.card__content > div {
+	grid-area: text;
+	width: 80%;
+	place-self: center;
+	text-align: left;
+
+	display: grid;
+	gap: 1em;
+	place-items: start;
+}
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}
+
+.card__content > figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+main h1 {
+	font-weight: 300;
+	font-size: 3.5em;
+}
+
+main h2 {
+	font-weight: 300;
+	font-size: 2.5em;
+}
+
+main p {
+	font-family: sans-serif;
+	font-weight: 300;
+	line-height: 1.42;
+}
+
+main .btn {
+	background: rgb(188 87 36);
+	color: rgb(255 255 255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+aside {
+	width: 50vw;
+	margin: 0 auto;
+	text-align: left;
+}
+
+aside p {
+	margin-bottom: 1em;
+}
+
+@supports (animation-timeline: view()) {
+	.card {
+		--index0: calc(var(--index) - 1); /* 0-based index */
+		--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+		--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+	}
+
+	@keyframes scale {
+		to {
+			transform:
+				scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+		}
+	}
+
+	#cards {
+		--numcards: 4;
+		view-timeline-name: --cards-element-scrolls-in-body;
+	}
+
+	.card__content {
+		--start-range: calc(var(--index0) / var(--numcards) * 100%);
+		--end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+		animation: linear scale forwards;
+		animation-timeline: --cards-element-scrolls-in-body;
+		animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+	}
+}
