@@ -1265,8 +1265,7 @@ img.wp-smiley,
   #content-353 #content_0qsf0cnt1 {
 	padding-top: 0rem;
   }
-  #content-353 #content_0qsf0cnt1 .is-content {
-  }
+  
   @media screen and (min-width: 544px) and (max-width: 767.98px) {
 	#content-353 #column_tug3zi27m {
 	  height: 0rem;
@@ -6464,6 +6463,190 @@ animation: slideInFromBottom 1s ease-out forwards;
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
 	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
 }
+
+#content-353 #section_bsjqxx0yp .container .row{
+	width: 100%;
+	display: grid;
+	place-items: center;
+}
+
+#content-353 #content_0qsf0cnt1 .is-content {
+	display: flex;
+	justify-content: center;
+  }
+
+#content-353 #content_k524frnev {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 135%;
+	right:7rem;
+}
+
+.step-container {
+	position: relative; /* For absolute positioning of children */
+	display: flex; /* Aligns children side by side */
+	justify-content: space-between;
+	align-items:flex-start; /* Centers children vertically */
+	height: auto; /* Full viewport height */
+	background-color: #222222; /* #222222 #424242*/ 
+	color: white; /* Set the text color for the whole container */
+	font-family: Arial, sans-serif; /* Example font */
+	margin-top: 50px;
+	margin-bottom: 125px;
+}
+
+.label-vertical {
+	color: #5a5454; /* Adjust the color to match your design */
+	transform: rotate(-90deg); /* Rotates the text */
+	transform-origin: left top; /* Sets the point of rotation */
+	position: absolute; /* Position it absolutely relative to its nearest positioned ancestor */
+	left: 25px; /* Distance from the left side; adjust as needed */
+	top: 81px; /* Distance from the top; adjust as needed */
+	white-space: nowrap; /* Ensures the label is in one line */
+}
+
+.context {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin-left: 2%; /* Space from the left edge */
+}
+
+.staircase-step {
+	width: 95%;
+	height: 75%;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.step-base, .step-middle, .step-top {
+	background-size: cover;
+	background-position: center;
+}
+
+.step-base {
+	background-color: #5a5454;
+	z-index: 1;
+}
+
+.step-middle {
+	background-color: transparent;
+	border: solid 1px #6b6969;
+	z-index: 2;
+	top: 65px;
+	left: 65px;
+}
+
+.step-top {
+	background-color: white;
+	z-index: 3;
+	top: 105px;
+	left: 105px;
+	background-image: url('https://via.placeholder.com/150');
+}
+
+.text-container {
+	display: flex;
+	margin-right: 3%; /* Space between the staircase and the text section */
+	padding: 20px; /* Padding around the text section */
+	width: 45%; /* Adjust width accordingly */
+	box-sizing: border-box; /* Include padding in the width calculation */
+	}
+
+.decorative-box {
+	background-color: #c3eed7; /* The distinct color for the decorative box */
+	width: 5px; /* Width of the decorative box */
+	height: 60px;
+	margin-top: 135px;
+	margin-left: -20px; /* Space between the decorative box and the text */
+	/* margin-left: 30px; */
+	position: absolute;
+}
+
+.text-section {
+	background-color: transparent; /* Background color for the text section */
+}
+
+.text-section h2 {
+	color: #ffffff;
+	margin-bottom: 50px; /* Adjust this value to the space you desire */
+	white-space: nowrap !important; /* Ensures the label is in one line */ 
+}
+
+.text-section p {
+	color: #ffffff; /* Dark text color for contrast */
+	text-align: justify;
+	margin-bottom: 15px;
+}
+
+.text-section .label {
+	background-color: transparent; /* Dark background for the label */
+	color: #ffffff; /* White text for the label */
+	display: inline-block;
+	padding: 5px;
+	margin-right: 10px; /* Space after the label */
+}
+
+.step-container.flipped {
+    flex-direction: row-reverse; /* Reverses the order of the flex items */
+}
+
+.flipped .staircase-step {
+	width: 95%;
+	height: 75%;
+	position: absolute;
+	top: 25px;
+	left: -25px;
+}
+
+.flipped .step-middle {
+	background-color: transparent;
+	border: solid 1px #6b6969;
+	z-index: 2;
+	top: 65px;
+	left: -65px;
+}
+
+.flipped .step-top {
+	background-color: white;
+	z-index: 3;
+	top: 105px;
+	left: -105px;
+	background-image: url('https://via.placeholder.com/150');
+}
+
+.flipped .label-vertical {
+    /* Adjust the left and right properties */
+    right: 24px;
+    left: auto;
+	top: 80px;
+    transform: rotate(90deg); /* Rotates the text the other way */
+    transform-origin: right top;
+}
+
+.flipped .decorative-box {
+    /* Adjust the left and right properties */
+    right: 688px; /* Reset the right property */
+}
+
+.flipped .text-container {
+    margin-left: 3%; /* Space between the text section and the staircase */
+}
+
+.flipped .text-section h2 {
+	text-align: end;	 
+}
+
+.flipped .text-section .label {
+    /* Aligns the label to the right so it appears on the left side of the text */
+    text-align: right;
+    display: block; /* Change display to block so it takes up its own line */
+	margin-right: -5px;
+}
+
+
 
 /* Viewport sizing */
 
