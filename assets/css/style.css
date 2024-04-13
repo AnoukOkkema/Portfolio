@@ -6464,25 +6464,6 @@ animation: slideInFromBottom 1s ease-out forwards;
 	transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg) rotateX(0deg) skew(0deg, 0deg) scale(1, 1);
 }
 
-#content-353 #section_bsjqxx0yp .container .row{
-	width: 100%;
-	display: grid;
-	place-items: center;
-}
-
-#content-353 #content_0qsf0cnt1 .is-content {
-	display: flex;
-	justify-content: center;
-  }
-
-#content-353 #content_k524frnev {
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	width: 135%;
-	right:7rem;
-}
-
 .step-container {
 	position: relative; /* For absolute positioning of children */
 	display: flex; /* Aligns children side by side */
