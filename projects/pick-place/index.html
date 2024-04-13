@@ -405,55 +405,77 @@
 										<div id="content_cea46e75f" class="column-content" data-module="image" style="padding-top: 3.3333333333333335rem;
 										margin-bottom: 50px;">
 											<div class="step-container">
-												<div class="label-vertical">LABEL</div>
+												<div class="label-vertical" style="top: 130px;">ROBOSUITE</div>
 												<div class="context">
 													<div class="staircase-step step-base"></div>
 													<div class="staircase-step step-middle"></div>
-													<div class="staircase-step step-top"></div>
+													<div class="staircase-step step-top" style="background-image: url('../../assets/files/Simulation Robot Learning Framework-2.png');"></div>
 												</div>
 												<div class="text-container">
 													<div class="decorative-box"></div> <!-- Decorative box with color #c3eed7 -->
 													<div class="text-section">
-														<span class="label">LABEL</span>
-														<h2><span style="color:#5a5454;">01.</span> Data Preparation</h2>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat. Aliquam egestas, velit at condimentum placerat, sem sapien laoreet mauris, dictum porttitor lacus est nec enim. Vivamus feugiat elit lorem, eu porttitor ante ultrices id.</p>
-														<p>Phasellus suscipit tellus ante, nec dignissim elit imperdiet nec. Nullam fringilla feugiat nisl. Ut pretium, metus venenatis dictum viverra, dui metus finibus enim, ac rhoncus sem lorem vitae mauris. Suspendisse ut venenatis libero. Suspendisse lorem felis, pretium in maximus id, tempor non ipsum.</p>
+														<span class="label">ROBOSUITE</span>
+														<h2><span style="color:#5a5454;">01.</span> Robotic Simulation</h2>
+														<p>This project harnesses the capabilities of Robosuite, a robot learning simulation framework powered by the MuJoCo physics engine. The central focus is the 'pick and place' task performed by a robotic arm. The simulation incorporates a front-view and an agent-view virtual camera, both providing synthetic visual data crucial for training and evaluating AI models. The specific items utilized in the task include a cereal box, a milk carton, and a soda can.</p>
+														<p>For data collection, approximately 6,000 images were generated through the Robosuite simulation, and an additional 4,000 images were collected in real-world settings with identical items. These images were uploaded to RoboFlow, a platform designed for organizing, annotating, and preparing image data for machine learning applications. The images were annotated by the project participants, a step essential for the subsequent stages of machine learning model training.</p>
 													</div>
 												</div>
 											</div>
 
 											<div class="step-container flipped">
-												<div class="label-vertical flipped">LABEL</div>
+												<div class="label-vertical flipped" style="top: 97px;">YOLOV8</div>
 												<div class="context">
 													<div class="staircase-step step-base"></div>
 													<div class="staircase-step step-middle"></div>
-													<div class="staircase-step step-top"></div>
+													<div class="staircase-step step-top" style="background-image: url('../../assets/files/1673456601097.jpeg');"></div>
 												</div>
 												<div class="text-container flipped">
 													<div class="decorative-box"></div> <!-- Decorative box with color #c3eed7 -->
 													<div class="text-section">
-														<span class="label">LABEL</span>
-														<h2><span style="color:#5a5454;">02.</span> Model Development</h2>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat. Aliquam egestas, velit at condimentum placerat, sem sapien laoreet mauris, dictum porttitor lacus est nec enim. Vivamus feugiat elit lorem, eu porttitor ante ultrices id.</p>
-														<p>Phasellus suscipit tellus ante, nec dignissim elit imperdiet nec. Nullam fringilla feugiat nisl. Ut pretium, metus venenatis dictum viverra, dui metus finibus enim, ac rhoncus sem lorem vitae mauris. Suspendisse ut venenatis libero. Suspendisse lorem felis, pretium in maximus id, tempor non ipsum.</p>
+														<span class="label">YOLOV8</span>
+														<h2><span style="color:#5a5454;">02.</span> Object Detection</h2>
+														<p>The annotated images were segmented into training, validation, and test datasets. The training dataset was employed to develop a YOLOv8 model, renowned for its efficiency and precision, especially in tasks requiring real-time object detection.</p>
+														<p>The validation dataset played a crucial role in optimizing the model during the training process, guaranteeing its efficacy before the final evaluation. After the training phase, the model underwent a thorough testing process using the test dataset. This vital assessment focused on evaluating the model's precision and its ability to correctly identify and position the objects in the 'pick and place' task.</p>
+														<p>Once the YOLOv8 model demonstrated its reliability with compelling evaluation metrics, it was reintegrated into the Robosuite simulation to generate a localization dataset. The model was applied across various simulation scenarios, encompassing different object placements and lighting conditions. It was tasked with identifying objects and accurately determining their bounding box coordinates and yaw angles. The data collected, which included detailed measurements and orientations of each item, were carefully assembled to create the localization dataset.</p>
 													</div>
 												</div>
 											</div>
 
 											<div class="step-container">
-												<div class="label-vertical">LABEL</div>
+												<div class="label-vertical" style="top: 111px;">PYTORCH</div>
 												<div class="context">
 													<div class="staircase-step step-base"></div>
 													<div class="staircase-step step-middle"></div>
-													<div class="staircase-step step-top"></div>
+													<div class="staircase-step step-top" style="background-image: url('../../assets/files/Pytorch-2.png');"></div>
 												</div>
 												<div class="text-container">
 													<div class="decorative-box"></div> <!-- Decorative box with color #c3eed7 -->
 													<div class="text-section">
-														<span class="label">LABEL</span>
-														<h2><span style="color:#5a5454;">03.</span> Pick Place Task</h2>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat. Aliquam egestas, velit at condimentum placerat, sem sapien laoreet mauris, dictum porttitor lacus est nec enim. Vivamus feugiat elit lorem, eu porttitor ante ultrices id.</p>
-														<p>Phasellus suscipit tellus ante, nec dignissim elit imperdiet nec. Nullam fringilla feugiat nisl. Ut pretium, metus venenatis dictum viverra, dui metus finibus enim, ac rhoncus sem lorem vitae mauris. Suspendisse ut venenatis libero. Suspendisse lorem felis, pretium in maximus id, tempor non ipsum.</p>
+														<span class="label">PYTORCH</span>
+														<h2><span style="color:#5a5454;">03.</span> Pose Estimation Models</h2>
+														<p>The localization dataset, carefully compiled earlier, was divided into distinct sets for training, validation, and testing purposes. Within the scope of pose estimation, two specialized models were constructed using PyTorch—a powerful open-source machine learning library favored for its flexibility and speed, especially when working with complex neural network architectures.</p>
+														<p>One model was dedicated to the precise prediction of the XYZ positions of the objects, whereas the second model was tailored to predict the yaw orientation. Both models underwent training with the designated training set, where they learned to interpret spatial data for accurate localization. The validation set was then used to fine-tune the models' parameters, ensuring their robustness and reliability.</p>
+														<p>Upon passing the validation phase, the models' performance was critically assessed with the test dataset. This thorough evaluation aimed to confirm their efficacy in accurate pose estimation. Providing the results met the project's high standards, the final models would be deployed in the robotic 'pick and place' task.</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="step-container flipped">
+												<div class="label-vertical flipped" style="top: 128px;">EXECUTION</div>
+												<div class="context">
+													<div class="staircase-step step-base"></div>
+													<div class="staircase-step step-middle"></div>
+													<div class="staircase-step step-top" style="background-image: url('../../assets/files/agentview_pickplace_task.mp4');"></div>
+												</div>
+												<div class="text-container flipped">
+													<div class="decorative-box"></div> <!-- Decorative box with color #c3eed7 -->
+													<div class="text-section">
+														<span class="label">EXECUTION</span>
+														<h2><span style="color:#5a5454;">04.</span> Pick Place Task</h2>
+														<p>In this phase, the robust YOLOv8 model previously trained was deployed once more to detect object coordinates within the robotic simulation environment. Leveraging these coordinates, the trained XYZ position and yaw models were then utilized to precisely predict the objects' locations and orientations.</p>
+														<p>These predictions were critical for the execution of the pick and place task. The robotic arm's movements were controlled by a PID (Proportional-Integral-Derivative) Control System. This system, widely used in industrial control for its precision and stability, adjusts the arm's actions based on the difference, or 'error,' between the target position and orientation and the current state. By addressing both the positional error and the yaw difference, the PID controller fine-tunes the arm’s movements, enabling it to accurately approach, grasp, and move the objects.</p>
+														<p>The effective combination of the PID control and the model's predictions enabled the robotic arm to perform its task efficiently: navigating to the object, grabbing it securely, and placing it in the specified bin. The effectiveness of this project is clearly demonstrated in the video accompanying this description, showing each step of the robotic arm in action.
+														</p>
 													</div>
 												</div>
 											</div>
@@ -465,21 +487,6 @@
 							</div>
 						</div>
 					</section>
-
-					<section id="section_13fb3fca9" class="content-block" data-column-mode-sm="single"
-					data-column-mode-xs="single" data-height="fullscreen" data-valign="center" data-justify="center"
-					data-layout="grid" data-force-fullscreen="true">
-						<div class="background-video">
-							<video data-autoplay="" autoplay="" webkit-playsinline="" playsinline="" loop="" muted=""
-								data-object-fit="cover">
-								<source src="../../assets/files/agentview_pickplace_task.mp4" type="video/mp4" />
-							</video>
-						</div>
-						<div class="container">
-						</div>
-					</section>
-					
-
 
 					<section class="semplice-next-prev"  data-np-visibility="visible" data-np-gutter="no" data-pn-layout="fluid" data-np-sep-visibility="hidden" data-np-prefix-visibility="visible" data-np-image-visibility="visible" data-np-text-visibility="visible" data-np-text-position="overlay" data-np-mouseover="scale-opacity">
 						<div class="container">

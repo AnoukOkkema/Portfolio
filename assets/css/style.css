@@ -6483,7 +6483,7 @@ animation: slideInFromBottom 1s ease-out forwards;
 	transform-origin: left top; /* Sets the point of rotation */
 	position: absolute; /* Position it absolutely relative to its nearest positioned ancestor */
 	left: 25px; /* Distance from the left side; adjust as needed */
-	top: 81px; /* Distance from the top; adjust as needed */
+	top: 83px; /* Distance from the top; adjust as needed */
 	white-space: nowrap; /* Ensures the label is in one line */
 }
 
@@ -6618,6 +6618,11 @@ animation: slideInFromBottom 1s ease-out forwards;
 
 .flipped .text-section h2 {
 	text-align: end;	 
+}
+
+.flipped .text-section p {
+	text-align-last: right;
+	text-align:justify;
 }
 
 .flipped .text-section .label {
