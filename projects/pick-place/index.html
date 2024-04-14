@@ -488,6 +488,31 @@
 						</div>
 					</section>
 
+					<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Create a new Intersection Observer instance with callback and options
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view'); // Add the class when the element is in the viewport
+        observer.unobserve(entry.target); // Stop observing the element after adding the class
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger the observer when half of the element is visible
+  });
+
+  // Select all elements with the class .step-container
+  var stepContainers = document.querySelectorAll('.step-container');
+  stepContainers.forEach(function(container) {
+    observer.observe(container); // Observe each .step-container for intersection changes
+  });
+});
+
+
+
+					</script>
+
 					<section class="semplice-next-prev"  data-np-visibility="visible" data-np-gutter="no" data-pn-layout="fluid" data-np-sep-visibility="hidden" data-np-prefix-visibility="visible" data-np-image-visibility="visible" data-np-text-visibility="visible" data-np-text-position="overlay" data-np-mouseover="scale-opacity">
 						<div class="container">
 							<div class="row">

@@ -6465,16 +6465,19 @@ animation: slideInFromBottom 1s ease-out forwards;
 }
 
 .step-container {
-	position: relative; /* For absolute positioning of children */
-	display: flex; /* Aligns children side by side */
+	position: relative;
+	display: flex;
 	justify-content: space-between;
-	align-items:flex-start; /* Centers children vertically */
-	height: auto; /* Full viewport height */
-	background-color: #222222; /* #222222 #424242*/ 
-	color: white; /* Set the text color for the whole container */
-	font-family: Arial, sans-serif; /* Example font */
+	align-items: flex-start;
+	height: auto;
+	background-color: #222222;
+	color: white;
+	font-family: Arial, sans-serif;
 	margin-top: 50px;
 	margin-bottom: 125px;
+	opacity: 0; /* Start hidden */
+	transform: translateX(-100px); /* Start 100px to the left */
+	transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition for transform and opacity */
 }
 
 .label-vertical {
@@ -6572,6 +6575,14 @@ animation: slideInFromBottom 1s ease-out forwards;
 
 .step-container.flipped {
     flex-direction: row-reverse; /* Reverses the order of the flex items */
+	opacity: 0; /* Start hidden */
+	transform: translateX(100px); /* Start 100px to the left */
+	transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition for transform and opacity */
+}
+
+.step-container.in-view, .step-container.flipped.in-view {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to original position */
 }
 
 .flipped .staircase-step {
