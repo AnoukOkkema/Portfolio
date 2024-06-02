@@ -7,8 +7,8 @@ export default defineStackbitConfig({
   contentSources: [
     new GitContentSource({
       rootPath: __dirname,
-      contentDirs: ["src/pages"],
-      models: []
+      contentDirs: ["/projects"],
+      models: [],
     })
   ]
 });
