@@ -155,11 +155,11 @@
     </script>
     <style type="text/css" id="semplice-custom-css">
         .semplice-cursor #semplice-cursor .semplice-cursor-inner {
-            background-color: #efefef;
+            background-color: #000000;
         }
 
         .semplice-cursor #semplice-cursor {
-            mix-blend-mode: difference;
+            mix-blend-mode: multiply;
         }
 
         .semplice-cursor #semplice-cursor.mouseover-cursor {
@@ -455,9 +455,9 @@
                                         <div id="content_3db3f62d0" class="column-content" data-module="button">
 
                                             <div class="ce-button" data-align="left">
-                                                <div class="is-content " data-width="auto"
+                                                <div class="is-content" data-width="auto"
                                                     data-effect="slide-bottom-to-top" data-icon-direction="right">
-                                                    <a data-font="font_qdryllvcq" href="mailto:anouk.okkema@gmail.com"
+                                                    <a id="color-mode" data-font="font_qdryllvcq" href="mailto:anouk.okkema@gmail.com"
                                                         target="_self" data-text-effect="none" data-text-align="center">
                                                         <div data-content-for="xl">
                                                             <div class="inner">SEND AN EMAIL</div>
@@ -876,11 +876,11 @@
             customize: {
                 cursor: {
                     custom_cursor: "enabled",
-                    color: "#efefef",
-                    blend_mode: "difference",
+                    color: "#000000",
+                    blend_mode: "multiply",
                     mouseover_color: "#c3eed7",
                     inner_color: "#323232",
-                    mouseover_blend_mode: "difference",
+                    mouseover_blend_mode: "multiply",
                     font_family: "font_qdryllvcq",
                     font_size: "0.6666666666666666rem",
                     custom_mouseovers: "show_more",
@@ -908,8 +908,11 @@
                     apg_prev_cursor_type: "left-arrow",
                     lightbox_cursor_color: "#c3eed7",
                     lightbox_cursor_inner_color: "#323232",
-                    logo_cursor_blendmode: "difference",
-                    nav_cursor_blendmode: "difference",
+                    logo_cursor_blendmode: "multiply",
+                    nav_cursor_blendmode: "multiply",
+                    contact_button_cursor_blendmode: "difference",
+                    contact_button_cursor_color: "white",
+                    contact_button_cursor_inner_color: "#b7f8d6",
                     nextprev_next_cursor_blendmode: "normal",
                     pg_cursor_blendmode: "normal",
                     apg_cursor_blendmode: "normal",
