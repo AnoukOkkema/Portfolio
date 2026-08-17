@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Case study: a vision-guided pick-and-place robot in RoboSuite and MuJoCo.">
+    <title>RoboSuite Pick &amp; Place — Anouk Okkema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="case-study.css">
+  </head>
+  <body>
+    <nav class="proj-nav">
+      <div class="wrap proj-nav-row">
+        <a class="proj-back" href="../../index.html">← Terug naar portfolio</a>
+        <a class="mark" href="#top">AO<span class="spark-wrap"><svg class="spark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z" fill="currentColor"/></svg></span></a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="project-title">
+        <div class="hero-dots" aria-hidden="true"></div>
+        <div class="hero-lines" aria-hidden="true">
+          <div class="hero-glow g1"></div>
+          <div class="hero-glow g2"></div>
+          <div class="hero-circle c1"></div>
+          <div class="hero-circle c2"></div>
+          <span class="hero-plus" style="left:46%; top:9%;"></span>
+          <span class="hero-plus" style="left:4%; top:24%;"></span>
+          <span class="hero-plus" style="left:34%; top:74%;"></span>
+          <span class="hero-plus" style="left:86%; top:20%;"></span>
+          <span class="hero-plus" style="left:64%; top:88%;"></span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> Robotics &amp; simulation</p>
+          <h1 id="project-title">A robot that<br>sees, picks<br><span class="outline">and sorts.</span></h1>
+          <p class="hero-intro">
+            A vision-guided pick-and-place pipeline that finds grocery objects,
+            estimates their pose and places each one in the correct bin.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Try the 3D demo <span>↓</span></a>
+            <a class="button secondary" href="#pipeline">See how it works <span>→</span></a>
+          </div>
+        </div>
+        <div class="stage">
+          <span class="circle" aria-hidden="true"></span>
+          <img class="scene cutout" src="assets/hero-scene-tables.png" alt="Panda robot arm above a tray of groceries and sorting bins, rendered in MuJoCo.">
+        </div>
+        <div class="hero-corners">
+          <div class="hero-corner left">
+            <b>RoboSuite · MuJoCo</b>
+            <span>Panda + Robotiq 85</span>
+          </div>
+          <div class="hero-corner center">
+            <span>SCROLL</span>
+            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 9L12 17L20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hero-corner right">
+            <span>Pipeline</span>
+            <b>Detect · Pose · Pick · Place</b>
+          </div>
+        </div>
+      </section>
+
+      <section class="facts" aria-label="Project facts">
+        <div><span>Environment</span><b>RoboSuite / MuJoCo</b></div>
+        <div><span>Robot</span><b>Panda + Robotiq 85</b></div>
+        <div><span>Objects</span><b>Cereal, milk, can, bread</b></div>
+        <div><span>Stack</span><b>Python · ONNX · Three.js</b></div>
+      </section>
+
+      <section class="section wrap overview" id="overview" aria-labelledby="overview-title">
+        <div class="section-label"><span>01</span> The challenge</div>
+        <div class="split-heading">
+          <h2 id="overview-title">From one camera image to a completed placement.</h2>
+          <div>
+            <p>
+              A pick-and-place task looks simple until the robot has to decide where an
+              object is, how it is rotated and how to reach it smoothly without losing it.
+            </p>
+            <p>
+              I built one connected pipeline: perception converts a camera image into a
+              world pose; a joint-space controller turns that pose into a reliable motion.
+            </p>
+          </div>
+        </div>
+
+        <div class="outcome-grid">
+          <article>
+            <span class="number">01</span>
+            <h3>Vision-led</h3>
+            <p>Each run starts from what the camera sees, rather than from fixed object coordinates.</p>
+          </article>
+          <article>
+            <span class="number">02</span>
+            <h3>Pose-aware</h3>
+            <p>The robot receives position and rotation, so it can approach objects in the right orientation.</p>
+          </article>
+          <article>
+            <span class="number">03</span>
+            <h3>Checked in motion</h3>
+            <p>Grasp and placement are validated before the sequence continues to the next object.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="pipeline" aria-labelledby="pipeline-title">
+        <div class="wrap">
+          <div class="section-label"><span>02</span> The pipeline</div>
+          <div class="pipeline-heading">
+            <h2 id="pipeline-title">Four small systems, one complete robot action.</h2>
+            <p>Technical detail is kept here when it helps explain the action — not before it.</p>
+          </div>
+
+          <ol class="pipeline-list">
+            <li>
+              <span class="step">01</span>
+              <div><h3>Detect the object</h3><p>YOLO identifies the object class and its bounding box in the agent camera image.</p></div>
+              <span class="tag">YOLO · ONNX</span>
+            </li>
+            <li>
+              <span class="step">02</span>
+              <div><h3>Estimate its pose</h3><p>A pose model predicts position and rotation. Camera coordinates are converted to the robot's world frame.</p></div>
+              <span class="tag">6D pose</span>
+            </li>
+            <li>
+              <span class="step">03</span>
+              <div><h3>Plan a smooth approach</h3><p>The controller follows a clear state sequence: raise, align, descend, grasp, lift and move to bin.</p></div>
+              <span class="tag">Joint-space IK</span>
+            </li>
+            <li>
+              <span class="step">04</span>
+              <div><h3>Validate and continue</h3><p>The pipeline checks whether the object is held and whether it was released in the bin before continuing.</p></div>
+              <span class="tag">State machine</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section wrap" id="results" aria-labelledby="results-title">
+        <div class="section-label"><span>03</span> Model results</div>
+        <div class="split-heading result-heading">
+          <h2 id="results-title">Each model has one job — and one result to inspect.</h2>
+          <p>
+            Rather than hiding the models in one accuracy score, the project exposes what
+            each part produces. This makes failures traceable and the whole system easier to improve.
+          </p>
+        </div>
+
+        <div class="model-grid">
+          <article class="model-card accent-red">
+            <div class="model-top"><span>Model 01</span><span>Perception</span></div>
+            <h3>Object detector</h3>
+            <p>Finds Cereal, Milk, Can and Bread in the camera frame.</p>
+            <dl><div><dt>Input</dt><dd>Agent-view image</dd></div><div><dt>Output</dt><dd>Class + bounding box</dd></div></dl>
+            <div class="status"><i></i> Reviewable in the recorded scan</div>
+          </article>
+          <article class="model-card accent-rust">
+            <div class="model-top"><span>Model 02</span><span>Pose</span></div>
+            <h3>Pose estimator</h3>
+            <p>Translates a detected object into a position and rotation the robot can use.</p>
+            <dl><div><dt>Input</dt><dd>Detection crop</dd></div><div><dt>Output</dt><dd>XYZ + rotation matrix</dd></div></dl>
+            <div class="status"><i></i> Rendered as RGB pose axes</div>
+          </article>
+          <article class="model-card accent-moss">
+            <div class="model-top"><span>Model 03</span><span>Control</span></div>
+            <h3>Joint motion solver</h3>
+            <p>Converts Cartesian stage targets to controlled joint-position commands.</p>
+            <dl><div><dt>Input</dt><dd>World pose + stage</dd></div><div><dt>Output</dt><dd>7 joint targets</dd></div></dl>
+            <div class="status"><i></i> Logged for every controller stage</div>
+          </article>
+        </div>
+
+        <div class="results-note">
+          <span class="note-mark">↗</span>
+          <p><b>Why this matters:</b> when a pick fails, I can see whether the error came from detection, pose estimation or movement — instead of treating the robot as a black box.</p>
+        </div>
+      </section>
+
+      <section class="section demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="wrap">
+          <div class="section-label"><span>04</span> Robotics &amp; simulation</div>
+          <div class="demo-heading">
+            <div>
+              <h2 id="demo-title">Interactive / <em>demo</em></h2>
+              <p>Run a new vision-guided pick-and-place sequence or inspect a recorded trajectory in 3D.</p>
+            </div>
+          </div>
+
+          <div class="demo-layout">
+            <div class="demo-shell">
+              <div class="demo-toolbar"><span><i></i> Simulation player</span><span>Drag to orbit · scroll to zoom</span></div>
+              <iframe id="demo-player" name="demo-player" title="Interactive pick-and-place simulation" data-player-base="http://localhost:5173"></iframe>
+            </div>
+            <aside class="demo-sidebar">
+              <section class="demo-panel">
+                <h3>Run configuration</h3>
+                <label>Seed <input id="demo-seed" type="number" placeholder="Random" aria-label="Simulation seed"></label>
+                <button id="demo-run-button" class="run-button" type="button">Run simulation <span>▶</span></button>
+                <p id="demo-status-text" class="demo-status-text">Waiting for the player to load…</p>
+              </section>
+              <section class="demo-panel status-panel">
+                <h3>Status</h3>
+                <p id="demo-progress-label" class="demo-progress-label">—</p>
+                <ol>
+                  <li id="demo-phase-detect" class="active">Detect</li>
+                  <li id="demo-phase-pick">Pick</li>
+                  <li id="demo-phase-place">Place</li>
+                </ol>
+              </section>
+              <section class="demo-panel results-panel">
+                <h3>Results</h3>
+                <p><b>Objects placed</b><span id="demo-result-placed">—</span></p>
+                <p><b>Detection confidence</b><span id="demo-result-confidence">—</span></p>
+                <p><b>Pose accuracy</b><span id="demo-result-pose">—</span></p>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap reflection" aria-labelledby="reflection-title">
+        <div class="section-label"><span>05</span> What I learned</div>
+        <h2 id="reflection-title">Reliable robotics comes from making every hand-off visible.</h2>
+        <div class="reflection-grid">
+          <p><b>Simulation is a practical test bench.</b> It made it possible to tune motion, inspect edge cases and iterate safely before considering a physical robot.</p>
+          <p><b>Model quality is only part of the system.</b> Smooth placement also depends on coordinate transforms, controller limits and clear stop conditions.</p>
+          <p><b>Interactive replay makes work more legible.</b> A visitor can inspect the same trajectory from any angle instead of trusting a single rendered video.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap proj-footer"><span>RoboSuite Pick &amp; Place · 2026</span><a href="../../index.html">← Back to portfolio</a></footer>
+    <script src="case-study.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hero 1 — Cirkel-backdrop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <style>
+      /* shared hero-mockup base (same in every variant page) */
+      :root{ --mono:var(--font-mono); --sans:var(--font-display); }
+      *{ box-sizing:border-box; }
+      body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.5; }
+      a{ color:inherit; text-decoration:none; }
+      .proj-nav{ position:fixed; top:0; left:0; right:0; z-index:20; background:color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+      .proj-nav-row{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+      .proj-back{ font-family:var(--mono); font-size:12.5px; color:var(--sub); }
+      .hero{
+        --inset:max(40px, calc((100vw - 1700px)/2 + 40px));
+        height:auto; min-height:100svh; text-align:left;
+        display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(40px,6vw,100px);
+        align-items:center; justify-content:normal;
+        padding:110px var(--inset) 50px;
+        position:relative; overflow:hidden;
+      }
+      .eyebrow{ color:var(--sub); font:600 11px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+      .eyebrow span{ color:var(--red); margin-right:10px; }
+      .hero h1{ margin:20px 0; font-size:clamp(46px,5vw,88px); font-weight:900; letter-spacing:-.05em; line-height:.94; }
+      .hero h1 .red{ color:var(--red); }
+      .hero h1 .outline{ color:transparent; -webkit-text-stroke:1.6px var(--ink); }
+      .intro{ max-width:44ch; margin:0; color:var(--sub); font-size:17px; line-height:1.6; }
+      .actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+      .button{ border:1px solid var(--line); border-radius:4px; padding:13px 17px; font:600 12px var(--mono); background:#fff; }
+      .button span{ margin-left:12px; }
+      .button.primary{ background:var(--red); border-color:var(--red); color:#fff; }
+      .stage{ position:relative; }
+      .scene{ position:relative; z-index:1; display:block; width:100%; height:auto; }
+      .cutout{ filter:drop-shadow(0 26px 28px rgba(23,22,20,.22)); }
+      .plus{ position:absolute; z-index:2; color:var(--red); font:500 24px var(--mono); }
+      .switcher{ position:fixed; top:72px; right:18px; z-index:30; display:flex; gap:4px; padding:6px; background:#fff; border:1px solid var(--line); border-radius:8px; font:600 12px var(--mono); }
+      .switcher a{ padding:6px 10px; border-radius:5px; color:var(--sub); }
+      .switcher a:hover{ color:var(--red); }
+      .switcher a.active{ background:var(--red); color:#fff; }
+
+      /* variant 1: cutout scene over a big filled circle, outlined accent.
+         left:50% -- the circle centres on the scene as a whole (robot +
+         bins), and tracks it at every size since it's anchored to the image. */
+      .circle{ position:absolute; left:47%; top:36%; transform:translate(-50%,-50%); width:73%; aspect-ratio:1; border-radius:50%; background:color-mix(in srgb, var(--ink) 7%, var(--bg)); }
+      /* shrink-wrap the stage to the image so the circle's percentages are
+         measured against the image itself, keeping it locked on the robot;
+         the translateX nudges the whole scene a little to the left */
+      .stage{ width:fit-content; max-width:700px; margin-inline:auto; transform:translateX(-38px); }
+      /* soften the sliced-off legs: fade the image out over its last ~12%.
+         The drop-shadow moves from the img to the stage so it is computed
+         from the already-faded silhouette instead of being clipped by the
+         img's own mask. */
+      .scene{ -webkit-mask-image:linear-gradient(to bottom, #000 86%, transparent 99%); mask-image:linear-gradient(to bottom, #000 86%, transparent 99%); }
+      .cutout{ filter:none; }
+      .stage{ filter:drop-shadow(0 26px 28px rgba(23,22,20,.22)); }
+      /* the effects run all the way down to the hero's bottom edge --
+         behind the corner labels too -- so no bottom fade masks and no
+         hero-fade overlay washing that strip back to plain background */
+      .hero-dots{ -webkit-mask-image:none; mask-image:none; }
+      .hero-lines{ -webkit-mask-image:none; mask-image:none; }
+
+      /* elements carried over from the main page's hero (their classes --
+         .hero-glow/.hero-circle/.hero-plus/.hero-fade/.hero-corners -- are
+         styled by ../../../style.css already). The dot grid on the main page
+         is a canvas with cursor-reactivity disabled, so a CSS dot pattern
+         with the same spacing/colour/fade is pixel-equivalent here. */
+      .hero-dots{ position:absolute; inset:0; z-index:0; background-image:radial-gradient(rgba(192,32,42,.22) 1.2px, transparent 1.5px); background-size:26px 26px; -webkit-mask-image:linear-gradient(to bottom, black 0%, black 76%, transparent 100%); mask-image:linear-gradient(to bottom, black 0%, black 76%, transparent 100%); }
+      .hero-copy, .stage{ position:relative; z-index:1; }
+      /* align the corner labels with the page's content inset instead of the
+         viewport edge (on the main page the hero sits inside .wrap already) */
+      .hero-corners{ left:var(--inset); right:var(--inset); }
+      /* the main page's glow sits at an empty edge; here it overlaps the
+         scene, so soften it to keep the robot reading clearly */
+      .hero-glow.g1{ opacity:.5; }
+    </style>
+  </head>
+  <body>
+    <nav class="proj-nav">
+      <div class="wrap proj-nav-row">
+        <a class="proj-back" href="../index.html">← Terug naar case study</a>
+        <a class="mark" href="#">AO<span class="spark-wrap"><svg class="spark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z" fill="currentColor"/></svg></span></a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-dots" aria-hidden="true"></div>
+        <div class="hero-lines" aria-hidden="true">
+          <div class="hero-glow g1"></div>
+          <div class="hero-glow g2"></div>
+          <div class="hero-circle c1"></div>
+          <div class="hero-circle c2"></div>
+          <span class="hero-plus" style="left:46%; top:9%;"></span>
+          <span class="hero-plus" style="left:4%; top:24%;"></span>
+          <span class="hero-plus" style="left:34%; top:74%;"></span>
+          <span class="hero-plus" style="left:86%; top:20%;"></span>
+          <span class="hero-plus" style="left:64%; top:88%;"></span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> Robotics &amp; simulation</p>
+          <h1>A robot that<br>sees, picks<br><span class="outline">and sorts.</span></h1>
+          <p class="intro">A vision-guided pick-and-place pipeline that finds grocery objects, estimates their pose and places each one in the correct bin.</p>
+          <div class="actions">
+            <a class="button primary" href="#">Try the 3D demo <span>↓</span></a>
+            <a class="button" href="#">See how it works <span>→</span></a>
+          </div>
+        </div>
+        <div class="stage">
+          <span class="circle" aria-hidden="true"></span>
+          <img class="scene cutout" src="../assets/hero-scene-cutout.png" alt="Panda robot arm above a tray of groceries and sorting bins, rendered in MuJoCo.">
+        </div>
+        <div class="hero-corners">
+          <div class="hero-corner left">
+            <b>RoboSuite · MuJoCo</b>
+            <span>Panda + Robotiq 85</span>
+          </div>
+          <div class="hero-corner center">
+            <span>SCROLL</span>
+            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 9L12 17L20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hero-corner right">
+            <span>Pipeline</span>
+            <b>Detect · Pose · Pick · Place</b>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="switcher" aria-label="Hero varianten">
+      <a href="index.html">☰</a>
+      <a class="active" href="variant-1.html">1</a>
+      <a href="variant-1b.html">1b</a>
+      <a href="variant-1c.html">1c</a>
+      <a href="variant-1d.html">1d</a>
+      <a href="variant-1e.html">1e</a>
+    </nav>
+  </body>
+</html>

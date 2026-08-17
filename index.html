@@ -1,1169 +1,336 @@
 <!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anouk Okkema — AI &amp; Data</title>
-<meta name="description" content="Portfolio van Anouk Okkema — Applied Data Science &amp; AI, projecten in robotics, machine learning en data engineering.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-
-/* ============ tokens ============ */
-:root{
-  --bg:#f4f2ee;
-  --bg-alt:#eae6de;
-  --card:#ffffff;
-  --ink:#1c1a17;
-  --sub:#726b60;
-  --line:#ddd6c9;
-  --red:#c0202a;
-  --red-ink:#c0202a;
-  --red-tint:#f9e0dd;
-  --rust:#b8541f;
-  --rust-tint:#f3e2d3;
-  --ochre:#93701c;
-  --ochre-tint:#f0e6cd;
-  --moss:#3f6b4a;
-  --moss-tint:#dde9e0;
-  --navy:#2c3550;
-  --navy-tint:#dfe1ea;
-  --focus:#c0202a;
-  --font-display:'Figtree', -apple-system, sans-serif;
-  --font-mono:'JetBrains Mono','SFMono-Regular',Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#161410; --bg-alt:#1d1a15; --card:#201d17; --ink:#f1ece2; --sub:#a89e8c; --line:#3a352a;
-    --red:#e2545c; --red-tint:#3a1e1e;
-    --rust:#e08a4f; --rust-tint:#3a2a1a;
-    --ochre:#d8b45a; --ochre-tint:#332c17;
-    --moss:#7fb389; --moss-tint:#1e2c22;
-    --navy:#93a0c9; --navy-tint:#1f2434;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#161410; --bg-alt:#1d1a15; --card:#201d17; --ink:#f1ece2; --sub:#a89e8c; --line:#3a352a;
-  --red:#e2545c; --red-tint:#3a1e1e;
-}
-:root[data-theme="light"]{
-  --bg:#f4f2ee; --bg-alt:#eae6de; --card:#ffffff; --ink:#1c1a17; --sub:#726b60; --line:#ddd6c9;
-  --red:#c0202a; --red-tint:#f9e0dd;
-}
-
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font-display);
-  line-height:1.5;
-  overflow-x:hidden;
-}
-a{ color:inherit; text-decoration:none; }
-img{ max-width:100%; display:block; }
-::selection{ background:var(--red-tint); color:var(--red); }
-:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
-
-.wrap{ max-width:1700px; margin:0 auto; padding:0 40px; }
-@media (max-width:640px){ .wrap{ padding:0 20px; } }
-/* nav + hero read edge-to-edge like the original's full-bleed hero photo —
-   only the copy-heavy sections below stay capped at a readable column width */
-.wrap-full{ max-width:none; }
-
-/* ============ reveal-on-scroll ============ */
-.reveal{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .7s cubic-bezier(.16,.8,.24,1), transform .7s cubic-bezier(.16,.8,.24,1);
-}
-.reveal.in{ opacity:1; transform:translateY(0); }
-@media (prefers-reduced-motion:reduce){
-  .reveal{ opacity:1; transform:none; transition:none; }
-  html{ scroll-behavior:auto; }
-}
-
-/* ============ spark mark ============ */
-.spark-wrap{
-  display:inline-flex;
-  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
-}
-.mark:hover .spark-wrap{ transform:scale(1.7) rotate(25deg); }
-.spark{
-  display:inline-block;
-  width:1em; height:1em;
-  animation:spin 9s linear infinite;
-}
-@keyframes spin{ to{ transform:rotate(360deg); } }
-@media (prefers-reduced-motion:reduce){ .spark{ animation:none; } .spark-wrap{ transition:none; } }
-
-/* ============ nav ============ */
-.nav{
-  position:fixed; top:0; left:0; right:0; z-index:40;
-}
-.nav .wrap{ display:flex; align-items:flex-start; justify-content:space-between; padding-top:19px; padding-bottom:16px; }
-section, #top{ scroll-margin-top:78px; }
-.mark{
-  font-family:var(--font-mono); font-weight:700; font-size:25px;
-  display:flex; align-items:center; gap:6px; color:var(--ink); margin-top:2px;
-}
-.mark .spark{ color:var(--red); }
-
-/* Row → stack, scrubbed directly by scroll position (no fixed-time transition):
-   the list's layout (gap/padding) stays fixed at its stacked, resting size at
-   all times — only its paint (background/border/shadow) fades with --p — so
-   every link's "settled" spot never moves under it. At --p:0 each link is
-   pulled off that fixed spot with a transform back onto its open/row position;
-   releasing that pull as --p climbs to 1 is the entire animation. Keeping the
-   resting geometry constant is what keeps the math (and the drift) honest. */
-.navlist{
-  --p: 0;
-  list-style:none; display:flex; flex-direction:column; gap:12px; margin:0; padding:14px 18px;
-  border-radius:10px;
-  background:color-mix(in srgb, var(--card) calc(var(--p) * 100%), transparent);
-  border:1px solid color-mix(in srgb, var(--line) calc(var(--p) * 100%), transparent);
-  box-shadow:0 14px 30px -18px rgba(20,15,10, calc(var(--p) * 0.3));
-}
-.navlist li a{
-  position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:3px;
-  font-family:var(--font-mono);
-}
-.navlist li{ will-change:transform; }
-.navlist li a .n{ font-size:10px; letter-spacing:0.05em; color:var(--sub); transition:color .2s ease; }
-.navlist li a .l{ font-size:13px; font-weight:700; color:var(--ink); transition:color .2s ease; }
-.navlist li a:hover .l{ color:var(--red); }
-.navlist li a.active .n, .navlist li a.active .l{ color:var(--red); }
-.dot-live{ position:relative; width:9px; height:9px; border-radius:50%; background:#2ea043; flex:none; box-shadow:0 0 0 1px color-mix(in srgb, #2ea043 40%, transparent); }
-.dot-live::after{
-  content:""; position:absolute; inset:-1.5px; border-radius:50%; border:1.5px solid #2ea043;
-  animation:pulse 2s ease-out infinite;
-}
-@keyframes pulse{ 0%{ transform:scale(.5); opacity:.9; } 100%{ transform:scale(1.6); opacity:0; } }
-
-.burger{
-  display:none; flex-direction:column; justify-content:center; gap:5px;
-  width:34px; height:34px; border:1px solid var(--line); border-radius:3px;
-  background:var(--card); cursor:pointer; padding:0;
-}
-.burger span{ display:block; width:14px; height:1.5px; background:var(--ink); margin:0 auto; transition:transform .3s ease, opacity .3s ease; }
-.burger.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
-.burger.open span:nth-child(2){ opacity:0; }
-.burger.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
-
-.navlist-mobile{
-  display:none;
-  list-style:none; margin:0; padding:8px 0 18px;
-  flex-direction:column; gap:2px;
-}
-.navlist-mobile.open{ display:flex; }
-.navlist-mobile li a{
-  display:flex; align-items:baseline; gap:12px; padding:11px 0;
-  font-family:var(--font-mono); border-top:1px solid var(--line);
-}
-.navlist-mobile li a .n{ font-size:11px; color:var(--sub); }
-.navlist-mobile li a .l{ font-size:16px; font-weight:700; color:var(--ink); }
-.navlist-mobile li a.active .n, .navlist-mobile li a.active .l{ color:var(--red); }
-
-@media (max-width:809px){
-  .navlist{ display:none; }
-  .burger{ display:flex; }
-  .nav{ flex-direction:column; }
-  .nav .wrap{ flex-wrap:wrap; align-items:center; padding-top:14px; padding-bottom:14px; }
-  .navlist-mobile{ width:100%; }
-}
-
-/* ============ hero ============ */
-.hero{
-  position:relative;
-  height:100svh;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center;
-}
-.hero-stack{ display:flex; flex-direction:column; align-items:center; gap:6px; width:100%; position:relative; z-index:1; }
-
-/* interactive dot grid — canvas, not a static CSS pattern, so the dots can
-   actually swell/brighten near the cursor instead of just sitting there */
-.hero-dotgrid{
-  position:absolute; top:0; bottom:0; left:50%; width:100vw;
-  transform:translateX(-50%); z-index:0;
-  -webkit-mask-image:linear-gradient(to bottom, black 0%, black 76%, transparent 100%);
-  mask-image:linear-gradient(to bottom, black 0%, black 76%, transparent 100%);
-}
-
-/* line-art layer: outline circles + small crosshair marks, full-bleed like
-   the dot grid (edge-to-edge, not boxed in by the wrap's side padding) */
-.hero-lines{
-  position:absolute; top:0; bottom:0; left:50%; width:100vw;
-  transform:translateX(-50%); z-index:0; pointer-events:none;
-  -webkit-mask-image:linear-gradient(to bottom, black 0%, black 72%, transparent 96%);
-  mask-image:linear-gradient(to bottom, black 0%, black 72%, transparent 96%);
-}
-
-/* the hero's pattern recedes into a soft fade rather than cutting off hard
-   right where About begins — reads as one continuous surface, not a seam */
-.hero-fade{
-  position:absolute; left:0; right:0; bottom:0; height:26%; z-index:1; pointer-events:none;
-  background:linear-gradient(to bottom, transparent, var(--bg) 92%);
-}
-#about{ padding-top:104px; }
-.hero-circle{ position:absolute; border-radius:50%; border:1px solid color-mix(in srgb, var(--red) 20%, transparent); }
-.hero-circle.c1{ width:56vw; height:56vw; max-width:800px; max-height:800px; min-width:460px; min-height:460px; top:-32%; left:-16%; }
-.hero-circle.c2{ width:34vw; height:34vw; max-width:520px; max-height:520px; min-width:320px; min-height:320px; top:32%; right:-10%; border-color:color-mix(in srgb, var(--ink) 12%, transparent); }
-.hero-circle.c3{ width:22vw; height:22vw; max-width:340px; max-height:340px; min-width:220px; min-height:220px; bottom:-8%; left:-2%; }
-
-.hero-plus{ position:absolute; width:15px; height:15px; opacity:.5; }
-.hero-plus::before, .hero-plus::after{ content:""; position:absolute; background:var(--sub); }
-.hero-plus::before{ left:50%; top:0; bottom:0; width:1px; transform:translateX(-50%); }
-.hero-plus::after{ top:50%; left:0; right:0; height:1px; transform:translateY(-50%); }
-
-/* soft blurred color wash — sits behind the line-art for depth */
-.hero-glow{ position:absolute; border-radius:50%; filter:blur(64px); }
-.hero-glow.g1{
-  width:42vw; height:42vw; max-width:620px; max-height:620px; min-width:320px; min-height:320px;
-  top:-14%; right:-12%;
-  background:radial-gradient(circle, color-mix(in srgb, var(--red) 45%, var(--red-tint)) 0%, var(--red-tint) 48%, transparent 74%);
-  opacity:.8;
-}
-.hero-glow.g2{
-  width:30vw; height:30vw; max-width:440px; max-height:440px; min-width:240px; min-height:240px;
-  bottom:-12%; left:-8%;
-  background:radial-gradient(circle, color-mix(in srgb, var(--red) 22%, var(--red-tint)) 0%, var(--red-tint) 50%, transparent 74%);
-  opacity:.75;
-}
-
-@media (max-width:760px){
-  .hero-circle.c2, .hero-circle.c3{ display:none; }
-  .hero-plus{ display:none; }
-  .hero-glow.g2{ display:none; }
-}
-
-.headline{
-  font-weight:900; letter-spacing:-0.03em; margin:0; text-wrap:balance;
-  font-size:clamp(40px,8.6vw,100px); line-height:0.92;
-}
-.headline .line2{ display:flex; align-items:baseline; justify-content:center; gap:0.28em; flex-wrap:wrap; }
-.headline .outline{
-  color:transparent; -webkit-text-stroke:1.5px var(--ink); text-stroke:1.5px var(--ink);
-}
-
-.hero-label{
-  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:18px;
-  width:100%; margin:18px auto; /* actual width is set to match the headline's width in JS */
-  font-family:var(--font-mono); font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
-  line-height:1;
-}
-.hero-label .stagger{ display:inline-flex; cursor:default; overflow:hidden; }
-.hero-label .stagger.name{ justify-self:start; color:var(--ink); font-weight:700; }
-.hero-label .stagger.role{ justify-self:end; color:var(--red); font-weight:600; }
-.hero-label .stagger .ch{
-  position:relative; display:inline-block; height:1em; overflow:hidden;
-}
-.hero-label .stagger .seg{
-  display:block; height:1em; transition:transform .4s ease-in-out;
-}
-.hero-label .stagger .seg.bottom{
-  position:absolute; left:0; top:0; width:100%; transform:translateY(100%);
-}
-.hero-label .stagger .ch.up .seg.top{ transform:translateY(-100%); }
-.hero-label .stagger .ch.up .seg.bottom{ transform:translateY(0%); }
-
-.bar-track{ position:relative; width:100%; height:2px; background:transparent; overflow:hidden; }
-.bar-track i{
-  position:absolute; top:0; left:-42%; width:42%; height:100%;
-  background:linear-gradient(to right, transparent, var(--red) 50%, transparent);
-  animation:barShoot 1.6s ease-in-out infinite alternate;
-}
-@keyframes barShoot{ from{ left:-42%; } to{ left:100%; } }
-@media (prefers-reduced-motion:reduce){
-  .bar-track i{ animation:none; left:29%; background:linear-gradient(to right, transparent, var(--red) 50%, transparent); }
-}
-
-/* one full-bleed strip, edges flush with the nav's own left/right content
-   edge (.hero already sits inset by the wrap's padding, so 0 here lines up
-   with the logo/nav links above it instead of adding a second 32px). */
-.hero-corners{ position:absolute; left:0; right:0; bottom:26px; z-index:5; }
-.hero-corner{
-  position:absolute; bottom:0;
-  font-family:var(--font-mono); font-size:11.5px; color:var(--sub); line-height:1.5;
-}
-.hero-corner b{ display:block; color:var(--ink); font-weight:600; }
-.hero-corner.left{ left:0; text-align:left; }
-.hero-corner.right{ right:0; display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
-.hero-corner.center{ left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; letter-spacing:.08em; }
-.hero-corner.center .chev{ animation:bob 1.7s ease-in-out infinite; }
-@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(5px); } }
-.hero-corner b.avail-inline{ display:flex; align-items:center; gap:6px; }
-@media (max-width:680px){ .hero-corners{ display:none; } }
-@media (prefers-reduced-motion:reduce){ .hero-corner.center .chev{ animation:none; } }
-
-/* ============ section shell ============ */
-section{ padding:68px 0;}
-.eyebrow{
-  font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-  color:var(--sub); display:flex; align-items:center; gap:10px; margin-bottom:28px;
-}
-.eyebrow .idx{ color:var(--red); }
-.eyebrow::after{ content:""; flex:1; height:1px; background:var(--line); }
-
-.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-
-@keyframes scroll-x{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-
-/* ============ companies band — full-bleed strip right after the hero ============ */
-.companies-band{
-  background:var(--bg-alt); border-bottom:1px solid var(--line);
-  padding:clamp(32px,4.5vw,60px) 0 clamp(56px,7vw,110px);
-  overflow:hidden;
-}
-.companies-label{
-  text-align:center; font-style:italic; font-weight:500;
-  font-size:14px; letter-spacing:0.03em; text-transform:uppercase; color:var(--sub);
-  margin:0 0 clamp(28px,4.5vw,48px);
-}
-.companies-marquee-wrap{ overflow:hidden; }
-.companies-marquee-wrap:hover .companies-marquee{ animation-play-state:paused; }
-/* duration scales with how many copies JS ends up rendering, so the speed
-   (px/sec) stays constant no matter how many times the set had to repeat
-   to fill the track — see setMarqueeDuration() */
-.companies-marquee{ display:flex; align-items:center; width:max-content; animation:scroll-x 30s linear infinite; will-change:transform; }
-@media (prefers-reduced-motion:reduce){ .companies-marquee{ animation:none; } }
-.co-item{
-  display:flex; align-items:center; gap:clamp(40px,5.5vw,80px);
-  white-space:nowrap; padding-right:clamp(40px,5.5vw,80px);
-}
-.co-logo{
-  height:clamp(34px,5.5vw,69px); width:auto; display:block;
-  filter:grayscale(1); opacity:.55;
-  transition:opacity .25s ease, filter .25s ease;
-}
-.co-item:hover .co-logo{ opacity:.9; filter:grayscale(0.4); }
-.co-sep{ display:inline-block; width:7px; height:7px; background:var(--red); transform:rotate(45deg); flex:none; }
-
-/* ============ about ============ */
-/* scrolling ticker title — "ABOUT ★ ME" repeated edge-to-edge, mixed
-   outline/fill like the hero's ANOUK. Driven by scroll position (JS sets
-   transform directly), not a timed animation — see the ticker scroll-drive
-   block in the script, which wraps the offset with modulo so it loops
-   forever in either scroll direction without ever snapping. */
-.ticker-wrap{ width:100vw; margin-left:calc(50% - 50vw); overflow:hidden; margin-bottom:clamp(36px,6vw,64px); }
-.ticker{
-  display:flex; align-items:baseline; width:max-content;
-  font-weight:900; letter-spacing:-0.02em; white-space:nowrap;
-  font-size:clamp(46px,8.6vw,110px); line-height:0.9;
-  will-change:transform;
-}
-.ticker-item{
-  display:inline-flex; align-items:baseline; padding-right:0.5em;
-  color:transparent; -webkit-text-stroke:1.5px var(--ink);
-}
-.ticker-item em{ font-style:normal; color:var(--red); -webkit-text-stroke:0; margin-left:0.24em; }
-
-.about-columns{ display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start; }
-@media (max-width:800px){ .about-columns{ grid-template-columns:1fr; gap:40px; } }
-
-.about-photo .frame{
-  position:relative; border-radius:8px; overflow:hidden; border:1px solid var(--line);
-  aspect-ratio:3/4; background:var(--ink);
-  box-shadow:0 18px 34px -22px rgba(20,15,10,.28);
-}
-.about-photo img{
-  width:100%; height:100%; object-fit:cover; object-position:top center;
-  filter:grayscale(1) brightness(1.15) contrast(1.03);
-  display:block; transition:filter .5s ease, transform .5s ease;
-}
-.about-photo:hover img{ filter:grayscale(0) brightness(1.02) contrast(1.05); transform:scale(1.03); }
-.about-coords{ font-family:var(--font-mono); font-size:10.5px; color:var(--sub); letter-spacing:.04em; margin:8px 2px 0; }
-.about-lead{ font-style:italic; color:var(--sub); font-size:15px; line-height:1.6; margin:22px 0 20px; max-width:34ch; }
-.about-locations{ display:flex; flex-direction:column; gap:6px; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--sub); }
-.about-locations b{ color:var(--ink); font-weight:600; }
-.stat-row{ display:flex; gap:28px; margin:24px 0 0; flex-wrap:wrap; }
-.stat b{ font-family:var(--font-mono); font-size:24px; color:var(--red); display:block; font-variant-numeric:tabular-nums; }
-.stat span{ font-size:11.5px; color:var(--sub); }
-
-.about-cta{ display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
-.btn{
-  font-family:var(--font-mono); font-size:13px; font-weight:600;
-  padding:12px 20px; border-radius:3px; display:inline-flex; align-items:center; gap:8px;
-  border:1.5px solid var(--red); color:var(--red); background:transparent;
-  transition:background .2s ease, color .2s ease, transform .15s ease;
-}
-.btn.solid{ background:var(--red); color:#fff; border-color:var(--red); }
-.btn.solid:hover{ background:#9c1a22; border-color:#9c1a22; }
-.btn.ghost{ border-color:var(--line); color:var(--ink); }
-.btn.ghost:hover{ border-color:var(--red); color:var(--red); }
-.btn:not(.solid):hover{ transform:translateY(-1px); }
-
-/* work experience / study lists */
-.record-group{ margin-bottom:36px; }
-.record-group:last-child{ margin-bottom:0; }
-.record-group h4{
-  font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em;
-  color:var(--sub); margin:0 0 4px; font-weight:600;
-}
-.record{
-  display:flex; justify-content:space-between; align-items:baseline; gap:16px;
-  padding:16px 0; border-top:1px solid var(--line);
-}
-.record:first-of-type{ border-top:none; }
-.record-role{ font-size:19px; font-weight:800; margin:0; letter-spacing:-0.01em; }
-.record-org{ font-size:12.5px; color:var(--sub); margin:2px 0 0; }
-.record-date{ font-family:var(--font-mono); font-size:11px; color:var(--sub); white-space:nowrap; padding-top:4px; }
-
-/* core foundations */
-.foundations{ margin-top:64px; }
-.foundations-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden; }
-@media (max-width:800px){ .foundations-grid{ grid-template-columns:1fr 1fr; } }
-@media (max-width:480px){ .foundations-grid{ grid-template-columns:1fr; } }
-.foundation-card{ background:var(--card); padding:22px 20px; }
-.foundation-card .fn{ font-family:var(--font-mono); font-size:11px; color:var(--red); display:block; margin-bottom:14px; }
-.foundation-card h5{ font-size:15.5px; font-weight:800; margin:0 0 8px; line-height:1.3; }
-.foundation-card p{ font-size:12.5px; color:var(--sub); margin:0; line-height:1.55; }
-
-/* core competencies */
-.competencies{ margin-top:56px; }
-.competency-list{ display:flex; flex-direction:column; }
-.competency{
-  display:flex; align-items:center; gap:14px; padding:16px 0; border-top:1px solid var(--line);
-}
-.competency:first-child{ border-top:none; }
-.competency svg{ color:var(--red); flex:none; width:18px; height:18px; }
-.competency span{ font-weight:700; font-size:15px; }
-
-/* my toolkit */
-.toolkit{ margin-top:56px; }
-.toolkit-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-@media (max-width:760px){ .toolkit-grid{ grid-template-columns:repeat(2,1fr); } }
-.tool-card{
-  background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px;
-  text-align:center; transition:border-color .15s ease, transform .15s ease;
-}
-.tool-card:hover{ border-color:var(--red); transform:translateY(-2px); }
-.tool-card .tool-name{ display:block; font-weight:700; font-size:13px; margin-top:2px; }
-.tool-card .tool-cat{ display:block; font-family:var(--font-mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--sub); margin-top:4px; }
-
-.about-block-title{
-  font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em;
-  color:var(--sub); margin:0 0 20px; display:flex; align-items:center; gap:10px;
-}
-.about-block-title::after{ content:""; flex:1; height:1px; background:var(--line); }
-
-/* ============ projects ============ */
-.projects{ display:flex; flex-direction:column; gap:16px; }
-.card{
-  --tint:var(--red-tint); --accent:var(--red);
-  background:var(--card); border:1px solid var(--line); border-radius:8px;
-  padding:26px 28px; position:relative; overflow:hidden;
-  transition:transform .3s cubic-bezier(.16,.8,.24,1), box-shadow .3s ease, border-color .3s ease;
-  transform-style:preserve-3d;
-  cursor:default;
-}
-.card::before{
-  content:""; position:absolute; top:0; left:0; width:5px; height:100%; background:var(--accent);
-  transform:scaleY(0); transform-origin:top; transition:transform .3s ease;
-}
-.card:hover{ box-shadow:0 18px 36px -20px rgba(20,15,10,.28); border-color:var(--accent); }
-.card:hover::before{ transform:scaleY(1); }
-.card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:10px; }
-.card-title{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
-.card h3{ font-size:18px; margin:0; font-weight:800; }
-.card .year{ font-family:var(--font-mono); font-size:12px; color:var(--sub); }
-.card .num{ font-family:var(--font-mono); font-size:12px; color:var(--accent); }
-.card p{ font-size:14.5px; color:var(--sub); margin:0 0 14px; max-width:64ch; line-height:1.6; }
-.tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
-.tag{
-  font-family:var(--font-mono); font-size:11px; padding:4px 10px; border-radius:3px;
-  background:var(--tint); color:var(--accent); font-weight:600;
-}
-
-/* ============ contact / footer ============ */
-.contact{ text-align:left; }
-.contact h2{ font-size:clamp(30px,6vw,58px); font-weight:900; letter-spacing:-0.02em; margin:0 0 20px; text-wrap:balance; }
-.contact h2 a{ border-bottom:2px solid var(--red); }
-.contact h2 a:hover{ color:var(--red); }
-footer{
-  border-top:1px solid var(--line); padding:26px 0 50px; font-family:var(--font-mono); font-size:12px; color:var(--sub);
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-}
-footer a:hover{ color:var(--red); }
-.back-top{ font-family:var(--font-mono); font-size:12px; color:var(--sub); }
-.back-top:hover{ color:var(--red); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anouk Okkema — AI &amp; Data</title>
+  <meta name="description" content="Portfolio van Anouk Okkema — Applied Data Science &amp; AI, projecten in robotics, machine learning en data engineering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap wrap-full">
-    <a class="mark" href="#top">AO
-      <span class="spark-wrap"><svg class="spark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z" fill="currentColor"/>
-      </svg></span>
-    </a>
-    <ul class="navlist" id="navlist">
-      <li><a href="#about" data-nav><span class="n">01</span><span class="l">About</span></a></li>
-      <li><a href="#work" data-nav><span class="n">02</span><span class="l">Work</span></a></li>
-      <li><a href="#contact" data-nav><span class="n">03</span><span class="l">Contact</span></a></li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="navlist-mobile" id="navlist-mobile">
-      <li><a href="#about" data-nav-m><span class="n">01</span><span class="l">About</span></a></li>
-      <li><a href="#work" data-nav-m><span class="n">02</span><span class="l">Work</span></a></li>
-      <li><a href="#contact" data-nav-m><span class="n">03</span><span class="l">Contact</span></a></li>
-    </ul>
+  <nav class="nav">
+    <div class="wrap wrap-full">
+      <a class="mark" href="#top">
+        AO
+        <span class="spark-wrap">
+          <svg class="spark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </a>
+
+      <ul class="navlist" id="navlist">
+        <li><a href="#about" data-nav><span class="n">01</span><span class="l">About</span></a></li>
+        <li><a href="#work" data-nav><span class="n">02</span><span class="l">Work</span></a></li>
+        <li><a href="#contact" data-nav><span class="n">03</span><span class="l">Contact</span></a></li>
+      </ul>
+
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navlist-mobile" id="navlist-mobile">
+        <li><a href="#about" data-nav-m><span class="n">01</span><span class="l">About</span></a></li>
+        <li><a href="#work" data-nav-m><span class="n">02</span><span class="l">Work</span></a></li>
+        <li><a href="#contact" data-nav-m><span class="n">03</span><span class="l">Contact</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="top" class="wrap wrap-full">
+    <header class="hero">
+
+      <canvas class="hero-dotgrid" id="dotgrid" aria-hidden="true"></canvas>
+
+      <div class="hero-lines" id="heroLines" aria-hidden="true">
+        <div class="hero-glow g1"></div>
+        <div class="hero-glow g2"></div>
+        <div class="hero-circle c1"></div>
+        <div class="hero-circle c2"></div>
+        <div class="hero-circle c3"></div>
+        <span class="hero-plus" style="left:47%; top:5%;"></span>
+        <span class="hero-plus" style="left:20%; top:13%;"></span>
+        <span class="hero-plus" style="left:4%; top:22%;"></span>
+        <span class="hero-plus" style="left:25%; top:42%;"></span>
+        <span class="hero-plus" style="left:70%; top:26%;"></span>
+        <span class="hero-plus" style="left:83%; top:66%;"></span>
+        <span class="hero-plus" style="left:61%; top:81%;"></span>
+        <span class="hero-plus" style="left:28%; top:95%;"></span>
+      </div>
+
+      <div class="hero-fade" aria-hidden="true"></div>
+
+      <div class="hero-stack">
+        <h1 class="headline">HI THERE</h1>
+
+        <div class="hero-label">
+          <span class="stagger name" data-text="Anouk Okkema"></span>
+          <span class="bar-track"><i></i></span>
+          <span class="stagger role" data-text="AI Engineer"></span>
+        </div>
+
+        <h1 class="headline"><span class="line2">I AM <span class="outline">ANOUK</span></span></h1>
+      </div>
+
+      <div class="hero-corners">
+        <div class="hero-corner left">
+          <b>Based in Oosterhout, NL</b>
+          <span id="clock">--:--</span>
+        </div>
+        <div class="hero-corner center">
+          <span>SCROLL</span>
+          <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 9L12 17L20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="hero-corner right">
+          <span>Work availability</span>
+          <b class="avail-inline"><span class="dot-live"></span>Actively seeking</b>
+        </div>
+      </div>
+
+    </header>
   </div>
-</nav>
 
-<div id="top" class="wrap wrap-full">
-  <header class="hero">
-    <canvas class="hero-dotgrid" id="dotgrid" aria-hidden="true"></canvas>
-    <div class="hero-lines" id="heroLines" aria-hidden="true">
-      <div class="hero-glow g1"></div>
-      <div class="hero-glow g2"></div>
-      <div class="hero-circle c1"></div>
-      <div class="hero-circle c2"></div>
-      <div class="hero-circle c3"></div>
-      <span class="hero-plus" style="left:47%; top:5%;"></span>
-      <span class="hero-plus" style="left:20%; top:13%;"></span>
-      <span class="hero-plus" style="left:4%; top:22%;"></span>
-      <span class="hero-plus" style="left:25%; top:42%;"></span>
-      <span class="hero-plus" style="left:70%; top:26%;"></span>
-      <span class="hero-plus" style="left:83%; top:66%;"></span>
-      <span class="hero-plus" style="left:61%; top:81%;"></span>
-      <span class="hero-plus" style="left:28%; top:95%;"></span>
-    </div>
-    <div class="hero-fade" aria-hidden="true"></div>
-    <div class="hero-stack">
-      <h1 class="headline">HI THERE</h1>
-
-      <div class="hero-label">
-        <span class="stagger name" data-text="Anouk Okkema"></span>
-        <span class="bar-track"><i></i></span>
-        <span class="stagger role" data-text="AI Engineer"></span>
+  <div class="companies-band">
+    <p class="companies-label">Some of the companies I've worked with</p>
+    <div class="companies-marquee-wrap">
+      <div class="companies-marquee" id="companiesMarquee">
+        <span class="co-item"><img class="co-logo" src="assets/maiburg-logo.png" alt="Maiburg"><i class="co-sep"></i></span>
+        <span class="co-item"><img class="co-logo" src="assets/truelime-logo.png" alt="TrueLime"><i class="co-sep"></i></span>
       </div>
-
-      <h1 class="headline"><span class="line2">I AM <span class="outline">ANOUK</span></span></h1>
-    </div>
-
-    <div class="hero-corners">
-      <div class="hero-corner left">
-        <b>Based in Oosterhout, NL</b>
-        <span id="clock">--:--</span>
-      </div>
-      <div class="hero-corner center">
-        <span>SCROLL</span>
-        <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 9L12 17L20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="hero-corner right">
-        <span>Work availability</span>
-        <b class="avail-inline"><span class="dot-live"></span>Actively seeking</b>
-      </div>
-    </div>
-  </header>
-</div>
-
-<div class="companies-band">
-  <p class="companies-label">Some of the companies I've worked with</p>
-  <div class="companies-marquee-wrap">
-    <div class="companies-marquee" id="companiesMarquee">
-      <span class="co-item"><img class="co-logo" src="assets/maiburg-logo.png" alt="Maiburg"><i class="co-sep"></i></span>
-      <span class="co-item"><img class="co-logo" src="assets/truelime-logo.png" alt="TrueLime"><i class="co-sep"></i></span>
     </div>
   </div>
-</div>
 
-<div class="wrap">
+  <div class="wrap">
 
-  <section id="about">
-    <div class="eyebrow reveal"><span class="idx">01</span> About</div>
-    <div class="ticker-wrap reveal" aria-hidden="true">
-      <div class="ticker" id="aboutTicker">
-        <span class="ticker-item">ABOUT<em>ME</em></span>
-        <span class="ticker-item">ABOUT<em>ME</em></span>
-        <span class="ticker-item">ABOUT<em>ME</em></span>
-        <span class="ticker-item">ABOUT<em>ME</em></span>
-      </div>
-    </div>
-    <h2 class="sr-only">Over Anouk Okkema</h2>
+    <section id="about">
+      <div class="eyebrow reveal"><span class="idx">01</span> About</div>
 
-    <div class="about-columns">
-      <div class="reveal">
-        <div class="about-photo">
-          <div class="frame">
-            <img src="assets/profile.png" alt="Portret van Anouk Okkema">
-          </div>
-        </div>
-        <p class="about-coords">Oosterhout — 51°38'N 4°51'E</p>
-        <p class="about-lead">10+ projecten in AI, robotics en data — als onderzoek en als code die de praktijk in ging.</p>
-        <div class="about-locations">
-          <div>Locatie — <b>Oosterhout, Nederland</b></div>
-          <div>Beschikbaarheid — <b>Open, direct inzetbaar</b></div>
-        </div>
-        <div class="stat-row">
-          <div class="stat"><b data-count="3" data-suffix="+">0</b><span>jaar werkervaring</span></div>
-          <div class="stat"><b data-count="5">0</b><span>projecten uitgelicht</span></div>
-          <div class="stat"><b data-count="2">0</b><span>opleidingen</span></div>
+      <div class="ticker-wrap reveal" aria-hidden="true">
+        <div class="ticker" id="aboutTicker">
+          <span class="ticker-item">ABOUT<em>ME</em></span>
+          <span class="ticker-item">ABOUT<em>ME</em></span>
+          <span class="ticker-item">ABOUT<em>ME</em></span>
+          <span class="ticker-item">ABOUT<em>ME</em></span>
         </div>
       </div>
+      <h2 class="sr-only">Over Anouk Okkema</h2>
 
-      <div class="reveal">
-        <div class="record-group">
-          <h4>Work experience</h4>
-          <div class="record">
-            <div><p class="record-role">Data Scientist Intern</p><p class="record-org">TrueLime</p></div>
-            <div class="record-date">MAR — JUL 2024</div>
+      <div class="about-columns">
+
+        <div class="reveal">
+          <div class="about-photo">
+            <div class="frame">
+              <img src="assets/profile.png" alt="Portret van Anouk Okkema">
+            </div>
           </div>
-          <div class="record">
-            <div><p class="record-role">AI Developer</p><p class="record-org">TrueLime</p></div>
-            <div class="record-date">OCT 2023 — FEB 2024</div>
+          <p class="about-coords">Oosterhout — 51°38'N 4°51'E</p>
+          <p class="about-lead">10+ projecten in AI, robotics en data — als onderzoek en als code die de praktijk in ging.</p>
+          <div class="about-locations">
+            <div>Locatie — <b>Oosterhout, Nederland</b></div>
+            <div>Beschikbaarheid — <b>Open, direct inzetbaar</b></div>
           </div>
-          <div class="record">
-            <div><p class="record-role">Junior Data Analist</p><p class="record-org">Maiburg</p></div>
-            <div class="record-date">SEP 2022 — AUG 2023</div>
+          <div class="stat-row">
+            <div class="stat"><b data-count="3" data-suffix="+">0</b><span>jaar werkervaring</span></div>
+            <div class="stat"><b data-count="5">0</b><span>projecten uitgelicht</span></div>
+            <div class="stat"><b data-count="2">0</b><span>opleidingen</span></div>
           </div>
         </div>
 
-        <div class="record-group">
-          <h4>Study</h4>
-          <div class="record">
-            <div><p class="record-role">Applied Data Science &amp; AI</p><p class="record-org">BUas</p></div>
-            <div class="record-date">SEP 2021 — JUL 2025</div>
+        <div class="reveal">
+
+          <div class="record-group">
+            <h4>Work experience</h4>
+            <div class="record">
+              <div>
+                <p class="record-role">Data Scientist Intern</p>
+                <p class="record-org">TrueLime</p>
+              </div>
+              <div class="record-date">MAR — JUL 2024</div>
+            </div>
+            <div class="record">
+              <div>
+                <p class="record-role">AI Developer</p>
+                <p class="record-org">TrueLime</p>
+              </div>
+              <div class="record-date">OCT 2023 — FEB 2024</div>
+            </div>
+            <div class="record">
+              <div>
+                <p class="record-role">Junior Data Analist</p>
+                <p class="record-org">Maiburg</p>
+              </div>
+              <div class="record-date">SEP 2022 — AUG 2023</div>
+            </div>
           </div>
-          <div class="record">
-            <div><p class="record-role">Minor Robotisering</p><p class="record-org">Avans</p></div>
-            <div class="record-date">SEP 2024 — JAN 2025</div>
+
+          <div class="record-group">
+            <h4>Study</h4>
+            <div class="record">
+              <div>
+                <p class="record-role">Applied Data Science &amp; AI</p>
+                <p class="record-org">BUas</p>
+              </div>
+              <div class="record-date">SEP 2021 — JUL 2025</div>
+            </div>
+            <div class="record">
+              <div>
+                <p class="record-role">Minor Robotisering</p>
+                <p class="record-org">Avans</p>
+              </div>
+              <div class="record-date">SEP 2024 — JAN 2025</div>
+            </div>
+          </div>
+
+          <div class="about-cta">
+            <a class="btn solid" href="assets/resume.pdf" download>Download resume ↓</a>
+            <a class="btn ghost" href="about.html">Meer over mij →</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="foundations reveal">
+        <div class="about-block-title">Core foundations</div>
+        <div class="foundations-grid">
+          <div class="foundation-card">
+            <span class="fn">01</span>
+            <h5>Uitlegbaar boven black-box</h5>
+            <p>Een model dat goed presteert is niet genoeg — het moet ook te begrijpen zijn voor wie ermee werkt.</p>
+          </div>
+          <div class="foundation-card">
+            <span class="fn">02</span>
+            <h5>Simuleer voor je uitrolt</h5>
+            <p>Van RoboSuite tot Gazebo: eerst testen in simulatie, pas daarna op fysieke systemen.</p>
+          </div>
+          <div class="foundation-card">
+            <span class="fn">03</span>
+            <h5>Gebouwd voor echte gebruikers</h5>
+            <p>Een dashboard telt pas als niet-technische collega's het zonder uitleg kunnen gebruiken.</p>
+          </div>
+          <div class="foundation-card">
+            <span class="fn">04</span>
+            <h5>Van experiment naar productie</h5>
+            <p>Van junior analist tot AI developer — ik lever modellen die daadwerkelijk de praktijk in gaan.</p>
           </div>
         </div>
+      </div>
 
-        <div class="about-cta">
-          <a class="btn solid" href="assets/resume.pdf" download>Download resume ↓</a>
-          <a class="btn ghost" href="about.html">Meer over mij →</a>
+      <div class="competencies reveal">
+        <div class="about-block-title">Core competencies</div>
+        <div class="competency-list">
+          <div class="competency">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span>AI &amp; Machine Learning</span>
+          </div>
+          <div class="competency">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span>Robotics &amp; Simulatie</span>
+          </div>
+          <div class="competency">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19V10M12 19V5M19 19v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span>Data-analyse &amp; BI</span>
+          </div>
+          <div class="competency">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12c2.5-4.5 6-7 10-7s7.5 2.5 10 7c-2.5 4.5-6 7-10 7s-7.5-2.5-10-7Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>Explainable AI</span>
+          </div>
+          <div class="competency">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5 3 12l5 7M16 5l5 7-5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Python Engineering</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="foundations reveal">
-      <div class="about-block-title">Core foundations</div>
-      <div class="foundations-grid">
-        <div class="foundation-card">
-          <span class="fn">01</span>
-          <h5>Uitlegbaar boven black-box</h5>
-          <p>Een model dat goed presteert is niet genoeg — het moet ook te begrijpen zijn voor wie ermee werkt.</p>
-        </div>
-        <div class="foundation-card">
-          <span class="fn">02</span>
-          <h5>Simuleer voor je uitrolt</h5>
-          <p>Van RoboSuite tot Gazebo: eerst testen in simulatie, pas daarna op fysieke systemen.</p>
-        </div>
-        <div class="foundation-card">
-          <span class="fn">03</span>
-          <h5>Gebouwd voor echte gebruikers</h5>
-          <p>Een dashboard telt pas als niet-technische collega's het zonder uitleg kunnen gebruiken.</p>
-        </div>
-        <div class="foundation-card">
-          <span class="fn">04</span>
-          <h5>Van experiment naar productie</h5>
-          <p>Van junior analist tot AI developer — ik lever modellen die daadwerkelijk de praktijk in gaan.</p>
+      <div class="toolkit reveal">
+        <div class="about-block-title">My toolkit</div>
+        <div class="toolkit-grid">
+          <div class="tool-card"><span class="tool-name">Python</span><span class="tool-cat">Programming</span></div>
+          <div class="tool-card"><span class="tool-name">PyTorch</span><span class="tool-cat">Deep Learning</span></div>
+          <div class="tool-card"><span class="tool-name">MuJoCo / RoboSuite</span><span class="tool-cat">Simulatie</span></div>
+          <div class="tool-card"><span class="tool-name">ROS / Gazebo</span><span class="tool-cat">Robotics</span></div>
+          <div class="tool-card"><span class="tool-name">SQL</span><span class="tool-cat">Data</span></div>
+          <div class="tool-card"><span class="tool-name">Power BI</span><span class="tool-cat">Dashboards</span></div>
+          <div class="tool-card"><span class="tool-name">scikit-learn</span><span class="tool-cat">Machine Learning</span></div>
+          <div class="tool-card"><span class="tool-name">Pandas</span><span class="tool-cat">Data-analyse</span></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="competencies reveal">
-      <div class="about-block-title">Core competencies</div>
-      <div class="competency-list">
-        <div class="competency">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span>AI &amp; Machine Learning</span>
-        </div>
-        <div class="competency">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span>Robotics &amp; Simulatie</span>
-        </div>
-        <div class="competency">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19V10M12 19V5M19 19v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span>Data-analyse &amp; BI</span>
-        </div>
-        <div class="competency">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12c2.5-4.5 6-7 10-7s7.5 2.5 10 7c-2.5 4.5-6 7-10 7s-7.5-2.5-10-7Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span>Explainable AI</span>
-        </div>
-        <div class="competency">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5 3 12l5 7M16 5l5 7-5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Python Engineering</span>
-        </div>
+    <section id="work">
+      <div class="eyebrow reveal"><span class="idx">02</span> Selected Work</div>
+      <div class="projects">
+
+        <article class="card reveal" style="--tint:var(--red-tint); --accent:var(--red);">
+          <a class="card-link" href="work/robosuite-pickplace/index.html" aria-label="Open case study: RoboSuite PickPlace"></a>
+          <div class="card-top">
+            <div class="card-title"><span class="num">01</span><h3>RoboSuite PickPlace</h3></div>
+            <span class="year">2022</span>
+          </div>
+          <p>Vision-guided pick-and-place: YOLO-detectie en een eigen pose-estimator sturen een 11-staps joint-space controller, in RoboSuite/MuJoCo.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Computer Vision</span><span class="tag">MuJoCo</span></div>
+          <span class="card-cta">Case study →</span>
+        </article>
+
+        <article class="card reveal" style="--tint:var(--navy-tint); --accent:var(--navy);">
+          <div class="card-top">
+            <div class="card-title"><span class="num">02</span><h3>Gazebo TurtleBot3 Person Tracking</h3></div>
+            <span class="year">2024</span>
+          </div>
+          <p>Persoon-tracking systeem op een TurtleBot3 in Gazebo, ontwikkeld tijdens de minor Robotisering aan Avans.</p>
+          <div class="tag-row"><span class="tag">ROS</span><span class="tag">Gazebo</span><span class="tag">Computer Vision</span></div>
+        </article>
+
+        <article class="card reveal" style="--tint:var(--moss-tint); --accent:var(--moss);">
+          <div class="card-top">
+            <div class="card-title"><span class="num">03</span><h3>Human Centered XAI</h3></div>
+            <span class="year">2021</span>
+          </div>
+          <p>Onderzoek naar uitlegbare AI: hoe maak je modelbeslissingen begrijpelijk voor eindgebruikers zonder technische achtergrond.</p>
+          <div class="tag-row"><span class="tag">Explainable AI</span><span class="tag">Research</span></div>
+        </article>
+
+        <article class="card reveal" style="--tint:var(--ochre-tint); --accent:var(--ochre);">
+          <div class="card-top">
+            <div class="card-title"><span class="num">04</span><h3>Oosterhout Municipality Dashboard</h3></div>
+            <span class="year">2021</span>
+          </div>
+          <p>Data-dashboard voor de gemeente Oosterhout, gebouwd om beleidsdata inzichtelijk en doorzoekbaar te maken voor niet-technische gebruikers.</p>
+          <div class="tag-row"><span class="tag">Power BI</span><span class="tag">SQL</span></div>
+        </article>
+
+        <article class="card reveal" style="--tint:var(--rust-tint); --accent:var(--rust);">
+          <div class="card-top">
+            <div class="card-title"><span class="num">05</span><h3>Fashion Recommendation App</h3></div>
+            <span class="year">2023</span>
+          </div>
+          <p>Aanbevelingssysteem voor kledingcombinaties, gebaseerd op machine learning en gebruikersvoorkeuren.</p>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
+        </article>
+
       </div>
-    </div>
+    </section>
 
-    <div class="toolkit reveal">
-      <div class="about-block-title">My toolkit</div>
-      <div class="toolkit-grid">
-        <div class="tool-card"><span class="tool-name">Python</span><span class="tool-cat">Programming</span></div>
-        <div class="tool-card"><span class="tool-name">PyTorch</span><span class="tool-cat">Deep Learning</span></div>
-        <div class="tool-card"><span class="tool-name">MuJoCo / RoboSuite</span><span class="tool-cat">Simulatie</span></div>
-        <div class="tool-card"><span class="tool-name">ROS / Gazebo</span><span class="tool-cat">Robotics</span></div>
-        <div class="tool-card"><span class="tool-name">SQL</span><span class="tool-cat">Data</span></div>
-        <div class="tool-card"><span class="tool-name">Power BI</span><span class="tool-cat">Dashboards</span></div>
-        <div class="tool-card"><span class="tool-name">scikit-learn</span><span class="tool-cat">Machine Learning</span></div>
-        <div class="tool-card"><span class="tool-name">Pandas</span><span class="tool-cat">Data-analyse</span></div>
-      </div>
-    </div>
-  </section>
+    <section id="contact" class="contact">
+      <div class="eyebrow reveal"><span class="idx">03</span> Contact</div>
+      <h2 class="reveal">Altijd benieuwd naar nieuwe projecten.<br><a href="mailto:Anouk.okkema@kpnmail.nl">Stuur me een mail →</a></h2>
+    </section>
 
-  <section id="work">
-    <div class="eyebrow reveal"><span class="idx">02</span> Selected Work</div>
-    <div class="projects">
+  </div>
 
-      <article class="card reveal" style="--tint:var(--red-tint); --accent:var(--red);">
-        <div class="card-top">
-          <div class="card-title"><span class="num">01</span><h3>RoboSuite PickPlace</h3></div>
-          <span class="year">2022</span>
-        </div>
-        <p>Reinforcement learning policy voor precisie pick-and-place met een robotarm, getraind en getest in RoboSuite/MuJoCo-simulatie.</p>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">Reinforcement Learning</span><span class="tag">MuJoCo</span></div>
-      </article>
+  <div class="wrap">
+    <footer>
+      <span>© 2026 · Anouk Okkema</span>
+      <a class="back-top" href="#top">↑ Terug naar boven</a>
+    </footer>
+  </div>
 
-      <article class="card reveal" style="--tint:var(--navy-tint); --accent:var(--navy);">
-        <div class="card-top">
-          <div class="card-title"><span class="num">02</span><h3>Gazebo TurtleBot3 Person Tracking</h3></div>
-          <span class="year">2024</span>
-        </div>
-        <p>Persoon-tracking systeem op een TurtleBot3 in Gazebo, ontwikkeld tijdens de minor Robotisering aan Avans.</p>
-        <div class="tag-row"><span class="tag">ROS</span><span class="tag">Gazebo</span><span class="tag">Computer Vision</span></div>
-      </article>
-
-      <article class="card reveal" style="--tint:var(--moss-tint); --accent:var(--moss);">
-        <div class="card-top">
-          <div class="card-title"><span class="num">03</span><h3>Human Centered XAI</h3></div>
-          <span class="year">2021</span>
-        </div>
-        <p>Onderzoek naar uitlegbare AI: hoe maak je modelbeslissingen begrijpelijk voor eindgebruikers zonder technische achtergrond.</p>
-        <div class="tag-row"><span class="tag">Explainable AI</span><span class="tag">Research</span></div>
-      </article>
-
-      <article class="card reveal" style="--tint:var(--ochre-tint); --accent:var(--ochre);">
-        <div class="card-top">
-          <div class="card-title"><span class="num">04</span><h3>Oosterhout Municipality Dashboard</h3></div>
-          <span class="year">2021</span>
-        </div>
-        <p>Data-dashboard voor de gemeente Oosterhout, gebouwd om beleidsdata inzichtelijk en doorzoekbaar te maken voor niet-technische gebruikers.</p>
-        <div class="tag-row"><span class="tag">Power BI</span><span class="tag">SQL</span></div>
-      </article>
-
-      <article class="card reveal" style="--tint:var(--rust-tint); --accent:var(--rust);">
-        <div class="card-top">
-          <div class="card-title"><span class="num">05</span><h3>Fashion Recommendation App</h3></div>
-          <span class="year">2023</span>
-        </div>
-        <p>Aanbevelingssysteem voor kledingcombinaties, gebaseerd op machine learning en gebruikersvoorkeuren.</p>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="eyebrow reveal"><span class="idx">03</span> Contact</div>
-    <h2 class="reveal">Altijd benieuwd naar nieuwe projecten.<br><a href="mailto:Anouk.okkema@kpnmail.nl">Stuur me een mail →</a></h2>
-  </section>
-
-</div>
-
-<div class="wrap">
-  <footer>
-    <span>© 2026 · Anouk Okkema</span>
-    <a class="back-top" href="#top">↑ Terug naar boven</a>
-  </footer>
-</div>
-
-<script>
-// live clock (Europe/Amsterdam)
-function tick(){
-  var el = document.getElementById('clock');
-  var now = new Date();
-  var parts = new Intl.DateTimeFormat('nl-NL', { timeZone:'Europe/Amsterdam', hour:'2-digit', minute:'2-digit' }).format(now);
-  el.textContent = parts + ' CET';
-}
-tick(); setInterval(tick, 15000);
-
-// interactive dot grid: a canvas of dots that swell and brighten near the
-// cursor, falling back to a plain still grid when there's no real pointer
-// or the visitor asked for less motion.
-(function(){
-  var canvas = document.getElementById('dotgrid');
-  var ctx = canvas.getContext('2d');
-  var heroEl = document.querySelector('.hero');
-  var dotReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var canHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-
-  var MOUSE_ENABLED = false; // cursor-reactivity switched off for now, per request — grid still renders
-  var SPACING = 26;      // px between dots
-  var BASE_R = 1.2;       // resting dot radius
-  var MAX_R = 3.6;        // dot radius right under the cursor
-  var INFLUENCE = 140;    // px radius of the cursor's effect
-
-  var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var w = 0, h = 0;
-  var mouseX = -9999, mouseY = -9999;
-  var targetMouseX = -9999, targetMouseY = -9999;
-  var dotRedRGB = '192,32,42';
-
-  function resize(){
-    var r = heroEl.getBoundingClientRect();
-    w = window.innerWidth; h = r.height; // canvas is full-bleed (100vw), not the padded hero width
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    draw();
-  }
-
-  function draw(){
-    ctx.clearRect(0, 0, w, h);
-    for(var y = SPACING / 2; y < h; y += SPACING){
-      for(var x = SPACING / 2; x < w; x += SPACING){
-        var dx = x - mouseX, dy = y - mouseY;
-        var dist = Math.sqrt(dx*dx + dy*dy);
-        var t = Math.max(0, 1 - dist / INFLUENCE); // 1 = right under cursor, 0 = out of range
-        var r = BASE_R + (MAX_R - BASE_R) * t;
-        var alpha = 0.22 + 0.65 * t;
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(' + dotRedRGB + ',' + alpha + ')';
-        ctx.fill();
-      }
-    }
-  }
-
-  var raf = null;
-  function loop(){
-    // ease current position toward the real cursor so the swell trails
-    // smoothly instead of snapping dot-by-dot on every mousemove
-    mouseX += (targetMouseX - mouseX) * 0.18;
-    mouseY += (targetMouseY - mouseY) * 0.18;
-    draw();
-    if(Math.abs(targetMouseX - mouseX) > 0.5 || Math.abs(targetMouseY - mouseY) > 0.5){
-      raf = requestAnimationFrame(loop);
-    } else {
-      raf = null;
-    }
-  }
-  function kick(){ if(!raf){ raf = requestAnimationFrame(loop); } }
-
-  resize();
-  window.addEventListener('resize', resize);
-
-  if(MOUSE_ENABLED && canHover && !dotReduceMotion){
-    heroEl.addEventListener('mousemove', function(e){
-      var r = heroEl.getBoundingClientRect();
-      targetMouseX = e.clientX; // canvas's own left edge is the viewport edge (x:0), not the padded hero edge
-      targetMouseY = e.clientY - r.top;
-      kick();
-    });
-    heroEl.addEventListener('mouseleave', function(){
-      targetMouseX = -9999; targetMouseY = -9999;
-      kick();
-    });
-  }
-})();
-
-// blobs/circles/plus-marks drift a little with the cursor — listens on the
-// whole document (not just .hero) so it keeps responding while the cursor
-// is over the fixed navbar too, since that sits outside the hero in the DOM.
-(function(){
-  var lines = document.getElementById('heroLines');
-  if(!lines) return;
-  var linesReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(linesReduceMotion || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
-
-  var lx = 0, ly = 0, ltx = 0, lty = 0;
-  var lraf = null;
-  function linesLoop(){
-    lx += (ltx - lx) * 0.08;
-    ly += (lty - ly) * 0.08;
-    lines.style.transform = 'translateX(-50%) translate(' + lx.toFixed(2) + 'px,' + ly.toFixed(2) + 'px)';
-    if(Math.abs(ltx - lx) > 0.05 || Math.abs(lty - ly) > 0.05){
-      lraf = requestAnimationFrame(linesLoop);
-    } else {
-      lraf = null;
-    }
-  }
-  document.addEventListener('mousemove', function(e){
-    // offset from viewport centre, capped to a small subtle drift
-    ltx = ((e.clientX / window.innerWidth) - 0.5) * 30;
-    lty = ((e.clientY / window.innerHeight) - 0.5) * 30;
-    if(!lraf){ lraf = requestAnimationFrame(linesLoop); }
-  }, { passive:true });
-})();
-
-// hero label matches the width of the widest headline line above/below it
-function syncLabelWidth(){
-  var lines = document.querySelectorAll('.hero-stack .headline');
-  var label = document.querySelector('.hero-label');
-  var w = 0;
-  lines.forEach(function(el){ w = Math.max(w, el.getBoundingClientRect().width); });
-  if(w) label.style.width = w + 'px';
-}
-syncLabelWidth();
-window.addEventListener('resize', syncLabelWidth);
-if(document.fonts && document.fonts.ready){ document.fonts.ready.then(syncLabelWidth); }
-
-// hero text splits apart on scroll, like the original: "HI THERE" (+ the
-// name/role label) lifts up and fades, "I AM ANOUK" drops down and fades —
-// scrubbed by scroll position, not a timed animation, so it tracks the
-// scrollbar exactly and reverses cleanly on the way back up.
-var heroLinesEls = document.querySelectorAll('.hero-stack .headline');
-var heroTopLine = heroLinesEls[0];
-var heroBottomLine = heroLinesEls[1];
-var heroLabelEl = document.querySelector('.hero-label');
-var HERO_EXIT_RANGE = 320;
-var HERO_EXIT_TRAVEL = 90;
-var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var heroTicking = false;
-function onHeroScroll(){
-  var p = Math.max(0, Math.min(1, window.scrollY / HERO_EXIT_RANGE));
-  var opacity = 1 - p;
-  var travel = reduceMotion ? 0 : HERO_EXIT_TRAVEL * p;
-  heroTopLine.style.transform = 'translateY(' + (-travel) + 'px)';
-  heroTopLine.style.opacity = opacity;
-  heroLabelEl.style.transform = 'translateY(' + (-travel) + 'px)';
-  heroLabelEl.style.opacity = opacity;
-  heroBottomLine.style.transform = 'translateY(' + travel + 'px)';
-  heroBottomLine.style.opacity = opacity;
-  heroTicking = false;
-}
-window.addEventListener('scroll', function(){
-  if(!heroTicking){ requestAnimationFrame(onHeroScroll); heroTicking = true; }
-}, { passive:true });
-onHeroScroll();
-
-// scroll reveal
-var revealEls = document.querySelectorAll('.reveal');
-var io = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
-  });
-}, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
-revealEls.forEach(function(el){ io.observe(el); });
-
-// about stats count up once they scroll into view
-var statReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function countUp(el){
-  var target = parseInt(el.getAttribute('data-count'), 10);
-  var suffix = el.getAttribute('data-suffix') || '';
-  if(statReduceMotion){ el.textContent = target + suffix; return; }
-  var duration = 900;
-  var start = null;
-  function tick(now){
-    if(start === null) start = now;
-    var t = Math.min(1, (now - start) / duration);
-    var eased = 1 - Math.pow(1 - t, 3);
-    el.textContent = Math.round(eased * target) + suffix;
-    if(t < 1){ requestAnimationFrame(tick); }
-  }
-  requestAnimationFrame(tick);
-}
-var statIO = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){ countUp(entry.target); statIO.unobserve(entry.target); }
-  });
-}, { threshold:0.6 });
-document.querySelectorAll('.stat b').forEach(function(el){ statIO.observe(el); });
-
-// active nav link on scroll (keeps the desktop row and mobile dropdown in sync)
-var navLinks = document.querySelectorAll('[data-nav], [data-nav-m]');
-var navHrefs = Array.from(new Set(Array.from(navLinks).map(function(a){ return a.getAttribute('href'); })));
-var sections = navHrefs.map(function(href){ return document.querySelector(href); });
-var navIO = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    var id = '#' + entry.target.id;
-    if(entry.isIntersecting){
-      navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === id); });
-    }
-  });
-}, { rootMargin:'-40% 0px -50% 0px' });
-sections.forEach(function(s){ if(s) navIO.observe(s); });
-
-// staggered text roll, ported from sona-ui's StaggerText (21st.dev):
-// two stacked letter layers per character; hovering a character sets it as the
-// "active" index and every character's delay is |activeIndex - i| * 40ms, so the
-// roll ripples outward from wherever the cursor enters. Leaving the word plays a
-// simple left-to-right wave back down (delay = i * 20ms).
-document.querySelectorAll('.stagger').forEach(function(el){
-  var text = el.getAttribute('data-text') || '';
-  var chars = [];
-  text.split('').forEach(function(ch){
-    var display = ch === ' ' ? '\xa0' : ch;
-    var wrap = document.createElement('span'); wrap.className = 'ch';
-    var top = document.createElement('span'); top.className = 'seg top'; top.textContent = display;
-    var bottom = document.createElement('span'); bottom.className = 'seg bottom'; bottom.textContent = display;
-    wrap.appendChild(top); wrap.appendChild(bottom);
-    el.appendChild(wrap);
-    chars.push(wrap);
-  });
-
-  chars.forEach(function(ch, i){
-    ch.addEventListener('mouseenter', function(){
-      chars.forEach(function(c2, j){
-        var delay = Math.abs(i - j) * 40;
-        c2.querySelectorAll('.seg').forEach(function(seg){
-          seg.style.transitionDelay = delay + 'ms';
-          seg.style.transitionDuration = '.4s';
-        });
-        c2.classList.add('up');
-      });
-    });
-  });
-  el.addEventListener('mouseleave', function(){
-    chars.forEach(function(c2, j){
-      var delay = j * 20;
-      c2.querySelectorAll('.seg').forEach(function(seg){
-        seg.style.transitionDelay = delay + 'ms';
-        seg.style.transitionDuration = '.3s';
-      });
-      c2.classList.remove('up');
-    });
-  });
-});
-
-// nav row -> stack, scrubbed by scroll position (not time). Contact (last
-// item) tucks under first, then Jams, then Work, then Experience, and About
-// slides right into the indent — each on its own slice of the same 0..1
-// scroll range, so the whole thing plays and reverses exactly with the
-// scrollbar instead of running on a timer.
-var navList = document.getElementById('navlist');
-var navItems = Array.from(navList.querySelectorAll('li'));
-var SCROLL_RANGE = 260; // px of scroll to go from fully open to fully stacked
-// [start, end] of each item's own slide within the 0..1 scroll progress,
-// ordered by DOM index (0=About ... 2=Contact) but Contact's window starts
-// earliest and About's starts latest, so the collapse reads right-to-left.
-var windows = [
-  [0.55, 0.95], // About -> shifts right, last to settle
-  [0.28, 0.66], // Work
-  [0.00, 0.38]  // Contact -> drops first
-];
-var deltas = null; // {dx,dy} per item: offset from stacked rest -> open row position
-
-function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
-
-// the list's real CSS layout is always the stacked column; to find out how far
-// that is from the open/row look, briefly force row mode, measure, then let it
-// snap back to column (its permanent state) before anyone sees it happen.
-function measureDeltas(){
-  navItems.forEach(function(el){ el.style.transform = ''; });
-  navList.style.flexDirection = 'row';
-  navList.style.gap = '32px';
-  navList.style.padding = '0';
-  var open = navItems.map(function(el){ return el.getBoundingClientRect(); });
-  navList.style.flexDirection = '';
-  navList.style.gap = '';
-  navList.style.padding = '';
-  var stacked = navItems.map(function(el){ return el.getBoundingClientRect(); });
-  deltas = navItems.map(function(el, i){
-    return { dx: open[i].left - stacked[i].left, dy: open[i].top - stacked[i].top };
-  });
-}
-var ticking = false;
-
-// measuring too early (before the mono webfont has actually swapped in) bakes
-// in wrong pixel deltas forever, so wait for fonts, then remeasure on resize
-var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
-fontsReady.then(function(){ measureDeltas(); onScroll(); }).catch(function(){ measureDeltas(); onScroll(); });
-window.addEventListener('resize', function(){ measureDeltas(); onScroll(); });
-
-function onScroll(){
-  if(!deltas) return; // fonts/layout not measured yet
-  var progress = Math.max(0, Math.min(1, window.scrollY / SCROLL_RANGE));
-  navList.style.setProperty('--p', progress);
-  navItems.forEach(function(el, i){
-    var w = windows[i];
-    var local = (progress - w[0]) / (w[1] - w[0]);
-    local = ease(Math.max(0, Math.min(1, local)));
-    var remaining = 1 - local; // 1 = still at the open/row position, 0 = settled in the stack
-    var d = deltas[i];
-    el.style.transform = remaining ? 'translate(' + (d.dx*remaining) + 'px,' + (d.dy*remaining) + 'px)' : '';
-  });
-  ticking = false;
-}
-window.addEventListener('scroll', function(){
-  if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
-}, { passive:true });
-
-// mobile menu: horizontal nav collapses into a burger that opens a vertical list
-var burger = document.getElementById('burger');
-var mobileList = document.getElementById('navlist-mobile');
-burger.addEventListener('click', function(){
-  var open = burger.classList.toggle('open');
-  mobileList.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', String(open));
-});
-document.querySelectorAll('[data-nav-m]').forEach(function(a){
-  a.addEventListener('click', function(){
-    burger.classList.remove('open');
-    mobileList.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-  });
-});
-
-// "ABOUT ME" ticker: no autoplay — its position is a direct function of
-// scroll position. The offset wraps with modulo against the width of one
-// repeated unit, so it scrolls forever in both directions and never has a
-// visible seam, using only two copies of the content.
-(function(){
-  var ticker = document.getElementById('aboutTicker');
-  if(!ticker) return;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  ticker.innerHTML += ticker.innerHTML;
-  var items = ticker.querySelectorAll('.ticker-item');
-  var unit = 0;
-  function measure(){
-    var half = items.length / 2;
-    unit = items[half].getBoundingClientRect().left - items[0].getBoundingClientRect().left;
-  }
-  function update(){
-    if(!unit) return;
-    if(reduceMotion){ ticker.style.transform = ''; return; }
-    var offset = ((window.scrollY * 0.6) % unit + unit) % unit;
-    ticker.style.transform = 'translateX(' + (-offset) + 'px)';
-  }
-  measure(); update();
-  window.addEventListener('resize', function(){ measure(); update(); });
-  var tickTicking = false;
-  window.addEventListener('scroll', function(){
-    if(!tickTicking){ requestAnimationFrame(function(){ update(); tickTicking = false; }); tickTicking = true; }
-  }, { passive:true });
-})();
-
-// companies marquee: real logos, cloned until the strip is comfortably wider
-// than any viewport (so the loop never runs out) with an even number of
-// copies (so the -50% keyframe lands exactly on a repeat boundary), and the
-// animation-duration is derived from the final width so every logo travels
-// at the same constant speed no matter how many clones that took.
-(function(){
-  var el = document.getElementById('companiesMarquee');
-  if(!el) return;
-  function setup(){
-    var base = el.innerHTML;
-    var baseCount = el.children.length;
-    el.style.animation = 'none';
-    var guard = 0;
-    while(el.scrollWidth < window.innerWidth * 2.2 && guard < 20){
-      el.innerHTML += base;
-      guard++;
-    }
-    var sets = el.children.length / baseCount;
-    if(sets % 2 !== 0){ el.innerHTML += base; }
-    var totalWidth = el.scrollWidth;
-    var PX_PER_SECOND = 55;
-    el.style.animation = '';
-    el.style.animationDuration = (totalWidth / 2 / PX_PER_SECOND) + 's';
-  }
-  if(document.readyState === 'complete'){ setup(); }
-  else { window.addEventListener('load', setup); }
-})();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+/* shared tokens/reset/.mark/.spark/.btn come from ../../style.css.
+   these aliases just let the rest of this file (restored from the original
+   case-study build) keep using its own --mono/--sans/--dark names. */
+:root{
+  --mono: var(--font-mono);
+  --sans: var(--font-display);
+  --dark: #171614;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+/* .wrap comes from ../../style.css so this page matches the main site's padding. */
+
+/* ---------- proj nav (kept as-is, this is the piece that replaced the
+   original site-header) ---------- */
+/* Fixed and floated over the hero, same as the main site's .nav -- so .hero
+   can be a plain 100svh below it instead of a sticky bar pushing it down by
+   an amount .hero would then have to subtract back out. */
+.proj-nav{
+  position:fixed; top:0; left:0; right:0; z-index:20;
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.proj-nav-row{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+.proj-back{ font-family:var(--font-mono); font-size:12.5px; color:var(--sub); transition:color .2s ease; }
+.proj-back:hover{ color:var(--red); }
+/* Anchor jumps (Try the 3D demo, See how it works, the AO mark) would
+   otherwise land flush under the fixed nav and hide the target's heading. */
+section, #top { scroll-margin-top: 61px; }
+
+/* ---------- hero (chosen variant 1d from hero-variants) ----------
+   Two grid columns: copy left, scene right. The scene is a background-freed
+   cutout that ends under the bins, floating over a soft circle; the main
+   page's hero decoration (dot grid, glows, outline circles, plus marks,
+   corner labels) runs behind everything, all the way to the hero's bottom
+   edge. .hero isn't a .wrap, so the edge inset is computed here to match
+   the rest of the page's .wrap margin. */
+.hero {
+  --inset: max(40px, calc((100vw - 1700px) / 2 + 40px));
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: clamp(40px, 6vw, 100px);
+  min-height: 100svh;
+  padding: 110px var(--inset) 50px;
+  /* undo the main page's centered flex hero (style.css .hero) */
+  height: auto; text-align: left; justify-content: normal;
+}
+.hero-copy, .stage { position: relative; z-index: 1; }
+.eyebrow, .section-label { color: var(--sub); font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow span, .section-label span { color: var(--red); margin-right: 10px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 730px; margin: 20px 0; font-size: clamp(46px, 5vw, 88px); font-weight: 900; letter-spacing: -.05em; line-height: .94; }
+h1 .outline { color: transparent; -webkit-text-stroke: 1.6px var(--ink); }
+.hero-intro { max-width: 44ch; color: var(--sub); font-size: 17px; line-height: 1.6; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+/* white base so the dot grid doesn't shine through the secondary button */
+.button { border: 1px solid var(--line); border-radius: 4px; padding: 13px 17px; font: 600 12px var(--mono); background: #fff; }
+.button span { margin-left: 13px; }.button.primary { background: var(--red); border-color: var(--red); color: #fff; }.button.secondary:hover { border-color: var(--red); color: var(--red); }
+/* the scene: a cutout image over a soft backdrop circle. The stage
+   shrink-wraps the image (capped on the stage, not the img, so their boxes
+   always match and every percentage-positioned child tracks the visible
+   scene at any viewport width); the translateX nudges it a little left. */
+.stage { width: fit-content; max-width: 700px; margin-inline: auto; transform: translateX(-38px); filter: drop-shadow(0 26px 28px rgba(23, 22, 20, .22)); }
+.scene { display: block; width: 100%; height: auto; }
+.cutout { filter: drop-shadow(0 26px 28px rgba(23, 22, 20, .22)); }
+.circle { position: absolute; left: 47%; top: 36%; transform: translate(-50%, -50%); width: 73%; aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--ink) 7%, var(--bg)); }
+/* main-page hero decoration: .hero-glow/.hero-circle/.hero-plus/.hero-corners
+   come styled from ../../style.css. The dot grid there is a canvas with
+   cursor-reactivity disabled, so this CSS dot pattern is pixel-equivalent.
+   No bottom fades: the effects run to the hero's bottom edge, behind the
+   corner labels too. */
+.hero-dots { position: absolute; inset: 0; z-index: 0; background-image: radial-gradient(rgba(192, 32, 42, .22) 1.2px, transparent 1.5px); background-size: 26px 26px; }
+.hero-lines { -webkit-mask-image: none; mask-image: none; }
+.hero-corners { left: var(--inset); right: var(--inset); }
+/* the main page's glow sits at an empty edge; here it overlaps the scene,
+   so soften it to keep the robot reading clearly */
+.hero-glow.g1 { opacity: .5; }
+
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); background: var(--card); }.facts div { min-height: 108px; padding: 25px clamp(20px, 3vw, 42px); border-right: 1px solid var(--line); }.facts div:last-child { border-right: 0; }.facts span { display: block; color: var(--sub); font: 500 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }.facts b { display: block; margin-top: 8px; font-size: 15px; }
+
+.section { padding-block: 112px; }.section-label { display: flex; align-items: center; gap: 4px; margin-bottom: 28px; }.section-label::after { content: ""; height: 1px; flex: 1; margin-left: 10px; background: var(--line); }.split-heading { display: grid; grid-template-columns: 1.08fr .7fr; gap: 9vw; align-items: start; }.split-heading h2, .pipeline-heading h2, .demo-heading h2, .reflection h2 { font-size: clamp(36px, 4.4vw, 66px); line-height: .98; letter-spacing: -.048em; margin-bottom: 0; }.split-heading p, .pipeline-heading p { color: var(--sub); font-size: 17px; }.outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 70px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }.outcome-grid article { padding: 27px; background: var(--card); border-right: 1px solid var(--line); }.outcome-grid article:last-child { border: 0; }.number { color: var(--red); font: 500 11px var(--mono); }.outcome-grid h3 { margin: 20px 0 8px; font-size: 19px; }.outcome-grid p { margin: 0; color: var(--sub); font-size: 14px; }
+
+.section-tint { background: var(--bg-alt); }.pipeline-heading { display: grid; grid-template-columns: 1.08fr .7fr; gap: 9vw; }.pipeline-list { list-style: none; margin: 58px 0 0; padding: 0; border-top: 1px solid var(--line); }.pipeline-list li { display: grid; grid-template-columns: 90px 1fr auto; gap: 20px; align-items: center; padding: 27px 0; border-bottom: 1px solid var(--line); }.step { font: 500 13px var(--mono); color: var(--red); }.pipeline-list h3 { margin: 0 0 3px; font-size: 20px; }.pipeline-list p { margin: 0; color: var(--sub); font-size: 15px; }.tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 3px; color: var(--sub); font: 500 10px var(--mono); white-space: nowrap; }
+
+.result-heading { margin-bottom: 52px; }.model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }.model-card { min-height: 332px; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }.model-card.accent-red { border-top: 5px solid var(--red); }.model-card.accent-rust { border-top: 5px solid var(--rust); }.model-card.accent-moss { border-top: 5px solid var(--moss); }.model-top { display: flex; justify-content: space-between; color: var(--sub); font: 500 10px var(--mono); text-transform: uppercase; }.model-card h3 { margin: 34px 0 8px; font-size: 23px; letter-spacing: -.02em; }.model-card > p { min-height: 65px; margin-bottom: 20px; color: var(--sub); font-size: 14px; }.model-card dl { margin: 0; border-top: 1px solid var(--line); }.model-card dl div { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 12px; }.model-card dt { color: var(--sub); }.model-card dd { margin: 0; font-weight: 600; }.status { margin-top: 17px; font: 500 10px var(--mono); color: var(--sub); }.status i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #2ea043; }.results-note { display: grid; grid-template-columns: 45px 1fr; gap: 16px; margin-top: 22px; padding: 20px; border-left: 3px solid var(--red); background: var(--red-tint); }.results-note p { margin: 0; max-width: 78ch; font-size: 14px; }.note-mark { color: var(--red); font-size: 26px; }
+
+.demo-section { background: var(--card); border-block: 1px solid var(--line); }.demo-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; }.demo-heading h2 { max-width: 630px; margin: 0; font-size: clamp(42px, 5.2vw, 76px); text-transform: uppercase; }.demo-heading h2 em { color: var(--red); font-style: normal; }.demo-heading p { max-width: 52ch; margin: 12px 0 0; color: var(--ink); font-size: 17px; }.demo-layout { display: grid; grid-template-columns: minmax(0, 1fr) 430px; gap: 18px; margin-top: 30px; }.demo-shell { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #0d0d0c; }.demo-toolbar { display: flex; justify-content: space-between; padding: 13px 16px; color: #bab3aa; border-bottom: 1px solid #373431; font: 500 10px var(--mono); text-transform: uppercase; }.demo-toolbar span:first-child { color: #f4f2ee; }.demo-toolbar i { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--red); border-radius: 50%; }.demo-shell iframe { display: block; width: 100%; height: 650px; border: 0; background: #171614; }.demo-sidebar { display: flex; flex-direction: column; gap: 13px; }.demo-panel { padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }.demo-panel h3 { margin: 0 0 20px; font-size: 14px; text-transform: uppercase; }.demo-panel label { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }.demo-panel input { width: 205px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 3px; background: var(--card); color: var(--ink); font: 500 12px var(--mono); }
+.run-button { display: flex; justify-content: center; gap: 10px; width: 100%; margin-top: 18px; padding: 14px; border: 1px solid var(--red); border-radius: 4px; background: var(--red); color: #fff; font: 600 13px var(--mono); cursor: pointer; }.run-button:hover { background: #9c1a22; }.run-button:disabled { cursor: not-allowed; opacity: .45; background: var(--red); }
+.demo-status-text { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--sub); font-size: 12px; line-height: 1.5; }.demo-status-text.is-error { color: var(--red); }
+.demo-progress-label { margin: -8px 0 16px; color: var(--sub); font: 600 12px var(--mono); text-align: center; }
+.status-panel ol { display: flex; justify-content: space-between; gap: 8px; padding: 0; margin: 0; list-style: none; }.status-panel li { position: relative; flex: 1; padding-top: 26px; text-align: center; font-size: 12px; }.status-panel li::before { position: absolute; top: 3px; left: calc(50% - 8px); width: 14px; height: 14px; border: 1px solid var(--ink); border-radius: 50%; content: ""; background: var(--bg); }.status-panel li:not(:last-child)::after { position: absolute; top: 10px; left: calc(50% + 10px); width: calc(100% - 18px); border-top: 1px dotted var(--sub); content: ""; }.status-panel li.active { color: var(--red); font-weight: 700; }.status-panel li.active::before { border-color: var(--red); background: var(--red); box-shadow: inset 0 0 0 3px var(--bg); }.results-panel { flex: 1; }.results-panel p { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 12px 0; border-top: 1px solid var(--line); font-size: 13px; }.results-panel p span { color: var(--sub); text-align: right; font-size: 12px; }
+
+.reflection h2 { max-width: 930px; }.reflection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 54px; }.reflection-grid p { color: var(--sub); font-size: 15px; }.reflection-grid b { display: block; margin-bottom: 8px; color: var(--ink); }
+.proj-footer { display: flex; justify-content: space-between; padding-block: 25px 45px; border-top: 1px solid var(--line); color: var(--sub); font: 500 11px var(--mono); } .proj-footer a:hover { color: var(--red); }
+
+@media (max-width: 900px) { .split-heading, .pipeline-heading, .demo-layout { grid-template-columns: 1fr; }.hero { grid-template-columns: 1fr; min-height: auto; padding: 110px 40px 50px; }.stage { transform: none; margin-top: 12px; }.facts { grid-template-columns: 1fr 1fr; }.facts div:nth-child(2) { border-right: 0; }.facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }.outcome-grid, .model-grid, .reflection-grid { grid-template-columns: 1fr; }.outcome-grid article { border-right: 0; border-bottom: 1px solid var(--line); }.outcome-grid article:last-child { border-bottom: 0; }.demo-shell iframe { height: 560px; }.demo-heading { display: block; }.demo-sidebar { display: grid; grid-template-columns: repeat(3, 1fr); }.demo-panel { min-height: 0; }.demo-panel input { width: 100%; }.results-panel p { display: block; }.results-panel p span { display: block; margin-top: 3px; text-align: left; } }
+@media (max-width: 620px) { .proj-nav-row { padding-block: 14px; }.hero { padding: 90px 20px 40px; }.facts { grid-template-columns: 1fr; }.facts div { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }.facts div:last-child { border-bottom: 0; }.section { padding-block: 72px; }.pipeline-list li { grid-template-columns: 42px 1fr; }.pipeline-list .tag { grid-column: 2; justify-self: start; }.demo-toolbar span:last-child { display: none; }.demo-shell iframe { height: 430px; }.demo-sidebar { grid-template-columns: 1fr; }.reflection-grid { gap: 10px; } }
